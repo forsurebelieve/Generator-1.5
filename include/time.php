@@ -1,6 +1,6 @@
 <?php
 session_start();
-$t=time(); // Current Time
+$t=time(); // Current Time 
 $u=$t;
 $tf = date('Y-m-d g:i A',$t); // Time, Formatted (in server TZ) (To be dislayed)
 $tu = date('Y-m-d G:i:s',$t); // Time, Formatted (in server TZ) (For the update process)

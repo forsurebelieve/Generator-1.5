@@ -1,7 +1,7 @@
 <?php
 require_once('pbkdf2.class.php');
 /**
- * Class User
+ * Class User 
  */
 class User {
     /** @var int  Contains the UID of the User (from the db) */

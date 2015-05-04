@@ -1,8 +1,8 @@
-<?php
-    $con = new PDO('mysql:host=sdgame.db;dbname=Characters','sdgame','Read_It');
-    $ud = new PDO('mysql:host=sdgame.db;dbname=Characters','sdgame_add','WriteIt');
-    $pw = new PDO('mysql:host=sdgame.db;dbname=Characters','sdgame_pw','safetyFirst');
-    $optimize = new PDO('mysql:host=sdgame.db;dbname=Characters','sdgame_maintain','janitor');
+<?php 
+    $con = new PDO('mysql:host=sdgame.db;dbname=TODO');
+    $ud = new PDO('mysql:host=sdgame.db;dbname=TODO');
+    $pw = new PDO('mysql:host=sdgame.db;dbname=TODO');
+    $optimize = new PDO('mysql:host=sdgame.db;dbname=TODO');
 
     $time = new DateTime('now',new DateTimeZone('UTC'));
     //debugging

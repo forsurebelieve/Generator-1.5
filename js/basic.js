@@ -1,6 +1,6 @@
 function hideAllHidden()
 {
-	var i;
+	var i; 
     for (i=0;i<document.getElementsByClassName("hidden").length;i++)
 	{
 		document.getElementsByClassName("hidden")[i].style.display='none';

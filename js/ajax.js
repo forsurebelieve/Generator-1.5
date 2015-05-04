@@ -1,4 +1,4 @@
-var sRoot = "http://game.acwpd.com/OO/";
+var sRoot = "http://game.acwpd.com/OO/"; 
 function loadMyPage(pageName,displayURL,targetDiv) {
     var ajax;
     document.getElementById("content").innerHTML = "Loading ...";

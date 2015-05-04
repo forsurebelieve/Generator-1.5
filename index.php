@@ -1,4 +1,4 @@
-<?php
+<?php 
     /*$site_root = 'http://game.acwpd.com/OO/';
     $serverRoot = '/f5/sdgame/public/OO/';*/
     spl_autoload_register(function ($class) {

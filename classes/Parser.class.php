@@ -1,5 +1,5 @@
 <?php
-/** Provides parsing tools for Sweet Dreams Online */
+/** Provides parsing tools for Sweet Dreams Online */ 
 class Parser {
     /** @param string $str String containing a time in UTC surrounded by ":-:UTC:-:" on one side and ":-:" on the other.
      * @param mixed $TimeZoneOffset The difference from a given timezone.
