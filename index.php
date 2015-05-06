@@ -25,8 +25,7 @@
 		 * Use the following format to control where each request goes:
 		 * 
 		 * 'NameOfTheParam': // www.example.com/NameOfTheParam
-			$useHeader = true; // (bool) Include the contents of a <head> for this page
-			$useHeadBar = true; // (bool) Render a header div for this page 
+			$useHeader = true; // (bool) Include the contents of a <head> for this page 
 			$bePretty = true; // (bool) Include CSS for this page
 			$content = $parser->buildOutput('pages/file.php'); // actual page to include
 			$useFooter = true; // (bool) Render a footer for this page 
@@ -37,7 +36,6 @@
 
 		default:
 			$useHeader = true;
-			$useHeadBar = true;
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/main.php');
 			$useFooter = true;

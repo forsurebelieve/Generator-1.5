@@ -1,4 +1,3 @@
 <title><?php echo $title ?></title>
-<link rel="stylesheet" href="http://game.acwpd.com/OO/styles/basic.css" type="text/css">
-<script src="http://game.acwpd.com/OO/js/basic.js" language="javascript"></script>
-<script src="http://game.acwpd.com/OO/js/ajax.js" language="javascript"></script>
+<link rel="stylesheet" href="<?php echo $site_root ?>/styles/basic.css" type="text/css">
+<script src="<?php echo $site_root ?>/js/ajax.js" language="javascript"></script>
