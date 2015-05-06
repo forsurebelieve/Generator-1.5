@@ -1,5 +1,16 @@
 <?php
-/** Provides parsing tools for Sweet Dreams Online */ 
+	
+/* 
+ * Provides parsing tools for ACWPD Projects
+ * Feel free to use this in your projects! Just provide Attribution by keeping this block in place!
+ * 
+ * This is version 1.0
+ * 
+ * For the latest version, please visit: https://github.com/farfromunique/ACWPD_Tools
+ * 
+ * This code is copyright (C) 2015 Aaron Coquet / ACWPD
+ */ 
+ 
 class Parser {
     /** @param string $str String containing a time in UTC surrounded by ":-:UTC:-:" on one side and ":-:" on the other.
      * @param mixed $TimeZoneOffset The difference from a given timezone.
