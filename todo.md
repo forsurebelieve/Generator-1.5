@@ -10,4 +10,4 @@
   * build save files
   * build save / load functions
 * replicate 1.5 functionality in 2.0 UI, in php 
-* ensure that gitgot works
+* ensure that gitgot works -- maybe?
