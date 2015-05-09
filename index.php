@@ -8,7 +8,7 @@
 	});
 	
 	session_start();
-	require_once ($serverRoot . 'include/connections.php');
+	//require_once ($serverRoot . 'include/connections.php');
 
 	$parser = new Parser;
 
