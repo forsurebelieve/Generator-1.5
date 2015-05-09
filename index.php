@@ -7,7 +7,7 @@
 		require_once $serverRoot . 'classes/' . $class . '.class.php';
 	});
 	
-	session_start();
+	//session_start();
 	//require_once ($serverRoot . 'include/connections.php');
 
 	$parser = new Parser;
@@ -18,6 +18,7 @@
 	
 	/*
 	 * Rudmentary controller. I should get / make someting better
+	 * .. but I'm not going to right now.
 	 */
 	switch ($params[0]) {
 		/*
