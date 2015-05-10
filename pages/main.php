@@ -21,7 +21,9 @@
 	
 	echo '<p>You rolled the <strong>' . $powerDraw['Type'][0]['name'] . '</strong> sign! This results in a <strong>' . $powerDraw['Type'][0]['class'] . '</strong>-class power. <strong>' . $powerDraw['Type'][0]['class'] . 's</strong> give ' . $powerDraw['Type'][0]['description'] . '</p>';
 	
-	echo '<p>You also rolled the <strong>' . $powerDraw['Flavor'][0]['name'] . '</strong> rune! This results in the flavor <strong>' . $powerDraw['Flavor'][0]['flavor'] . '</strong>, which gives a ' . $powerDraw['Flavor'][0]['description'] . '.</p>';
+	$element = $powerDraw['Flavor'][0]['element_name'] === '' ? 'represented by ' . $powerDraw['Flavor'][0]['element'] : $powerDraw['Flavor'][0]['element_name'];
+	
+	echo '<p>You also rolled the <strong>' . $powerDraw['Flavor'][0]['name'] . '</strong> rune! This results in the flavor <strong>' . $powerDraw['Flavor'][0]['flavor'] . '</strong>, which gives a ' . $powerDraw['Flavor'][0]['description'] . '. Optionally, if your power requires an element in order to manifest, the element associated with this rune is <strong>' . $element . '</strong></p>';
 	
 	echo '<p>Additionally, you pulled the <strong>' . $powerDraw['Twist']['value'][0]['name'] . ' of ' . $powerDraw['Twist']['suit'][0]['name'] . '</strong> which ' . $powerDraw['Twist']['value'][0]['description'] . '. This ' . $powerDraw['Twist']['suit'][0]['direction'] . ' ' . $powerDraw['Twist']['suit'][0]['factor'] . ', and ' . $powerDraw['Twist']['suit'][0]['undirection'] . ' your choice of ' . $powerDraw['Twist']['suit'][0]['unfactor'];
 ?>	
