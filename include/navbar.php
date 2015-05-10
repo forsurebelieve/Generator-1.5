@@ -6,6 +6,7 @@
 ?>
 <div class='navbar'>
 	<ul>
-		<li>Nothing here, yet</li>
+		<li><a href="http://futharkgeneratorphp.nfshost.com/">Roll them bones!</a></li>
+		<li><a href="http://futharkgeneratorphp.nfshost.com/lists">See all combinations</a></li>
 	</ul>
 </div>

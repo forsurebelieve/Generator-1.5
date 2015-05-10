@@ -87,7 +87,7 @@ span:hover {
 	position: absolute;
 	top: 105px;
 	left: 235px;
-	width: 500px;
+	width: 75%;
 	background-color: #99fdd8;
 	z-index:1;
 }
@@ -151,4 +151,25 @@ span:hover {
 }
 .hidden {
 	display:none;
+}
+
+table {
+	border: 1px black solid;
+}
+
+td {
+ 	border-top: 1px solid black;
+	border-left: 1px solid black;
+}
+
+td::first {
+	border-left: 0px;
+}
+
+thead {
+	font-weight: bold;
+}
+
+thead td {
+	border-top: 0px;
 }

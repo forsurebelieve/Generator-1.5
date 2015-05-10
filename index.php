@@ -1,6 +1,8 @@
 <?php 
 	$site_root = $_SERVER['SERVER_NAME'];
+	echo '<!-- $site_root: ' . $site_root . ' /-->';
 	$serverRoot = $_SERVER['DOCUMENT_ROOT'];
+	echo '<!-- $serverRoot: ' . $serverRoot . ' /-->';
 	
 	spl_autoload_register(function ($class) {
 		global $serverRoot;
@@ -34,7 +36,13 @@
 		 * 
 		 * Leave default at the bottom of the list
 		 */
-
+		case "lists":
+			$useHeader = true;
+			$bePretty = true;
+			$content = $parser->buildOutput('pages/allitems.php');
+			$useFooter = true;
+			break;
+			
 		default:
 			$useHeader = true;
 			$bePretty = true;
@@ -60,11 +68,10 @@
 	</head>
 	<body>
 		<?php
-			if ($useHeadBar) {
-				$headbar = $parser->buildOutput('include/headbar.php');
-				echo $headbar;
+			if ($useNavigation) {
+				$nav = $parser->buildOutput('include/navbar.php');
+				echo $nav;
 			}
-
 			if ($bePretty) {
 				echo '<div class="content">';
 			}
