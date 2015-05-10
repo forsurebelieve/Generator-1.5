@@ -23,5 +23,5 @@
 	
 	echo '<p>You also rolled the <strong>' . $powerDraw['Flavor'][0]['name'] . '</strong> rune! This results in the flavor <strong>' . $powerDraw['Flavor'][0]['flavor'] . '</strong>, which gives a ' . $powerDraw['Flavor'][0]['description'] . '.</p>';
 	
-	echo '<p>Additionally, you pulled the </strong>' . $powerDraw['Twist']['value'][0]['name'] . ' of ' . $powerDraw['Twist']['suit'][0]['name'] . '</strong> which ' . . $powerDraw['Twist']['value'][0]['description'] . '. This ' . $powerDraw['Twist']['suit'][0]['direction'] . ' ' . $powerDraw['Twist']['suit'][0]['factor'] . ', and ' . $powerDraw['Twist']['suit'][0]['undirection'] . ' your choice of ' . $powerDraw['Twist']['suit'][0]['unfactor'];
+	echo '<p>Additionally, you pulled the <strong>' . $powerDraw['Twist']['value'][0]['name'] . ' of ' . $powerDraw['Twist']['suit'][0]['name'] . '</strong> which ' . $powerDraw['Twist']['value'][0]['description'] . '. This ' . $powerDraw['Twist']['suit'][0]['direction'] . ' ' . $powerDraw['Twist']['suit'][0]['factor'] . ', and ' . $powerDraw['Twist']['suit'][0]['undirection'] . ' your choice of ' . $powerDraw['Twist']['suit'][0]['unfactor'];
 ?>	
