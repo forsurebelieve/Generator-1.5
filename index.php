@@ -71,10 +71,8 @@
 	<body>
 		<?php
 			if ($useNavigation) {
-				echo '<div class="navbar">';
 				$nav = $parser->buildOutput('include/navbar.php');
 				echo $nav;
-				echo '</div>';
 			}
 			if ($bePretty) {
 				echo '<div class="content">';
