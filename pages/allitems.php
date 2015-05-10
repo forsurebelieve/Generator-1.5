@@ -7,6 +7,7 @@
 	<thead>
 		<tr>
 			<td>Zodiac</td>
+			<td>Image</td>
 			<td>Classification</td>
 			<td>Description</td>
 		</tr>
@@ -17,6 +18,7 @@
 	foreach ($powerType as $key => $value) {
 		echo '<tr>';
 		echo '<td>' . $value['name'] . '</td>';
+		echo '<td><img src="' . $value['image'] . '"></td>';
 		echo '<td>' . $value['class'] . '</td>';
 		echo '<td>' . $value['description'] . '</td>';
 		echo '</tr>';
@@ -31,6 +33,7 @@
 	<thead>
 		<tr>
 			<td>Elder Futhark</td>
+			<td>Image</td>
 			<td>Flavor</td>
 			<td>Element</td>
 			<td>Element example</td>
@@ -43,6 +46,7 @@
 	foreach ($powerFlavor as $key => $value) {
 		echo '<tr>';
 		echo '<td>' . $value['name'] . '</td>';
+		echo '<td><img src="' . $value['image'] . '"></td>';
 		echo '<td>' . $value['flavor'] . '</td>';
 		echo '<td>' . $value['element'] . '</td>';
 		echo '<td>' . $value['element_name'] . '</td>';
@@ -81,6 +85,7 @@
 	<thead>
 		<tr>
 			<td>Suit / Symbol</td>
+			<td>Image</td>
 			<td>Direction</td>
 			<td>Factor</td>
 		</tr>
@@ -91,6 +96,7 @@
 	foreach ($powerTwistsSuit as $key => $value) {
 		echo '<tr>';
 		echo '<td>' . $value['name'] . '/' . $value['symbol'] . '</td>';
+		echo '<td><img src="' . $value['image'] . '"></td>';
 		echo '<td>' . $value['direction'] . '</td>';
 		echo '<td>' . $value['factor'] . '</td>';
 		echo '</tr>';
