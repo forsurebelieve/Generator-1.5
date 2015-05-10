@@ -6,7 +6,7 @@
 ?>
 <div class='navbar'>
 	<ul>
-		<li><a href="http://futharkgeneratorphp.nfshost.com/">Roll them bones!</a></li>
-		<li><a href="http://futharkgeneratorphp.nfshost.com/lists">See all combinations</a></li>
+		<li><a href="<?php echo $site_root; ?>/">Roll them bones!</a></li>
+		<li><a href="<?php echo $site_root; ?>/lists">See all combinations</a></li>
 	</ul>
 </div>

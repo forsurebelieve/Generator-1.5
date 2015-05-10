@@ -272,54 +272,67 @@
 	$powerTwistsNumber = [
 		'Ace' => [
 			'name' => 'Ace',
+			'short' => 'A',
 			'description' => 'Your power bypasses some limit it might otherwise be bound by'
 		],
 		'Two' => [
 			'name' => 'Two',
+			'short' => '2',
 			'description' => 'Your power has a drawback, but increases the positive effect of your suit'
 		],
 		'Three' => [
 			'name' => 'Three',
+			'short' => '3',
 			'description' => 'You have a wide array of minor powers rather than one single power. Not all powers have to be in the same category'
 		],
 		'Four' => [
 			'name' => 'Four',
+			'short' => '4',
 			'description' => 'Instead of increasing one factor and decreasing another, your suit decreases both factors'
 		],
 		'Five' => [
 			'name' => 'Five',
+			'short' => '5',
 			'description' => 'Nothing happens. The suit effect is applied as written'
 		],
 		'Six' => [
 			'name' => 'Six',
+			'short' => '6',
 			'description' => 'You and your power are relatively in sync'
 		],
 		'Seven' => [
 			'name' => 'Seven',
+			'short' => '7',
 			'description' => 'Your suit increases both factors that it affects. A Seven of Hearts would increase control AND [power or versatility]'
 		],
 		'Eight' => [
 			'name' => 'Eight',
+			'short' => '8',
 			'description' => 'Your power has potential, but conflicts with your personality (someone who hates waiting gets a power that must charge for days before being used). This is in some way that isn\'t moral (see King, for that)'
 		],
 		'Nine' => [
 			'name' => 'Nine',
+			'short' => '9',
 			'description' => 'The suit\'s effects are taken to the extreme'
 		],
 		'Ten' => [
 			'name' => 'Ten',
+			'short' => '10',
 			'description' => 'Your power has a significant secondary usage in another class (such as a Blaster who can use recoil as a Mover)'
 		],
 		'Jack' => [
 			'name' => 'Jack',
+			'short' => 'J',
 			'description' => 'Your power is different than what outside observers might think it to be, and often has subtle aspects unnoticed by others'
 		],
 		'Queen' => [
 			'name' => 'Queen',
+			'short' => 'Q',
 			'description' => 'Your power is less straight-up strong but lends itself towards teamwork and combos with other powers'
 		],
 		'King' => [
 			'name' => 'King',
+			'short' => 'K',
 			'description' => 'Your power has strength but is unethical as all hell (such as Butcher\'s long distance pain inducement or Heartbreaker\'s irreversible emotion manipulation)'
 		]
 	];

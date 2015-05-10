@@ -67,9 +67,9 @@ span:hover {
 	text-align: center;
 }
 .navbar {
-	position: absolute;
+	position: fixed;
 	left: 10px;
-	top: 10px;
+	top: 105px;
 	width: 185px;
 	background-color: #a9fc9a;
 	z-index:1;
@@ -87,7 +87,7 @@ span:hover {
 	position: absolute;
 	top: 105px;
 	left: 235px;
-	width: 75%;
+	width: 65%;
 	background-color: #99fdd8;
 	z-index:1;
 }
