@@ -48,7 +48,7 @@
 ?>
 	
 <h1>Using Worm Futhark Generator</h1>
-<h2>v1.5.2-PHP build 201505101540</h2>
+<h2>v1.5.2-PHP build 201505101700</h2>
 <p>Your pull:</p>
 <table>
 	<tr>
@@ -59,10 +59,10 @@
 	</tr>
 </table>
  
-<p>You rolled the <strong><?php echo $draw['Type']['name']; ?></strong> sign! This results in a <strong><?php echo $draw['Type']['class']; ?></strong>-class power. <strong><?php echo $draw['Type']['class']; ?>s</strong> give <?php echo $draw['Type']['description']; ?></p>
+<p>You rolled the <strong><?php echo $draw['Type']['name']; ?></strong> sign! This results in a <strong><?php echo $draw['Type']['class']; ?></strong>-class power. <strong><?php echo $draw['Type']['class']; ?>s</strong> have <?php echo $draw['Type']['description']; ?></p>
 	
-<p>You also rolled the <strong> <?php echo $draw['Flavor']['name']; ?></strong> rune! This results in the flavor <strong> <?php echo $draw['Flavor']['flavor']; ?></strong>, which gives a  <?php echo $draw['Flavor']['description']; ?>. Optionally, if your power requires an element in order to manifest, the element associated with this rune is <strong> <?php echo $draw['Flavor']['element']; ?></strong></p>
+<p>You also rolled the <strong> <?php echo $draw['Flavor']['name']; ?></strong> rune! This results in the flavor <strong> <?php echo $draw['Flavor']['flavor']; ?></strong>, which gives a power that <?php echo $draw['Flavor']['description']; ?>. Optionally, if your power requires an element in order to manifest, the element associated with this rune is <strong> <?php echo $draw['Flavor']['element']; ?></strong></p>
 	
-<p>Finally, you pulled the <strong> <?php echo $draw['Twist']['value']; ?> of  <?php echo $draw['Twist']['suit']; ?></strong> which  <?php echo $draw['Twist']['description']; ?>. This  <?php echo $draw['Twist']['direction']; ?>  <?php echo $draw['Twist']['factor']; ?>, and  <?php echo $draw['Twist']['undirection']; ?> your choice of  <?php echo $draw['Twist']['unfactor']; ?>.
+<p>Finally, you pulled the <strong> <?php echo $draw['Twist']['value']; ?> of  <?php echo $draw['Twist']['suit']; ?></strong> which modifies your power so that it <?php echo $draw['Twist']['description']; ?>. Your <?php echo $draw['Twist']['factor']; ?> is <?php echo $draw['Twist']['direction']; ?>, but your choice of <?php echo $draw['Twist']['unfactor']; ?> is <?php echo $draw['Twist']['undirection']; ?> .
 
 <p><a href="<?php echo $site_root; ?>">Roll again?</a></p>
