@@ -14,9 +14,7 @@
 		}
 	
 		public function __construct() {
-			
-			echo 'Construct started' . "\n";
-			
+						
 			require_once($serverRoot . 'include/lists.php');
 			
 			$powerDraw = [];

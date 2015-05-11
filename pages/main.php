@@ -2,7 +2,6 @@
 <h2>v1.5.2-PHP build 201505101700</h2>
 
 <?php
-	echo 'Main loaded...' . "\n";
 	$draw = new Draw();
 	
 	echo $draw->getBigImageTable();
