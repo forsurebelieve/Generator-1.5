@@ -92,7 +92,7 @@
 			echo $content;
 
 			if ($useFooter) {
-				echo '<div class="footer">';
+				echo '<br /><br />' . "\n" . '<div class="footer">';
 				$footer = $parser->buildOutput('include/footer.php');
 				echo $footer;
 				echo '</div>';

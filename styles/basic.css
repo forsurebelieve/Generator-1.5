@@ -93,9 +93,6 @@ span:hover {
 }
 .footer {
 	position: absolute;
-	bottom: 5px;
-	left: 235px;
-	width: 65%;
 	background-color: #99fdd8;
 	z-index:1;
 }
