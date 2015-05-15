@@ -86,13 +86,13 @@
 				echo $nav;
 			}
 			if ($bePretty) {
-				echo '<div class="content">';
+				echo '<div class="content"><div class="main">';
 			}
 
 			echo $content;
 
 			if ($useFooter) {
-				echo '<br /><br />' . "\n" . '<div class="footer">';
+				echo '</div><br /><br />' . "\n" . '<div class="footer">';
 				$footer = $parser->buildOutput('include/footer.php');
 				echo $footer;
 				echo '</div>';
