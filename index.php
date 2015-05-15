@@ -96,8 +96,10 @@
 			}
 
 			if ($useFooter) {
+				echo '<div class="footer">';
 				$footer = $parser->buildOutput('include/footer.php');
 				echo $footer;
+				echo '</div>';
 			}
 		?>
 	</body>
