@@ -103,10 +103,10 @@
 			$output = '<p>Your pull:</p>' . "\n";
 			$output .= '<table>' . "\n";
 			$output .= '<tr>' . "\n";
-			$output .= '<td><img src="' . $this->draw['Type']['image'] . '"></td>' . "\n";
-			$output .= '<td><img src="' . $this->draw['Flavor']['image'] . '"></td>' . "\n";
+			$output .= '<td><img src="' . $this->draw['Type']['image'] . '"><br />' . $this->draw['Type']['name'] . '</td>' . "\n";
+			$output .= '<td><img src="' . $this->draw['Flavor']['image'] . '"><br />' . $this->draw['Flavor']['name'] . '</td>' . "\n";
 			$output .= '<td style="font-size: 72pt;">' . $this->draw['Twist']['value_short'] . '</td>' . "\n";
-			$output .= '<td><img src="' . $this->draw['Twist']['suit_image'] . '"></td>' . "\n";
+			$output .= '<td><img src="' . $this->draw['Twist']['suit_image'] . '"><br />' . $this->draw['Type']['name'] . '</td>' . "\n";
 			$output .= '</tr>' . "\n";
 			$output .= '</table>' . "\n";
 			
