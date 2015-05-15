@@ -1,6 +1,3 @@
-<h1>Using Worm Futhark Generator</h1>
-<h2>v1.5.2-PHP build 201505101700</h2>
-
 <?php
 	$draw = new Draw();
 	
