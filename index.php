@@ -38,6 +38,7 @@
 		 */
 		case "lists":
 			$useHeader = true;
+			$useHeadBar = true;
 			$useNavigation = true;
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/allitems.php');
@@ -49,6 +50,7 @@
 		case "legal":
 		case "license":
 			$useHeader = true;
+			$useHeadBar = true;
 			$useNavigation = true;
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/credits.php');
@@ -57,6 +59,7 @@
 			
 		default:
 			$useHeader = true;
+			$useHeadBar = true;
 			$useNavigation = true;
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/main.php');
@@ -81,24 +84,30 @@
 	</head>
 	<body>
 		<?php
+			if ($useHeadBar) {
+				$headerBar = $parser->buildOutput('include/headbar.php');
+				echo $headerBar;
+			}
+			
 			if ($useNavigation) {
 				$nav = $parser->buildOutput('include/navbar.php');
 				echo $nav;
 			}
+			
 			if ($bePretty) {
-				echo '<div class="content"><div class="main">';
+				echo '<div class="content">';
 			}
 
 			echo $content;
-
-			if ($useFooter) {
-				echo '</div><br /><br />' . "\n" . '<div class="footer">';
-				$footer = $parser->buildOutput('include/footer.php');
-				echo $footer;
+			
+			if ($bePretty) {
 				echo '</div>';
 			}
 			
-			if ($bePretty) {
+			if ($useFooter) {
+				echo '<div class="footer">';
+				$footer = $parser->buildOutput('include/footer.php');
+				echo $footer;
 				echo '</div>';
 			}
 		?>
