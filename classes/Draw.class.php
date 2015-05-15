@@ -1,6 +1,10 @@
 <?php 	
 	class Draw {
 		protected $draw;
+		protected $type;
+		protected $flavor;
+		protected $twistsNumber;
+		protected $twistsSuit;
 		
 		private function array_random_assoc($arr, $num = 1) {
     		$keys = array_keys($arr);
@@ -17,10 +21,15 @@
 						
 			require_once($serverRoot . 'include/lists.php');
 			
+			$this->type = $powerType;
+			$this->flavor = $powerFlavor;
+			$this->twistsNumber = $powerTwistsNumber;
+			$this->twistsSuit = $powerTwistsSuit;
+			
 			$powerDraw = [];
-			$powerDraw['Type'] = $this->array_random_assoc($powerType);
-			$powerDraw['Flavor'] = $this->array_random_assoc($powerFlavor);
-			$powerDraw['Twist'] = ['suit' => $this->array_random_assoc($powerTwistsSuit), 'value' => $this->array_random_assoc($powerTwistsNumber)];
+			$powerDraw['Type'] = $this->array_random_assoc($this->type);
+			$powerDraw['Flavor'] = $this->array_random_assoc($this->flavor);
+			$powerDraw['Twist'] = ['suit' => $this->array_random_assoc($this->twistsSuit), 'value' => $this->array_random_assoc($this->twistsNumber)];
 		
 			$element = $powerDraw['Flavor'][0]['element_name'] === '' ? 'represented by ' . $powerDraw['Flavor'][0]['element'] : $powerDraw['Flavor'][0]['element_name'];
 		
@@ -50,6 +59,44 @@
 					'unfactor' =>  $powerDraw['Twist']['suit'][0]['unfactor']
 				]
 			];
+		}
+		
+		public function rollSign() {
+			$newDraw = $this->array_random_assoc($this->type);
+			$this->draw['Type']['name'] = $newDraw['Type'][0]['name'];
+			$this->draw['Type']['image'] = $newDraw['Type'][0]['image'];
+			$this->draw['Type']['class'] = $newDraw['Type'][0]['class'];
+			$this->draw['Type']['description'] = $newDraw['Type'][0]['description'];
+			
+			return true;
+		}
+		
+		public function rollFuthark() {
+			$newDraw = $this->array_random_assoc($this->flavor);
+			
+			$element = $newDraw['Flavor'][0]['element_name'] === '' ? 'represented by ' . $newDraw['Flavor'][0]['element'] : $newDraw['Flavor'][0]['element_name'];
+			
+			
+			$this->draw['Flavor']['name'] = $newDraw['Type'][0]['name'];
+			$this->draw['Flavor']['image'] = $newDraw['Type'][0]['image'];
+			$this->draw['Flavor']['flavor'] = $newDraw['Type'][0]['flavor'];
+			$this->draw['Flavor']['element'] = $element;
+			$this->draw['Flavor']['description'] = $newDraw['Type'][0]['description'];
+			
+			return true;
+		}
+		
+		public function drawCard($type = 'poker') {
+			if ($type === 'poker') {
+				$newDraw['suit'] = $this->array_random_assoc($this->twistsSuit);
+				$newDraw['value'] = $this->array_random_assoc($this->twistsNumber);
+				
+				
+			} else {
+				// ...
+			}
+			
+			return true;
 		}
 		
 		public function getBigImageTable() {

@@ -43,6 +43,17 @@
 			$content = $parser->buildOutput('pages/allitems.php');
 			$useFooter = true;
 			break;
+		
+		case "credit":
+		case "credits":
+		case "legal":
+		case "license":
+			$useHeader = true;
+			$useNavigation = true;
+			$bePretty = true;
+			$content = $parser->buildOutput('pages/credits.php');
+			$useFooter = true;
+			break;
 			
 		default:
 			$useHeader = true;

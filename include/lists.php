@@ -87,7 +87,7 @@
 		'Uruz' => [
 			'image' => $site_root . '/img/uruz.png',
 			'element' => 'solid earth',
-			'element_name' => '',
+			'element_name' => 'rock or cement',
 			'name' => 'Uruz',
 			'flavor' => 'Beast of burden',
 			'description' => 'is limited in versatility, but very good at what it does'
@@ -111,7 +111,7 @@
 		'Raido' => [
 			'image' => $site_root . '/img/raido.png',
 			'element' => 'ether air',
-			'element_name' => 'fog',
+			'element_name' => 'gas',
 			'name' => 'Raido',
 			'flavor' => 'Journey',
 			'description' => 'tends toward the physical, and involves freedom and the breaking of bonds'
@@ -119,7 +119,7 @@
 		'Kenaz' => [
 			'image' => $site_root . '/img/kauna.png',
 			'element' => 'liquid fire',
-			'element_name' => 'lava',
+			'element_name' => 'magma',
 			'name' => 'Kenaz',
 			'flavor' => 'Torch',
 			'description' => 'interacts with human-built things rather than natural things'
@@ -127,7 +127,7 @@
 		'Gebo' => [
 			'image' => $site_root . '/img/gebo.png',
 			'element' => 'liquid air',
-			'element_name' => 'gas',
+			'element_name' => 'darkness',
 			'name' => 'Gebo',
 			'flavor' => 'Gift',
 			'description' => 'involves some kind of equal exchange'
@@ -135,7 +135,7 @@
 		'Wunjo' => [
 			'image' => $site_root . '/img/wunjo.png',
 			'element' => 'mystic air',
-			'element_name' => '',
+			'element_name' => 'miasma',
 			'name' => 'Wunjo',
 			'flavor' => 'Joy',
 			'description' => 'is teamwork-oriented, encouraging synergy'
@@ -167,7 +167,7 @@
 		'Jera' => [
 			'image' => $site_root . '/img/jera.png',
 			'element' => 'mystic earth',
-			'element_name' => '',
+			'element_name' => 'sand',
 			'name' => 'Jera',
 			'flavor' => 'Harvest',
 			'description' => 'requires some kind of buildup before it can be used'
@@ -199,7 +199,7 @@
 		'Sowilo' => [
 			'image' => $site_root . '/img/sowilo.png',
 			'element' => 'mystic fire',
-			'element_name' => 'fire',
+			'element_name' => 'light',
 			'name' => 'Sowilo',
 			'flavor' => 'Sun',
 			'description' => 'induces change in some fashion'
@@ -215,7 +215,7 @@
 		'Berkano' => [
 			'image' => $site_root . '/img/berkano.png',
 			'element' => 'liquid lifeforce',
-			'element_name' => '',
+			'element_name' => 'time',
 			'name' => 'Berkano',
 			'flavor' => 'Birch',
 			'description' => 'is continually active in some form or works on a cycle'
@@ -231,7 +231,7 @@
 		'Mannaz' => [
 			'image' => $site_root . '/img/mannaz.png',
 			'element' => 'liquid earth',
-			'element_name' => 'sand',
+			'element_name' => 'metal',
 			'name' => 'Mannaz',
 			'flavor' => 'Man',
 			'description' => 'tends to work on humans, either the body or the mind'
@@ -247,7 +247,7 @@
 		'Inguz' => [
 			'image' => $site_root . '/img/inguz.png',
 			'element' => 'ether earth',
-			'element_name' => 'plant',
+			'element_name' => 'plants',
 			'name' => 'Inguz',
 			'flavor' => 'Fertility',
 			'description' => 'works over large time scales, growing stronger the longer it is applied'
