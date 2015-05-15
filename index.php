@@ -91,14 +91,14 @@
 
 			echo $content;
 
-			if ($bePretty) {
-				echo '</div>';
-			}
-
 			if ($useFooter) {
 				echo '<div class="footer">';
 				$footer = $parser->buildOutput('include/footer.php');
 				echo $footer;
+				echo '</div>';
+			}
+			
+			if ($bePretty) {
 				echo '</div>';
 			}
 		?>

@@ -91,25 +91,13 @@ span:hover {
 	background-color: #99fdd8;
 	z-index:1;
 }
-.conversation {
+.footer {
 	position: absolute;
-	padding-bottom: 0;
+	bottom: 5px;
 	left: 235px;
-	top: 115px;
-	width: 500px;
+	width: 65%;
 	background-color: #99fdd8;
-	vertical-align: bottom;
 	z-index:1;
-}
-.TalkBox {
-	width: 85%;
-	position: relative;
-	left: 30px;
-	z-index:1;
-}
-.TalkButton {
-	position: relative;
-	left: 30px;
 }
 .register {
 	margin-left: auto;
