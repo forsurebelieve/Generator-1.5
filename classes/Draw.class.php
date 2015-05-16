@@ -105,8 +105,7 @@
 		}
 		
 		public function getBigImageTable() {
-			$output = '<p>Your pull:</p>' . "\n";
-			$output .= '<table>' . "\n";
+			$output = '<table>' . "\n";
 			$output .= '<tr>' . "\n";
 			$output .= '<td><img src="' . $this->draw['Type']['image'] . '"><br />' . $this->draw['Type']['name'] . '</td>' . "\n";
 			$output .= '<td><img src="' . $this->draw['Flavor']['image'] . '"><br />' . $this->draw['Flavor']['name'] . '</td>' . "\n";
