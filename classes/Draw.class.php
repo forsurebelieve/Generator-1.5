@@ -51,7 +51,6 @@
 					'value' => $powerDraw['Twist']['value'][0]['name'],
 					'value_short' => $powerDraw['Twist']['value'][0]['short'],
 					'suit' => $powerDraw['Twist']['suit'][0]['name'],
-					'suit_image' => $powerDraw['Twist']['suit'][0]['image'],
 					'description' =>  $powerDraw['Twist']['value'][0]['description'],
 					'direction' =>  $powerDraw['Twist']['suit'][0]['direction'],
 					'factor' =>  $powerDraw['Twist']['suit'][0]['factor'],
@@ -59,6 +58,12 @@
 					'unfactor' =>  $powerDraw['Twist']['suit'][0]['unfactor']
 				]
 			];
+			
+			if ($this->draw['Twist']['suit'] === 'Spades' || $this->draw['Twist']['suit'] === 'Clubs') {
+				$this->draw['Twist']['image'] = 'card/r-' . strtolower($this->draw['Twist']['value']) . '.' . strtolower($this->draw['Twist']['suit']);
+			} else {
+				 $this->draw['Twist']['image'] = 'card/b-' . strtolower($this->draw['Twist']['value']) . '.' . strtolower($this->draw['Twist']['suit']);
+			}
 		}
 		
 		public function rollSign() {
@@ -105,8 +110,7 @@
 			$output .= '<tr>' . "\n";
 			$output .= '<td><img src="' . $this->draw['Type']['image'] . '"><br />' . $this->draw['Type']['name'] . '</td>' . "\n";
 			$output .= '<td><img src="' . $this->draw['Flavor']['image'] . '"><br />' . $this->draw['Flavor']['name'] . '</td>' . "\n";
-			$output .= '<td style="font-size: 72pt;">' . $this->draw['Twist']['value_short'] . '</td>' . "\n";
-			$output .= '<td><img src="' . $this->draw['Twist']['suit_image'] . '"><br />' . $this->draw['Twist']['value'] . ' of ' . $this->draw['Twist']['suit'] . '</td>' . "\n";
+			$output .= '<td><img src="' . $this->draw['Twist']['image'] . '"><br />' . $this->draw['Twist']['value'] . ' of ' . $this->draw['Twist']['suit'] . '</td>' . "\n";
 			$output .= '</tr>' . "\n";
 			$output .= '</table>' . "\n";
 			

@@ -1,8 +1,6 @@
 <?php 
 	$site_root = $_SERVER['SERVER_NAME'];
-	echo '<!-- $site_root: ' . $site_root . ' /-->';
 	$serverRoot = $_SERVER['DOCUMENT_ROOT'];
-	echo '<!-- $serverRoot: ' . $serverRoot . ' /-->';
 	
 	spl_autoload_register(function ($class) {
 		global $serverRoot;
@@ -58,10 +56,10 @@
 			break;
 			
 		case "card":
-			$name = explode('.', $param[1]);
+			$name = explode('.', $params[1]);
 			$value = $name[0];
 			$suit = $name[1];
-			$card = new Card($value,$name);
+			$card = new Card($value,$suit);
 			exit(0);
 			break;
 		
