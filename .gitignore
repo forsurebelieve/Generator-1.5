@@ -19,3 +19,6 @@ settings.json
 
 # Get your own analytics.js!
 js/analytics.js
+
+# Don't include Paint.net files
+*.pdn

@@ -57,6 +57,14 @@
 			$useFooter = true;
 			break;
 			
+		case "card":
+			$name = explode('.', $param[1]);
+			$value = $name[0];
+			$suit = $name[1];
+			$card = new Card($value,$name);
+			exit(0);
+			break;
+		
 		default:
 			$useHeader = true;
 			$useHeadBar = true;
