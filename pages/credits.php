@@ -2,37 +2,37 @@
 	$contributors = [
 		[
 			'name' => 'Wildbow',
-			'for' => 'tons of amazing stuff, including but not limited to being the creative mastermind behind Worm, everything Parahumans, and the power classification system used by this generator',
+			'for' => 'tons of amazing stuff, including but not limited to being the creative mastermind behind Worm, everything Parahumans, and the power classification system used by this generator. Classifications, story, characters, and other elements are his by right, we\'re just playing in his sandbox.',
 			'link' => ''
 		],
 		[
 			'name' => '/u/ughzubat',
-			'for' => 'coordination, images, descriptions, and mechanics and so much more',
+			'for' => 'coordination, images, descriptions, and mechanics and so much more.',
 			'link' => ''
 		],
 		[
 			'name' => '/u/TELL_ME_TO_CALM_DOWN',
-			'for' => 'unflipping tables',
+			'for' => 'unflipping tables.',
 			'link' => ''
 		],
 		[
 			'name' => '/u/DrOlot',
-			'for' => 'Tarot Card usage and concepts',
+			'for' => 'Tarot Card usage and concepts.',
 			'link' => ''
 		],
 		[
 			'name' => 'Aaron C',
-			'for' => 'backend code',
+			'for' => 'backend code.',
 			'link' => ''
 		],
 		[
 			'name' => '/u/Brutusness',
-			'for' => 'looking at stuff and saying \"neat\"',
+			'for' => 'looking at stuff and saying \"neat\".',
 			'link' => ''
 		],
 		[
 			'name' => '/u/misterspokes',
-			'for' => 'merkstave rune information. Also stufff and or junk',
+			'for' => 'merkstave rune information. Also stufff and or junk.',
 			'link' => ''
 		]
 	]
