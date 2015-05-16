@@ -98,19 +98,30 @@
 				
 				
 			} else {
-				// ...
+				// ... Tarot!
 			}
 			
 			return true;
 		}
 		
 		public function getBigImageTable() {
-			$output = '<table>' . "\n";
-			$output .= '<tr>' . "\n";
-			$output .= '<td><img src="' . $this->draw['Type']['image'] . '"><br />' . $this->draw['Type']['name'] . '</td>' . "\n";
-			$output .= '<td><img src="' . $this->draw['Flavor']['image'] . '"><br />' . $this->draw['Flavor']['name'] . '</td>' . "\n";
-			$output .= '<td><img src="' . $this->draw['Twist']['image'] . '"><br />' . $this->draw['Twist']['value'] . ' of ' . $this->draw['Twist']['suit'] . '</td>' . "\n";
-			$output .= '</tr>' . "\n";
+			$output = '<table class="bigImages">' . "\n";
+			$output .= "\t" . '<tr>' . "\n";
+			$output .= "\t\t" . '<td>' . "\n";
+			$output .= "\t\t\t" . '<img src="' . $this->draw['Type']['image'] . '"><br />';
+			$output .= "\t\t\t" . $this->draw['Type']['name'] . '<br />' . "\n";
+			$output .= "\t\t\t(" . $this->draw['Type']['class'] . ")\n";
+			$output .= "\t\t" .  '</td>' . "\n";
+			$output .= "\t\t" . '<td>' . "\n";
+			$output .= "\t\t\t" . '<img src="' . $this->draw['Flavor']['image'] . '"><br />' . "\n";
+			$output .= "\t\t\t" . $this->draw['Flavor']['name'] . '<br />' . "\n";
+			$output .= "\t\t\t(" . $this->draw['Flavor']['flavor'] . ")\n";
+			$output .= "\t\t" . '</td>' . "\n";
+			$output .= "\t\t" . '<td>' . "\n";
+			$output .= "\t\t\t" . '<img src="' . $this->draw['Twist']['image'] . '"><br />' . "\n";
+			$output .= "\t\t\t" . $this->draw['Twist']['value'] . ' of ' . $this->draw['Twist']['suit'] . "\n";
+			$output .= "\t\t" . '</td>' . "\n";
+			$output .= "\t" . '</tr>' . "\n";
 			$output .= '</table>' . "\n";
 			
 			return $output;
