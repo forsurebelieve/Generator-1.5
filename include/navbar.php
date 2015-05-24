@@ -38,4 +38,5 @@
 		<li>
 			Have you heard of <a href="http://parahumans.wordpress.com/">Worm</a>? If not, please <a href="http://www.reddit.com/r/FutharkGenerator/comments/35kilh/if_you_havent_read_worm_read_me_first/">read me first!</a>
 	</ul>
+	
 </div>

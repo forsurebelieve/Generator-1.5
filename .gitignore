@@ -15,7 +15,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 # Visual Studio Code settings
-settings.json
+.settings/*.*
 
 # Get your own analytics.js!
 js/analytics.js

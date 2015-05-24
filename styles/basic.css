@@ -146,6 +146,18 @@ table.bigImages td {
   max-width: 70px;
 }
 
+table.smallImages {
+	text-align: center;
+}
+
+table.smallImages td {
+ 	max-width: 70px;
+}
+
+img.smallImage {
+	height: 50%;
+}
+
 td {
  	border-top: 1px solid black;
 	border-left: 1px solid black;
