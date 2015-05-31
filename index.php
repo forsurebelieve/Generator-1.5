@@ -96,11 +96,6 @@
 				echo $headerBar;
 			}
 			
-			if ($useNavigation) {
-				$nav = $parser->buildOutput('include/navbar.php');
-				echo $nav;
-			}
-			
 			if ($bePretty) {
 				echo '<div class="content">';
 			}
@@ -109,6 +104,11 @@
 			
 			if ($bePretty) {
 				echo '</div>';
+			}
+			
+			if ($useNavigation) {
+				$nav = $parser->buildOutput('include/navbar.php');
+				echo $nav;
 			}
 			
 			if ($useFooter) {
