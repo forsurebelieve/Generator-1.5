@@ -25,7 +25,7 @@
 		 * $params is everything past the first / in the URL
 		 * Use the following format to control where each request goes:
 		 * 
-		 * 'NameOfTheParam': // www.example.com/NameOfTheParam
+		 * 'NameOfTheParam': // www.example.com/NameOfTheParam/SecondLayer/Third/Etc
 			$useHeader = true; // (bool) Include the contents of a <head> for this page 
 			$bePretty = true; // (bool) Include CSS for this page
 			$content = $parser->buildOutput('pages/file.php'); // actual page to include
@@ -56,6 +56,8 @@
 			break;
 			
 		case "card":
+		case "cards":
+		case "poker":
 			$name = explode('.', $params[1]);
 			$value = $name[0];
 			$suit = $name[1];
