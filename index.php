@@ -14,7 +14,7 @@
 
 	$params = $parser->getParameters($_SERVER['REQUEST_URI']);
 
-	$title = 'Futhark Power Generator 1.5.4';
+	$title = 'Futhark Power Generator 1.5.2';
 	
 	/*
 	 * Rudmentary controller. I should get / make someting better
@@ -56,7 +56,6 @@
 			break;
 			
 		case "card":
-		case "cards":
 			$name = explode('.', $params[1]);
 			$value = $name[0];
 			$suit = $name[1];
