@@ -95,6 +95,13 @@ span:hover {
 	box-shadow: 0px -1px 5px 3px rgba(0, 0, 0, 0.25);
 }
 
+.headBar h1,
+.headbar h2 {
+	text-align: center;
+	-webkit-margin-before: 5px;
+	-webkit-margin-after: 5px;
+}
+
 .content {
 	position: absolute;
 	top: 0;
@@ -173,4 +180,77 @@ thead {
 
 thead td {
 	border-top: 0px;
+}
+
+@media (max-width: 700px) {
+	body {
+		background-color: #99fdd8;
+		margin: -5px 0 0 0;
+		font-size: x-large;
+	}
+	
+	.headBar {
+		width: 100%;
+		padding: 0;
+		background-color: #99fd44;
+		z-index: 2;
+		box-shadow: 0px -1px 5px 3px rgba(0, 0, 0, 0.25);
+	}
+	
+	.navbar {
+		position: absolute;
+		left: 0;
+		top: 75px;
+		width: 100%;
+		background-color: #a9fc9a;
+		z-index: 1;
+		box-shadow: 0px -1px 5px 3px rgba(0, 0, 0, 0.25);
+	}
+	
+	.navgroup {
+		max-width: 100%;
+		padding: 10px 0 0 0;
+		text-align: center;
+	}
+	
+	.navgroup:first-of-type {
+		padding: 0;
+	}
+	
+	.navgroup p {
+		display: block;
+	}
+	
+	.navgroup a {
+		margin: 5px;
+	}
+	
+	.navgroup ul {
+		display: inline;
+		padding-left: 5px;
+		padding-right: 10px;
+	}
+	
+	.navgroup ul li {
+		display: inline-block;
+		margin: 0 5px;
+	}
+	
+	.content {
+		position: static;
+		background-color: #99fdd8;
+		z-index: 0;
+	}
+	
+	table.bigImages {
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+		max-width: 300px;
+	}
+	
+	.bigImages img {
+		width: 100%;
+	}
 }

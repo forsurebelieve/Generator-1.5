@@ -388,22 +388,22 @@
 					'The Fool' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => 'Your power rewards you for throwing yourself into chaos and becomes slightly more efficient after each serious conflict.'
 					],
 					'The Magician' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => 'Your power has a psychological side effect on your enemies (or friends), or you have a secondary power which acheives similar results.'
 					],
 					'The High Priestess' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => 'implies a power which works in such a way that the parahuman is more or less aware of other parahumans\' passengers'
 					],
 					'The Empress' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => 'Power has a Stranger side effect, or alters time.'
 					],
 					'The Emperor' => [
 						'image' => '',
@@ -423,7 +423,7 @@
 					'The Chariot' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => ' focus on projecting more of their power into the world and may work well to support a team or group.'
 					],
 					'Strength' => [
 						'image' => '',
@@ -443,27 +443,27 @@
 					'Justice' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => ' gives a power exceptionally clear and obvious applications to its abilities. While most upright Justice powers can be used for other purposes through clever application or leveraging an interaction between one or more other powers, by itself what you see is what you get.'
 					],
 					'The Hanged Man' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => 'essentially says that the power draws strength from patience and foresight. While they can take immediate action and make hasty decisions, the power benefits immensely from having time to build up, spread out, concentrate, or in some other way focus its effect.'
 					],
 					'Death' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => 'has to be that the power affects Biological material only. Preferably destructive.'
 					],
 					'Temperance' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => 'could suggest powers that are especially efficient, or accomplish a lot with a little effort. Alternatively, a power that operates in subtle ways. Running with the subtlety aspect, that would mean that a reversed temperance would be especially flashy or eye-catching, though I don\'t know how well that fits the description here. Maybe a power that requires a large amount of a support network (e.g. church organization) before having any real effect, but has a correspondingly higher maximum effect size.'
 					],
 					'The Devil' => [
 						'image' => '',
 						'name' => '',
-						'description' => ''
+						'description' => 'the power has an automatic quality to it. it is difficult to control, and always acts on full-blast.'
 					],
 					'The Tower' => [
 						'image' => '',
@@ -491,6 +491,116 @@
 						'description' => ''
 					],
 					'The World' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'The Fool (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'Your power is stronger but permanently effects your personality in a very small way with each use, usually in the negative, and only noticeable over macro periods of time.'
+					],
+					'The Magician (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'Use of your power takes a toll on your body. This can be crippling but temporary, or minor but cumulative.'
+					],
+					'The High Priestess (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'implies that the shard affects the parahuman\'s basic personality, hijacking it somewhat to allow easier or more free use of the power.'
+					],
+					'The Empress (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'Power involves multiple people, or has an aspect/mechanism which is based on granting understanding or insight (e.g, Tattletale, Codex\'s Thinker side effect). Alternatively, it requires multiple people or some amount of analysis to work properly.'
+					],
+					'The Emperor (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'The Hierophant (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'The Lovers (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'The Chariot (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ' focus on abrading the power of others away from the world and may be effective against teams or groups.'
+					],
+					'Strength (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'The Hermit (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'Wheel of Fortune (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'Justice (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'the power has a large amount of leeway in the way it manifests. Whether its through shape, duration, or even a complete change of effect, Reversed Justice powers are very versatile in their own right. However, the sheer level of possibility with these powers means that an agent typically ends up managing the broad level effects of a power instead of the minutiae, leaving the parahuman to figure out the intricacies of application and experimentation.'
+					],
+					'The Hanged Man (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ' power is diffused over a large area, whether it affects multiple people or a more physically defined range, it has a low powered effect. Extended periods in this area will permanently affect the targets within it.'
+					],
+					'Death (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'has to have some means of preventing death, but at a cost - ie cryostasis, zombies, cyborgs, Uaine Glaistig etc. / focused on stopping or incapacitating things.'
+					],
+					'Temperance (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'the power tends towards groups, it may have strict rules to follow, or need you to do certain things for it to unlock.'
+					],
+					'The Devil (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'the power has an automatic quality to it.  If reversed, the automatic quality comes with negative side effects to the user.'
+					],
+					'The Tower (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'The Star (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => 'could be a power that seems outwardly powerful and impressive, but that harbors a weakness or two.'
+					],
+					'The Moon (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'The Sun (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'Judgement (Merkstave)' => [
+						'image' => '',
+						'name' => '',
+						'description' => ''
+					],
+					'The World (Merkstave)' => [
 						'image' => '',
 						'name' => '',
 						'description' => ''
