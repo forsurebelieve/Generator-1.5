@@ -30,7 +30,7 @@
 		
 		public function getBigImageCell() {
 			$output = "\t\t" . '<td>' . "\n";
-			$output .= "\t\t\t" . '<img src="' . $site_root . $this->flavor['image'] . '"><br />' . "\n";
+			$output .= "\t\t\t" . '<img src="/' . $this->flavor['image'] . '"><br />' . "\n";
 			$output .= "\t\t\t" . $this->flavor['name'] . '<br />' . "\n";
 			$output .= "\t\t\t(" . $this->flavor['flavor'] . ")\n";
 			$output .= "\t\t" .  '</td>' . "\n";
@@ -40,7 +40,7 @@
 		
 		public function getSmallImageCell() {
 			$output = "\t\t" . '<td>' . "\n";
-			$output .= "\t\t\t" . '<img class="smallImage" src="' . $site_root . $this->flavor['image'] . '"><br />' . "\n";
+			$output .= "\t\t\t" . '<img class="smallImage" src="/' . $this->flavor['image'] . '"><br />' . "\n";
 			$output .= "\t\t" .  '</td>' . "\n";
 			
 			return $output;

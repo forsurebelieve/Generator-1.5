@@ -32,7 +32,7 @@
 		
 		public function getBigImageCell() {
 			$output = "\t\t" . '<td>' . "\n";
-			$output .= "\t\t\t" . '<img src="' . $site_root . $this->type['image'] . '"><br />' . "\n";
+			$output .= "\t\t\t" . '<img src="/' . $this->type['image'] . '"><br />' . "\n";
 			$output .= "\t\t\t" . $this->type['name'] . '<br />' . "\n";
 			$output .= "\t\t\t(" . $this->type['class'] . ")\n";
 			$output .= "\t\t" .  '</td>' . "\n";
@@ -42,7 +42,7 @@
 		
 		public function getSmallImageCell() {
 			$output = "\t\t" . '<td>' . "\n";
-			$output .= "\t\t\t" . '<img class="smallImage" src="' . $site_root . $this->type['image'] . '"><br />' . "\n";
+			$output .= "\t\t\t" . '<img class="smallImage" src="/' . $this->type['image'] . '"><br />' . "\n";
 			$output .= "\t\t" .  '</td>' . "\n";
 			
 			return $output;
