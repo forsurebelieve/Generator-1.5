@@ -114,6 +114,7 @@
 			echo $content;
 			
 			if ($bePretty) {
+				echo '<spacer></spacer>';
 				echo '</div>';
 			}
 			
@@ -129,6 +130,6 @@
 				echo '</div>';
 			}
 		?>
-		<spacer></spacer>
+		
 	</body>
 </html>
