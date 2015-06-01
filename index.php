@@ -65,6 +65,16 @@
 			exit(0);
 			break;
 		
+		case "multi":
+		case "multiple":
+			$useHeader = true;
+			$useHeadBar = true;
+			$useNavigation = true;
+			$bePretty = true;
+			$content = $parser->buildOutput('pages/multi-roll.php');
+			$useFooter = true;
+			break;
+			
 		default:
 			$useHeader = true;
 			$useHeadBar = true;
