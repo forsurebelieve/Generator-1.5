@@ -99,6 +99,7 @@
 		z-index:0;
 		padding-left: 250px;
 		padding-top: 80px;
+		padding-bottom: 80px;
 	}
 	
 	.verboseDescription {
@@ -175,6 +176,12 @@
 	
 	thead td {
 		border-top: 0px;
+	}
+	
+	spacer {
+		display: block;
+		height: 75px;
+		width: 1px;
 	}
 /* } */
 
@@ -259,5 +266,11 @@
 		height: initial;
 		text-align: center;
 		padding: 0 15px;
+	}
+	
+	spacer {
+		display: none;
+		height: 0;
+		width: 0;
 	}
 }
