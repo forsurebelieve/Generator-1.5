@@ -1,4 +1,5 @@
 <?php
+	global $site_root;
 	class PowerTwist {
 		
 		private $twist;
@@ -27,9 +28,9 @@
 					$this->twist['Value'] = $this->twist['Value'][0];
 					
 					if ($this->twist['Suit']['name'] === 'Spades' || $this->twist['Suit']['name'] === 'Clubs') {
-						$this->twist['image'] = 'card/r-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
+						$this->twist['image'] = $site_root . 'card/r-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
 						} else {
-							$this->twist['image'] = 'card/b-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
+							$this->twist['image'] = $site_root . 'card/b-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
 							
 							$this->twist['name'] = $this->twist['Value']['name'] . ' of ' . $this->twist['Suit']['name'];
 						}
@@ -44,9 +45,9 @@
 					
 					
 					if ($this->twist['Suit']['name'] === 'Spades' || $this->twist['Suit']['name'] === 'Clubs') {
-						$this->twist['image'] = 'card/r-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
+						$this->twist['image'] = $site_root . 'card/r-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
 						} else {
-							$this->twist['image'] = 'card/b-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
+							$this->twist['image'] = $site_root . 'card/b-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
 							
 							$this->twist['name'] = $this->twist['Value']['name'] . ' of ' . $this->twist['Suit']['name'];
 						}
