@@ -38,12 +38,7 @@
 		</ul>
 	</div>
 	<div class="navgroup">
-		<ul>
-			<li>
-				Have you heard of <a href="http://parahumans.wordpress.com/">Worm</a>?
-			</li>
-			<li>If not, please <a href="http://www.reddit.com/r/FutharkGenerator/comments/35kilh/if_you_havent_read_worm_read_me_first/">read me first!</a>
-			</li>
-		</ul>
+		Have you heard of <a href="http://parahumans.wordpress.com/">Worm</a>?
+		<br />If not, please <a href="http://www.reddit.com/r/FutharkGenerator/comments/35kilh/if_you_havent_read_worm_read_me_first/">read me first!</a>
 	</div>	
 </div>

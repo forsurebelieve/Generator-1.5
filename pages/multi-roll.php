@@ -9,7 +9,7 @@
 	}
 	
 	$out = '<p>Here are your ' . $toRoll . ' randomly generated rolls:</p>' . "\n";
-	$nav = '<div class="mininav">' . "\n";
+	$nav = "\n" . '<div class="mininav">' . "\n";
 	for ($i = 0; $i < $toRoll; $i++) {
 		$i >= 1 ? $nav .= ' | ' : $nav .= ''; 
 		$nav .= '<a href="#power_' . ($i +1) . '"> Power ' . ($i +1) . '</a>';  
@@ -20,6 +20,7 @@
 		$out .= $power->getVerboseDescription();
 		$out .= "\n" . '<hr />' . "\n";
 	}
+	$nav .= '</div>' . "\n";
 	
 	echo $nav . "\n";
 	echo $out;

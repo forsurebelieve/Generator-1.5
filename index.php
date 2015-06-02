@@ -14,7 +14,7 @@
 
 	$params = $parser->getParameters($_SERVER['REQUEST_URI']);
 
-	$title = 'Futhark Power Generator 1.5.2';
+	$title = 'Futhark Power Generator 1.5.4';
 	
 	/*
 	 * Rudmentary controller. I should get / make someting better
