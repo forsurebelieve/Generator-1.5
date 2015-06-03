@@ -21,6 +21,8 @@
 			$myList = new DescriptorList;
 			$this->typeList = $myList->Type;
 			
+			$target = ucfirst($target);
+			
 			if ($target === 'Random') {
 				$this->type = $this->array_random_assoc($this->typeList);
 				$this->type = $this->type[0];

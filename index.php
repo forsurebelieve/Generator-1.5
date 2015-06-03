@@ -74,7 +74,17 @@
 			$content = $parser->buildOutput('pages/multi-roll.php');
 			$useFooter = true;
 			break;
-			
+		
+		case "save":
+		case "load":
+			$useHeader = true;
+			$useHeadBar = true;
+			$useNavigation = true;
+			$bePretty = true;
+			$content = $parser->buildOutput('pages/load.php');
+			$useFooter = true;
+			break;
+		
 		default:
 			$useHeader = true;
 			$useHeadBar = true;

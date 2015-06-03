@@ -19,6 +19,10 @@
 			$myList = new DescriptorList;
 			$this->twistList = $myList->Twist;
 			
+			$target[0] = ucfirst($target[0]);
+			$target[1] = ucfirst($target[1]);
+			$target[2] = ucfirst($target[2]);
+			
 			if ($target[1] === 'RandomValue' && $target[2] === 'RandomSuit') {
 				if ($target[0] === 'Poker') {
 					$this->twist['Suit'] = $this->array_random_assoc($this->twistList['Suit']);

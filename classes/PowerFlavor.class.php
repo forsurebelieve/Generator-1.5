@@ -17,9 +17,10 @@
     		return $r;
 		}
 		
-		public function __construct ($target = 'Random') {
+		public function __construct ($target = 'random') {
 			$myList = new DescriptorList;
 			$this->flavorList = $myList->Flavor;
+			$target = ucfirst($target);
 			if ($target === 'Random') {
 				$this->flavor = $this->array_random_assoc($this->flavorList);
 				$this->flavor = $this->flavor[0];
