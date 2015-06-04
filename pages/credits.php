@@ -34,6 +34,11 @@
 			'name' => '/u/misterspokes',
 			'for' => 'merkstave rune information. Also stufff and or junk.',
 			'link' => ''
+		],
+		[
+			'name' => '/u/GreatWyrmGold',
+			'for' => 'various ideas for cards, runes, etc.',
+			'link' => ''
 		]
 	]
 ?>
