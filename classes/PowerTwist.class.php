@@ -1,6 +1,6 @@
 <?php
 	class PowerTwist {
-		
+		private $deck;
 		private $twist;
 		private $twistList;
 		
@@ -15,6 +15,10 @@
     		return $r;
 		}
 		
+		public function __toString() {
+			return $this->deck . ':' . $this->twist['Value']['name'] . '-' . $this->twist['Suit']['name'];
+		}
+		
 		public function __construct ($target = ['Poker','RandomValue','RandomSuit']) {
 			$myList = new DescriptorList;
 			$this->twistList = $myList->Twist;
@@ -22,6 +26,8 @@
 			$target[0] = ucfirst($target[0]);
 			$target[1] = ucfirst($target[1]);
 			$target[2] = ucfirst($target[2]);
+			
+			$this->deck = $target[0];
 			
 			if ($target[1] === 'RandomValue' && $target[2] === 'RandomSuit') {
 				if ($target[0] === 'Poker') {

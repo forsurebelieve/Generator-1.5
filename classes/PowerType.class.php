@@ -17,6 +17,10 @@
     		return $r;
 		}
 		
+		public function __toString() {
+			return $this->type['name'];
+		}
+		
 		public function __construct ($target = 'Random') {
 			$myList = new DescriptorList;
 			$this->typeList = $myList->Type;

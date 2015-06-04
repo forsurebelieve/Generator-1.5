@@ -40,6 +40,11 @@
 			$output .= $this->flavor->getVerboseDescription() . "\n";
 			$output .= $this->twist->getVerboseDescription() . "\n";
 			$output .= '</div>' . "\n";
+			$output .= '<a href="/load' 
+				. '/' . $this->type
+				. '/' . $this->flavor 
+				. '/' . $this->twist
+				 . '/">Permalink</a>' . "\n";
 			
 			return $output;
 		}

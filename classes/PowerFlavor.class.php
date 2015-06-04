@@ -17,6 +17,10 @@
     		return $r;
 		}
 		
+		public function __toString() {
+			return $this->flavor['name'];
+		}
+		
 		public function __construct ($target = 'random') {
 			$myList = new DescriptorList;
 			$this->flavorList = $myList->Flavor;

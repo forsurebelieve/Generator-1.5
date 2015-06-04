@@ -18,7 +18,6 @@
 		'twist' => $twist
 		];
 	
-	var_dump($build);
 	$power = new Power($build);
 
 	echo $power->getBigImageTable();
