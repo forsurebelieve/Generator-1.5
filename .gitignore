@@ -22,3 +22,7 @@ js/analytics.js
 
 # Don't include Paint.net files
 *.pdn
+
+# Anonymize my dev environment settings (as well as my production env settings!)
+/config/passwords.php
+ 
