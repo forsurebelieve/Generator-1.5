@@ -94,6 +94,15 @@
 			$useFooter = true;
 			break;
 		}
+	
+	// Override to allow for a "raw" (not pretty) version of the page
+	if ($params[-1] === "raw") {
+		$useHeader = false;
+		$useHeadBar = false;
+		$useNavigation = false;
+		$bePretty = false;
+		$useFooter = false;
+	}
 		
 	$header = '';
 	$footer = '';
@@ -118,7 +127,7 @@
 			}
 			
 			if ($bePretty) {
-				echo '<div class="content">';
+				echo '<div class="content" id="content">';
 			}
 
 			echo $content;
@@ -131,6 +140,7 @@
 			if ($useNavigation) {
 				$nav = $parser->buildOutput('include/navbar.php');
 				echo $nav;
+				echo "<div id='hist' class='hist'><span id='endOfHist'></span></div>";
 			}
 			
 			if ($useFooter) {
@@ -140,6 +150,10 @@
 				echo '</div>';
 			}
 		?>
-		
+		<div id="loader" class="fullscreen hidden">
+			<svg class="circular">
+    			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="20"/>
+  			</svg>
+		</div>
 	</body>
 </html>

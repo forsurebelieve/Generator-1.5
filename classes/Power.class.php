@@ -1,4 +1,4 @@
-<?php 	
+<?php
 	class Power {
 		protected $type;
 		protected $flavor;

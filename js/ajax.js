@@ -25,16 +25,18 @@ function adjustMyURL(displayURL) {
 
 function loadMyPage(pageName, displayURL, targetDiv) {
 	var ajax;
-	document.getElementById("content").innerHTML = "Loading ...";
+	document.getElementById(targetDiv).classList.add("visible");
+	document.getElementById(targetDiv).classList.add("loading");
+	document.getElementById(targetDiv).innerHTML = "Loading ...";
 	ajax = new XMLHttpRequest();
 	ajax.open("GET", sRoot + pageName, true);
 	ajax.onreadystatechange = function() {
 		if (ajax.readyState === 4) {
 			document.getElementById(targetDiv).innerHTML = ajax.responseText;
+			document.getElementById(targetDiv).classList.remove("loading");
 		}
 	};
 	ajax.send(null);
-	adjustMyURL(displayURL);
 }
 
 function postToPage(pageName, displayURL, postData) {
@@ -77,4 +79,17 @@ function hideMessage() {
 	if(document.getElementById('Message')) {
 		document.getElementById('Message').style.display='none';
 	}
+}
+
+function insertSmallImages() {
+	var hist = document.getElementById("hist");
+	var insertBefore = document.getElementById("endOfhist");
+	var newDiv = document.createElement("div");
+	
+	newDiv.id = "added_"+ hist.childNodes.length;
+	newDiv.classList.add("added");
+	if (document.getElementsByClassName("added").length > 0) {
+		insertBefore = document.getElementById("added_" + (hist.childNodes.length-1));
+	}
+	hist.insertBefore(newDiv,insertBefore);	
 }
