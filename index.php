@@ -139,7 +139,14 @@
 				echo $header;
 			}
 		?>
-
+	<script>
+		document.onload = function () {
+			var rerollers = document.querySelectorAll(".reroll");
+			for (var i=0;i<rerollers.length;i++) {
+				rerollers[i].onclick = reroll();
+			}
+		}
+	</script>
 	</head>
 	<body>
 		

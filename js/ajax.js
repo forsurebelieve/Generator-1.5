@@ -110,13 +110,8 @@ function reroll() {
 	loadMyPage("/raw","content");
 	var rerollers = document.querySelectorAll(".reroll");
 	for (var i=0;i<rerollers.length;i++) {
-		rerollers[i].onclick = reroll();
+		rerollers[i].onclick = function () {reroll();};
 	}
 }
 
-document.onload = function () {
-	var rerollers = document.querySelectorAll(".reroll");
-	for (var i=0;i<rerollers.length;i++) {
-		rerollers[i].onclick = reroll();
-	}
-}
+
