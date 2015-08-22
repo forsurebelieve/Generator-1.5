@@ -116,4 +116,6 @@ function reroll() {
 	}
 }
 
-
+function goToPower(powerRef) {
+	loadMyPage('/load/' + powerRef + 'raw',"content");
+}
