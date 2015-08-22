@@ -38,17 +38,6 @@
 		 */
 		
 // Routing Table
-		// Admin panel - add powers, modify text, etc.
-		case "admin":
-			$title = "Admin Panel | " . $title;
-			$useHeader = true;
-			$useHeadBar = true;
-			$useNavigation = true;
-			$bePretty = true;
-			$content = $parser->buildOutput('pages/admin.php');
-			$useFooter = true;
-			break;
-		
 		// List of all portions of a power - all Zodiac, Futhark, and Card Values
 		case "lists":
 		case "list":
@@ -189,7 +178,5 @@
 				echo '</div>';
 			}
 		?>
-		
-		
 	</body>
 </html>

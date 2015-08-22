@@ -104,3 +104,12 @@ function insertSmallImages() {
 	var req = "/small/" + document.querySelector("#ref").innerText;
 	loadMyPage(req,target);
 }
+
+function reroll() {
+	insertSmallImages();
+	loadMyPage("/raw","content");
+	var rerollers = document.querySelectorAll(".reroll");
+	for (var i=0;i<rerollers.length;i++) {
+		reroll[i].onclick = reroll;
+	}
+}
