@@ -18,6 +18,7 @@
 // Put site's address here, in format "http://sub.domain.tld/path/to/root"
 var sRoot = document.location.origin; // Default: document.location.origin
 var siteName = "Futhark Power Generator 1.5.4";
+var countOfAdded = 0;
 
 function adjustMyURL(displayURL) {
 	window.history.pushState({site:sRoot}, siteName, "/" + displayURL + "/");
@@ -90,10 +91,11 @@ function insertHistory() {
 	var marker = document.querySelector("#endOfhist");
 	var newDiv = document.createElement("div");
 	
-	newDiv.id = "added_"+ hist.childNodes.length;
+	newDiv.id = "added_"+ countOfAdded;
+	countOfAdded++;
 	newDiv.classList.add("added");
 	if (document.querySelectorAll(".added").length > 0) {
-		marker = document.getElementById("added_" + (hist.childNodes.length-1));
+		marker = document.getElementById("added_" + (countOfAdded));
 	}
 	hist.insertBefore(newDiv,marker);
 	return newDiv.id;	
