@@ -85,7 +85,7 @@ function hideMessage() {
 	}
 }
 
-function insertSmallImages() {
+function insertHistory() {
 	var hist = document.querySelector("#hist");
 	var marker = document.querySelector("#endOfhist");
 	var newDiv = document.createElement("div");
@@ -97,4 +97,10 @@ function insertSmallImages() {
 	}
 	hist.insertBefore(newDiv,marker);
 	return newDiv.id;	
+}
+
+function insertSmallImages() {
+	var target = insertHistory();
+	var req = "/small/" + document.querySelector("#ref");
+	loadMyPage(req,target);
 }
