@@ -167,13 +167,14 @@
 				$footer = $parser->buildOutput('include/footer.php');
 				echo $footer;
 				echo '</div>';
+				echo '<div id="loader" class="fullscreen hidden">';
+				echo '<svg class="circular">';
+    			echo '<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="20"/>';
+  				echo '</svg>';
+				echo '</div>';
 			}
 		?>
 		
-		<div id="loader" class="fullscreen hidden">
-			<svg class="circular">
-    			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="20"/>
-  			</svg>
-		</div>
+		
 	</body>
 </html>
