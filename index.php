@@ -96,7 +96,7 @@
 		}
 	
 	// Override to allow for a "raw" (not pretty) version of the page
-	if ($params[-1] === "raw") {
+	if ($params[count($params)-1] === "raw") {
 		$useHeader = false;
 		$useHeadBar = false;
 		$useNavigation = false;
