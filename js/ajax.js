@@ -18,7 +18,6 @@
 // Put site's address here, in format "http://sub.domain.tld/path/to/root"
 var sRoot = document.location.origin; // Default: document.location.origin
 var siteName = "Futhark Power Generator 1.5.4";
-var loadInProgress = false;
 
 function adjustMyURL(displayURL) {
 	window.history.pushState({site:sRoot}, siteName, "/" + displayURL + "/");
@@ -32,13 +31,11 @@ function loadMyPage(pageName, targetDiv) {
 	loaderDiv.classList.add("loading");
 	ajax = new XMLHttpRequest();
 	ajax.open("GET", sRoot + pageName, true);
-	loadInProgress = true;
 	ajax.onreadystatechange = function() {
 		if (ajax.readyState === 4) {
 			document.getElementById(targetDiv).innerHTML = ajax.responseText;
 			loaderDiv.classList.remove("loading");
 			loaderDiv.classList.add("hidden");
-			loadInProgress = false;
 		}
 	};
 	ajax.send(null);
@@ -110,13 +107,7 @@ function insertSmallImages() {
 
 function reroll() {
 	insertSmallImages();
-	while (loadInProgress === true) {
-		setTimeout(function() {
-			if (loadInProgress === false) {
-				document.querySelector(".reroll").onclick = function () {reroll();}
-			}
-		}, 500);
-	}
+	loadMyPage("/raw","content");
 }
 
-document.querySelector(".reroll").onclick = function () {reroll();}
+

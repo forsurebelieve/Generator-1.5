@@ -1,4 +1,4 @@
-<p>Your Roll: (<a href="#" class="reroll">Roll again?</a>)</p>
+<p>Your Roll: (<a href="#" onclick="reroll();">Roll again?</a>)</p>
 
 <?php
 	$power = new Power();
