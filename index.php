@@ -25,16 +25,20 @@
 		 * $params is everything past the first / in the URL
 		 * Use the following format to control where each request goes:
 		 * 
-		 * 'NameOfTheParam': // www.example.com/NameOfTheParam/SecondLayer/Third/Etc
-			$useHeader = true; // (bool) Include the contents of a <head> for this page 
-			$bePretty = true; // (bool) Include CSS for this page
-			$content = $parser->buildOutput('pages/file.php'); // actual page to include
-			$useFooter = true; // (bool) Render a footer for this page 
-			break; // to signify the end of the page
+		 * 'NameOfTheParam': 									// www.example.com/NameOfTheParam/SecondLayer/Third/Etc
+			$useHeader = true; 									// (bool) Include the contents of a <head> for this page 
+			$bePretty = true; 									// (bool) Include CSS for this page
+			$content = $parser->buildOutput('pages/file.php'); 	// actual page to include
+			$useFooter = true; 									// (bool) Render a footer for this page 
+			break; 												// to signify the end of the page
 		 * 
 		 * Leave default at the bottom of the list
 		 */
+		
+// Routing Table
+		// List of all portions of a power - all Zodiac, Futhark, and Card Values
 		case "lists":
+		case "list":
 			$useHeader = true;
 			$useHeadBar = true;
 			$useNavigation = true;
@@ -43,6 +47,7 @@
 			$useFooter = true;
 			break;
 		
+		// Credits and legal stuff
 		case "credit":
 		case "credits":
 		case "legal":
@@ -55,6 +60,7 @@
 			$useFooter = true;
 			break;
 			
+		// Generate an image of a card, and return as .png
 		case "card":
 		case "cards":
 		case "poker":
@@ -65,6 +71,7 @@
 			exit(0);
 			break;
 		
+		// Generate an arbitrary number of Powers
 		case "multi":
 		case "multiple":
 			$useHeader = true;
@@ -75,7 +82,7 @@
 			$useFooter = true;
 			break;
 		
-		case "save":
+		// Generate a specific Power, based on URL
 		case "load":
 			$useHeader = true;
 			$useHeadBar = true;
@@ -85,6 +92,17 @@
 			$useFooter = true;
 			break;
 		
+		// Generate only the small table of a specific Power, based on URL 
+		case "small":
+			$useHeader = false;
+			$useHeadBar = false;
+			$useNavigation = false;
+			$bePretty = false;
+			$content = $parser->buildOutput('pages/load.php');
+			$useFooter = false;
+			break;
+			
+		// Generate a single, random Power
 		default:
 			$useHeader = true;
 			$useHeadBar = true;
@@ -120,6 +138,7 @@
 
 	</head>
 	<body>
+		
 		<?php
 			if ($useHeadBar) {
 				$headerBar = $parser->buildOutput('include/headbar.php');
@@ -140,7 +159,7 @@
 			if ($useNavigation) {
 				$nav = $parser->buildOutput('include/navbar.php');
 				echo $nav;
-				echo "<div id='hist' class='hist'><span id='endOfHist'></span></div>";
+				echo "<div id='hist' class='hist'><span id='endOfHist'>&nbsp;</span></div>";
 			}
 			
 			if ($useFooter) {
@@ -150,6 +169,7 @@
 				echo '</div>';
 			}
 		?>
+		
 		<div id="loader" class="fullscreen hidden">
 			<svg class="circular">
     			<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="20"/>

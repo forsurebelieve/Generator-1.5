@@ -10,4 +10,6 @@
 	echo $power->getBigImageTable();
 	
 	echo $power->getVerboseDescription();
+	
+	echo "<div id='ref' class='hidden'>" . $power->getReferenceString() . "</div>";
 ?>

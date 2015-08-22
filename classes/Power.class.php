@@ -48,5 +48,9 @@
 			
 			return $output;
 		}
+		
+		public function getReferenceString() {
+			return $this->type . "/" . $this->flavor . "/" . $this->twist;
+		}
 			
 	}
