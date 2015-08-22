@@ -2,6 +2,8 @@
 	$site_root = 'http://' . $_SERVER['SERVER_NAME'];
 	$serverRoot = $_SERVER['DOCUMENT_ROOT'] . '/';
 	
+	$version = 'v1.5.5-beta';
+	
 	spl_autoload_register(function ($class) {
 		global $serverRoot;
 		require_once $serverRoot . 'classes/' . $class . '.class.php';
@@ -13,8 +15,8 @@
 	$parser = new Parser;
 
 	$params = $parser->getParameters($_SERVER['REQUEST_URI']);
-
-	$title = 'Futhark Power Generator 1.5.4';
+	
+	$title = 'Futhark Power Generator' . $version;
 	
 	/*
 	 * Rudmentary controller. I should get / make someting better
