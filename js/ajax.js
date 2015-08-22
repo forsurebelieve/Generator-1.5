@@ -101,6 +101,6 @@ function insertHistory() {
 
 function insertSmallImages() {
 	var target = insertHistory();
-	var req = "/small/" + document.querySelector("#ref");
+	var req = "/small/" + document.querySelector("#ref").innerText;
 	loadMyPage(req,target);
 }
