@@ -36,6 +36,7 @@ function loadMyPage(pageName, targetDiv) {
 			document.getElementById(targetDiv).innerHTML = ajax.responseText;
 			loaderDiv.classList.remove("loading");
 			loaderDiv.classList.add("hidden");
+			return true;
 		}
 	};
 	ajax.send(null);
@@ -107,11 +108,9 @@ function insertSmallImages() {
 
 function reroll() {
 	insertSmallImages();
-	loadMyPage("/raw","content");
-	var rerollers = document.querySelectorAll(".reroll");
-	for (var i=0;i<rerollers.length;i++) {
-		rerollers[i].onclick = function () {reroll();};
+	if (loadMyPage("/raw","content")) {
+		document.querySelector(".reroll").onclick = function () {reroll();}
 	}
 }
 
-
+document.querySelector(".reroll").onclick = function () {reroll();}
