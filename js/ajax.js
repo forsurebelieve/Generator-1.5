@@ -23,20 +23,24 @@ function adjustMyURL(displayURL) {
 	window.history.pushState({site:sRoot}, siteName, "/" + displayURL + "/");
 }
 
-function loadMyPage(pageName, displayURL, targetDiv) {
+function loadMyPage(pageName, targetDiv) {
 	var ajax;
-	document.getElementById(targetDiv).classList.add("visible");
-	document.getElementById(targetDiv).classList.add("loading");
-	document.getElementById(targetDiv).innerHTML = "Loading ...";
+	var loaderDiv;
+	loaderDiv = document.getElementById("loader") 
+	loaderDiv.classList.remove("hidden");
+	loaderDiv.classList.add("loading");
 	ajax = new XMLHttpRequest();
 	ajax.open("GET", sRoot + pageName, true);
 	ajax.onreadystatechange = function() {
 		if (ajax.readyState === 4) {
 			document.getElementById(targetDiv).innerHTML = ajax.responseText;
-			document.getElementById(targetDiv).classList.remove("loading");
+			loaderDiv.classList.remove("loading");
+			loaderDiv.classList.add("hidden");
 		}
 	};
 	ajax.send(null);
+	
+	
 }
 
 function postToPage(pageName, displayURL, postData) {
@@ -82,14 +86,15 @@ function hideMessage() {
 }
 
 function insertSmallImages() {
-	var hist = document.getElementById("hist");
-	var insertBefore = document.getElementById("endOfhist");
+	var hist = document.querySelector("#hist");
+	var marker = document.querySelector("#endOfhist");
 	var newDiv = document.createElement("div");
 	
 	newDiv.id = "added_"+ hist.childNodes.length;
 	newDiv.classList.add("added");
-	if (document.getElementsByClassName("added").length > 0) {
-		insertBefore = document.getElementById("added_" + (hist.childNodes.length-1));
+	if (document.querySelectorAll(".added").length > 0) {
+		marker = document.getElementById("added_" + (hist.childNodes.length-1));
 	}
-	hist.insertBefore(newDiv,insertBefore);	
+	hist.insertBefore(newDiv,marker);
+	return newDiv.id;	
 }
