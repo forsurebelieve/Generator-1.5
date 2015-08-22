@@ -28,8 +28,6 @@
 		 * Use the following format to control where each request goes:
 		 * 
 		 * 'NameOfTheParam': 									// www.example.com/NameOfTheParam/SecondLayer/Third/Etc
-			$useTemplate = "template.html.php"					// (string) Which template to use
-			$title = "Text for Title Bar"						// (string) Title of the page, to overwrite the default (defined above)
 			$useHeader = true; 									// (bool) Include the contents of a <head> for this page 
 			$bePretty = true; 									// (bool) Include CSS for this page
 			$content = $parser->buildOutput('pages/file.php'); 	// actual page to include
@@ -42,7 +40,6 @@
 // Routing Table
 		// Admin panel - add powers, modify text, etc.
 		case "admin":
-			$useTemplate = "template.html.php";
 			$title = "Admin Panel | " . $title;
 			$useHeader = true;
 			$useHeadBar = true;
@@ -52,14 +49,9 @@
 			$useFooter = true;
 			break;
 		
-		case "submit":
-			$useTemplate = "bare.html.php";
-			break;
-			
 		// List of all portions of a power - all Zodiac, Futhark, and Card Values
 		case "lists":
 		case "list":
-			$useTemplate = "template.html.php";
 			$title = "All Items | " . $title;
 			$useHeader = true;
 			$useHeadBar = true;
@@ -74,7 +66,6 @@
 		case "credits":
 		case "legal":
 		case "license":
-			$useTemplate = "template.html.php";
 			$title = "Credits | " . $title;
 			$useHeader = true;
 			$useHeadBar = true;
@@ -88,7 +79,6 @@
 		case "card":
 		case "cards":
 		case "poker":
-			// $useTemplate not included; this route doesn't render a page.
 			$name = explode('.', $params[1]);
 			$value = $name[0];
 			$suit = $name[1];
@@ -99,7 +89,6 @@
 		// Generate an arbitrary number of Powers
 		case "multi":
 		case "multiple":
-			$useTemplate = "template.html.php";
 			$useHeader = true;
 			$useHeadBar = true;
 			$useNavigation = true;
@@ -110,7 +99,6 @@
 		
 		// Generate a specific Power, based on URL
 		case "load":
-			$useTemplate = "template.html.php";
 			$useHeader = true;
 			$useHeadBar = true;
 			$useNavigation = true;
@@ -121,7 +109,6 @@
 		
 		// Generate only the small table of a specific Power, based on URL 
 		case "small":
-			$useTemplate = "template.html.php";
 			$useHeader = false;
 			$useHeadBar = false;
 			$useNavigation = false;
@@ -132,7 +119,6 @@
 			
 		// Generate a single, random Power
 		default:
-			$useTemplate = "template.html.php";
 			$useHeader = true;
 			$useHeadBar = true;
 			$useNavigation = true;
@@ -144,11 +130,66 @@
 	
 	// Override to allow for a "raw" (not pretty) version of the page
 	if ($params[count($params)-1] === "raw") {
-		$useTemplate = "bare.html.php";
+		$useHeader = false;
+		$useHeadBar = false;
+		$useNavigation = false;
+		$bePretty = false;
+		$useFooter = false;
 	}
 		
 	$header = '';
 	$footer = '';
 	
-	require_once($serverRoot . "templates/" . $useTemplate);
 ?>
+<html>
+	<head>
+
+		<?php
+			if ($useHeader) {
+				$header = $parser->buildOutput('include/header.php');
+				echo $header;
+			}
+		?>
+
+	</head>
+	<body>
+		
+		<?php
+			if ($useHeadBar) {
+				$headerBar = $parser->buildOutput('include/headbar.php');
+				echo $headerBar;
+			}
+			
+			if ($bePretty) {
+				echo '<div class="content" id="content">';
+			}
+
+			echo $content;
+			
+			if ($bePretty) {
+				echo '<spacer></spacer>';
+				echo '</div>';
+			}
+			
+			if ($useNavigation) {
+				$nav = $parser->buildOutput('include/navbar.php');
+				echo $nav;
+				echo "<div id='hist' class='hist'><span id='endOfHist'>&nbsp;</span></div>";
+			}
+			
+			if ($useFooter) {
+				echo '<div class="footer">';
+				$footer = $parser->buildOutput('include/footer.php');
+				echo $footer;
+				echo '</div>';
+				echo '<div id="loader" class="fullscreen hidden">';
+				echo '<svg class="circular">';
+    			echo '<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="20"/>';
+  				echo '</svg>';
+				echo '</div>';
+			}
+		?>
+		
+		
+	</body>
+</html>
