@@ -108,6 +108,10 @@ function insertSmallImages() {
 function reroll() {
 	insertSmallImages();
 	loadMyPage("/raw","content");
+	var hist = document.querySelector("#hist");
+	while (hist.childElementCount > 4) {
+		document.querySelector(".added:last-of-type").remove();
+	}
 }
 
 
