@@ -95,7 +95,7 @@ function insertHistory() {
 	countOfAdded++;
 	newDiv.classList.add("added");
 	if (document.querySelectorAll(".added").length > 0) {
-		marker = document.getElementById("added_" + (countOfAdded));
+		marker = document.querySelector(".added");
 	}
 	hist.insertBefore(newDiv,marker);
 	return newDiv.id;	
