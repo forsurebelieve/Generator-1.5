@@ -23,7 +23,7 @@
 		}
 	
 		public function getSmallImageTable() {
-			$output = '<table class="smallImages" onclick="goToPower(' . $this->getReferenceString() . ')">' . "\n";
+			$output = '<table class="smallImages" onclick="goToPower(' . "'" . $this->getReferenceString() . "/'" . ')">' . "\n";
 			$output .= '<tr>' . "\n";
 			$output .= $this->type->getSmallImageCell() . "\n";
 			$output .= $this->flavor->getSmallImageCell() . "\n";
