@@ -18,23 +18,30 @@
 // Put site's address here, in format "http://sub.domain.tld/path/to/root"
 var sRoot = document.location.origin; // Default: document.location.origin
 var siteName = "Futhark Power Generator 1.5.4";
+var countOfAdded = 0;
 
 function adjustMyURL(displayURL) {
 	window.history.pushState({site:sRoot}, siteName, "/" + displayURL + "/");
 }
 
-function loadMyPage(pageName, displayURL, targetDiv) {
+function loadMyPage(pageName, targetDiv) {
 	var ajax;
-	document.getElementById("content").innerHTML = "Loading ...";
+	var loaderDiv;
+	loaderDiv = document.getElementById("loader") 
+	loaderDiv.classList.remove("hidden");
+	loaderDiv.classList.add("loading");
 	ajax = new XMLHttpRequest();
 	ajax.open("GET", sRoot + pageName, true);
 	ajax.onreadystatechange = function() {
 		if (ajax.readyState === 4) {
 			document.getElementById(targetDiv).innerHTML = ajax.responseText;
+			loaderDiv.classList.remove("loading");
+			loaderDiv.classList.add("hidden");
 		}
 	};
 	ajax.send(null);
-	adjustMyURL(displayURL);
+	
+	
 }
 
 function postToPage(pageName, displayURL, postData) {
@@ -77,4 +84,38 @@ function hideMessage() {
 	if(document.getElementById('Message')) {
 		document.getElementById('Message').style.display='none';
 	}
+}
+
+function insertHistory() {
+	var hist = document.querySelector("#hist");
+	var marker = document.querySelector("#endOfhist");
+	var newDiv = document.createElement("div");
+	
+	newDiv.id = "added_"+ countOfAdded;
+	countOfAdded++;
+	newDiv.classList.add("added");
+	if (document.querySelectorAll(".added").length > 0) {
+		marker = document.querySelector(".added");
+	}
+	hist.insertBefore(newDiv,marker);
+	return newDiv.id;	
+}
+
+function insertSmallImages() {
+	var target = insertHistory();
+	var req = "/small/" + document.querySelector("#ref").innerText;
+	loadMyPage(req,target);
+}
+
+function reroll() {
+	insertSmallImages();
+	loadMyPage("/raw","content");
+	var hist = document.querySelector("#hist");
+	while (hist.childElementCount > 4) {
+		document.querySelector(".added:last-of-type").remove();
+	}
+}
+
+function goToPower(powerRef) {
+	loadMyPage('/load/' + powerRef + 'raw',"content");
 }

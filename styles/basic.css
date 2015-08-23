@@ -72,6 +72,12 @@
 	
 	.navgroup {
 		padding: 0;
+		margin-bottom: 10px;
+		border-bottom: 1px black solid;
+	}
+	
+	.navgroup:last-of-type {
+    	border-bottom: 0px;
 	}
 	
 	.headBar {
@@ -187,6 +193,33 @@
 		height: 75px;
 		width: 1px;
 	}
+	
+	.hidden {
+		display: none ! important;
+	}
+	
+	.fullscreen {
+		background-color: rgba(0,0,0,.5);
+		z-index: 5000;
+		display: block;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.hist {
+		z-index: 10;
+		width: 200px;
+		height: 40%;
+		position: absolute;
+		bottom: 60;
+		left: 0;
+	}
+	
 /* } */
 
 @media (max-width: 700px), (max-width: 1000px) and (min-resolution: 2dppx), (max-width: 2100px) and (min-resolution: 3dppx)	 {
@@ -194,6 +227,10 @@
 		background-color: #99fdd8;
 		margin: -5px 0 0 0;
 		font-size: 3em;
+	}
+	
+	.hist {
+		display: none;
 	}
 	
 	.headBar {

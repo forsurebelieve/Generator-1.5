@@ -7,14 +7,14 @@
 		private $typeList;
 		
 		private function array_random_assoc($arr, $num = 1) {
-    		$keys = array_keys($arr);
-    		shuffle($keys);
-    
-    		$r = array();
-    		for ($i = 0; $i < $num; $i++) {
-        		$r[$i] = $arr[$keys[$i]];
-    		}
-    		return $r;
+			$keys = array_keys($arr);
+			shuffle($keys);
+			
+			$r = array();
+			for ($i = 0; $i < $num; $i++) {
+				$r[$i] = $arr[$keys[$i]];
+			}
+			return $r;
 		}
 		
 		public function __toString() {
