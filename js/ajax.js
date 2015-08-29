@@ -27,9 +27,11 @@ function adjustMyURL(displayURL) {
 function loadMyPage(pageName, targetDiv) {
 	var ajax;
 	var loaderDiv;
+	var timer;
 	loaderDiv = document.getElementById("loader") 
 	loaderDiv.classList.remove("hidden");
 	loaderDiv.classList.add("loading");
+	timer = window.setTimeout(function(){hideLoader();},500)
 	ajax = new XMLHttpRequest();
 	ajax.open("GET", sRoot + pageName, true);
 	ajax.onreadystatechange = function() {
@@ -118,4 +120,11 @@ function reroll() {
 
 function goToPower(powerRef) {
 	loadMyPage('/load/' + powerRef + 'raw',"content");
+}
+
+function hideLoader() {
+	var loaderDiv;
+	loaderDiv = document.getElementById("loader") 
+	loaderDiv.classList.remove("loading");
+	loaderDiv.classList.add("hidden");
 }
