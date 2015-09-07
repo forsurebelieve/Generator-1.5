@@ -142,7 +142,7 @@
 ?>
 <?php endif; ?>
 <?php
-			$content = $parser->buildOutput('include/' . $content . '.php');
+			$content = $parser->buildOutput('pages/' . $content . '.php');
 			echo $content;
 
 			if ($bePretty) {
