@@ -466,3 +466,38 @@ Share = (function(_super) {
 })(ShareUtils);
  return Share;
 });
+
+var config = {
+  ui: {
+    flyout:`middle right`
+  },
+  networks: {
+    googlePlus: {
+      enabled: true
+    },
+    twitter: {
+      enabled: true
+    },
+    facebook: {
+      enabled: true,
+      load_sdk: true
+    },
+    pinterest: {
+      enabled: false
+    },
+    reddit: {
+      enabled: true
+    },
+    linkedin: {
+      enabled: false
+    },
+    whatsapp: {
+      enabled: false
+    },
+    email: {
+      enabled: false
+    }
+  }
+}
+
+var share = new Share('.share-button', config);
