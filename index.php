@@ -56,7 +56,7 @@
 		case "list":
 			$title = "All Items | " . $title;
 			$bePretty = true;
-			$content = "allitems.php";
+			$content = "allitems";
 			$gaCookie = "_list";
 			break;
 		
@@ -64,10 +64,9 @@
 		case "legal":
 			$title = "Credits | " . $title;
 			$bePretty = true;
-			$content = "credits.php";
+			$content = "credits";
 			$gaCookie = "_legal";
 			break;
-		
 		
 		// Generate an arbitrary number of Powers
 		case "multi":
@@ -79,21 +78,28 @@
 		// Generate a specific Power, based on URL
 		case "load":
 			$bePretty = true;
-			$content = "load.php";
+			$content = "load";
 			$gaCookie = "_load";
 			break;
 		
 		// Generate only the small table of a specific Power, based on URL 
 		case "small":
 			$bePretty = false;
-			$content = $parser->buildOutput('pages/load.php');
+			$fullPage = false;
+			$content = "load";
 			// $gaCookie not defined, because this shouldn't ever load a ga tracker
+			break;
+			
+		case "share":
+			$bePretty = true;
+			$content = "share";
+			$gaCookie = "_load";
 			break;
 			
 		// Generate a single, random Power
 		default:
 			$bePretty = true;
-			$content = "main.php";
+			$content = "main";
 			$gaCookie = "_main";
 			break;
 		}
@@ -121,18 +127,6 @@
 			}
 		?>
 		
-		<script src="js/analytics.js" />
-		<script>
-			var gaCookie = '<?php echo $gaCookie; ?>';
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  			ga('create', gaTag, 'auto');
-			ga('require', 'linkid', {
-				'cookieName': gaCookie,
-				'duration': 5,
-				'levels': 5});
-			ga('send', 'pageview');
-		</script>
 	</head>
 	<body>
 
