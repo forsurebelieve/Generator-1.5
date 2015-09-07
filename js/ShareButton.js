@@ -68,7 +68,7 @@ ShareUtils = (function() {
           to[prop] = from[prop];
         }
       }
-    }
+    } 
   };
 
   ShareUtils.prototype.hide = function(el) {
