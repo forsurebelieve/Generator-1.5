@@ -48,6 +48,7 @@
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/allitems.php');
 			$useFooter = true;
+			$gaCookie = "_list";
 			break;
 		
 		// Credits and legal stuff
@@ -62,6 +63,7 @@
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/credits.php');
 			$useFooter = true;
+			$gaCookie = "_legal";
 			break;
 			
 		// Generate an image of a card, and return as .png
@@ -84,6 +86,7 @@
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/multi-roll.php');
 			$useFooter = true;
+			$gaCookie = "_multi";
 			break;
 		
 		// Generate a specific Power, based on URL
@@ -94,6 +97,7 @@
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/load.php');
 			$useFooter = true;
+			$gaCookie = "_load";
 			break;
 		
 		// Generate only the small table of a specific Power, based on URL 
@@ -114,6 +118,7 @@
 			$bePretty = true;
 			$content = $parser->buildOutput('pages/main.php');
 			$useFooter = true;
+			$gaCookie = "main";
 			break;
 		}
 	
@@ -124,6 +129,7 @@
 		$useNavigation = false;
 		$bePretty = false;
 		$useFooter = false;
+		$gaCookie = "_reroll";
 	}
 		
 	$header = '';
@@ -139,6 +145,18 @@
 				echo $header;
 			}
 		?>
+		<script src="js/analytics.js" />
+		<script>
+			var gaCookie = '<?php echo $gaCookie; ?>';
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  			ga('create', gaTag, 'auto');
+			ga('require', 'linkid', {
+				'cookieName': gaCookie,
+				'duration': 5,
+				'levels': 5});
+			ga('send', 'pageview');
+		</script>
 	</head>
 	<body>
 		

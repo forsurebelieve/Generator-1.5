@@ -1,0 +1,1 @@
+ var gaTag = 'UA-xxxxx-x';
