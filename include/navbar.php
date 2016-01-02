@@ -15,11 +15,6 @@
 					See all combinations
 				</a>
 			</li>
-			<li>
-				<a href="<?php echo $site_root; ?>/donate">
-					Help keep the site going
-				</a>
-			</li>
 		</ul>
 	</div>
 	<div class="navgroup">

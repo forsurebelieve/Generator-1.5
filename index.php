@@ -95,13 +95,7 @@
 			$content = "share";
 			$gaCookie = "_load";
 			break;
-		
-		case "donate":
-			$bePretty = true;
-			$content = "donate";
-			$gaCookie = "_donate";
-			break;
-		
+			
 		// Generate a single, random Power
 		default:
 			$bePretty = true;
