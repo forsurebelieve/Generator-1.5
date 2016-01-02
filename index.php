@@ -14,7 +14,7 @@
 
 	$parser = new Parser;
 
-	$params = $parser->getParameters($_SERVER['REQUEST_URI']);
+	$params = $parser->getParameters($_SERVER['REQUEST_URI']) || []; 
 	
 	$title = 'Futhark Power Generator' . $version;
 	

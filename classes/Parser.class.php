@@ -49,7 +49,7 @@ class Parser {
     public function getParameters($uri) {
         $uri = strtolower($uri);
         $request  = str_replace("", "", $uri);
-        $site_array  = split("/", $request);
+        $site_array  = explode("/", $request);
 
         foreach($site_array as $key => $value) {
             if($value == "") {
