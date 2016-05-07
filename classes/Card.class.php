@@ -16,7 +16,7 @@
 			}
 			
 			header('Content-Type: ' . $fmt);
-			echo $valueImage;
+			echo $outputImage;
 		}
 		
 		private function IMagickConstruct($value, $suit) {
