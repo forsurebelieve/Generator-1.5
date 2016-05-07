@@ -11,6 +11,7 @@
     		} elseif (class_exists('gd')) {
 				$outputImage['img'] = $this->GDConstruct($value, $suit);
 				$fmt = $outputImage['fmt'];
+				$outputImage = $outputImage['img'];
 			} else {
 				die('No image libraries installed!');
 			}
@@ -34,7 +35,7 @@
 		
 		private function GDConstruct($value, $suit) {
 			$valueImage = imagecreatefrompng($this->sourceDirectory . '/' . $suit . '.png');
-			$suitImage = imagecreatefrompng($this-sourceDirectory . '/' . $value . '.png');
+			$suitImage = imagecreatefrompng($this->sourceDirectory . '/' . (string)$value . '.png');
 			$imageData = getimagesize($suitImage);
 			imagecopymerge($suitImage, $valueImage, 0, 0, 0, 0, $imageData[0], $imageData[1], 100);
 			
@@ -43,7 +44,7 @@
 				'fmt' => $imageData['mime']
 			];
 			
-			return $suitImage;
+			return $data;
 		}
 	}
 ?>
