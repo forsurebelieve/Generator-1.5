@@ -6,7 +6,7 @@
 		public function __construct($value, $suit) {
 					
 			if (class_exists('Imagick')) { 
-        		$outputImage = $this->IMagicConstruct($value,$suit);
+        		$outputImage = $this->IMagickConstruct($value,$suit);
 				$fmt = 'image/' . $outputImage->getImageFormat();
     		} elseif (class_exists('gd')) {
 				$outputImage['img'] = $this->GDConstruct($value, $suit);
