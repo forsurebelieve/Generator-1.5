@@ -41,18 +41,7 @@
 		
 	// Routing Table
 		// List of all portions of a power - all Zodiac, Futhark, and Card Values
-			
-		// Generate an image of a card, and return as .png
 		// TODO: Extract this to somewhere else. But where? And How? Issue #18
-		case "card":
-		case "poker":
-			$name = explode('.', $params[1]);
-			$value = $name[0];
-			$suit = $name[1];
-			header('Content-Type: image/png');
-			file_get_contents($site_root . '/img/' . $value . '-' . $suit . '.png');
-			exit(0);
-			break;		
 		
 		case "list":
 			$title = "All Items | " . $title;
