@@ -282,47 +282,47 @@
 				'Value' => [
 					'Ace' => [
 						'name' => 'Ace',
-						'short' => 'A',
+						'short' => '01',
 						'description' => 'it bypasses some limit it might otherwise be bound by'
 					],
 					'Two' => [
 						'name' => 'Two',
-						'short' => '2',
+						'short' => '02',
 						'description' => 'it has a drawback, but increases the positive effect of your suit'
 					],
 					'Three' => [
 						'name' => 'Three',
-						'short' => '3',
+						'short' => '03',
 						'description' => 'you have a wide array of minor powers rather than one single power. Not all of your powers have to be in the same category (roll Sign and Rune again, twice)'
 					],
 					'Four' => [
 						'name' => 'Four',
-						'short' => '4',
+						'short' => '04',
 						'description' => 'your suit decreases two factors, instead of decreasing one and increasing another'
 					],
 					'Five' => [
 						'name' => 'Five',
-						'short' => '5',
+						'short' => '05',
 						'description' => 'the suit effect is applied as written'
 					],
 					'Six' => [
 						'name' => 'Six',
-						'short' => '6',
+						'short' => '06',
 						'description' => 'you and your power are relatively in sync'
 					],
 					'Seven' => [
 						'name' => 'Seven',
-						'short' => '7',
+						'short' => '07',
 						'description' => 'your suit increases two factors, instead of decreasing one and increasing another'
 					],
 					'Eight' => [
 						'name' => 'Eight',
-						'short' => '8',
+						'short' => '08',
 						'description' => 'although your power has potential, it conflicts with your personality (someone who hates waiting gets a power that must charge for days before being used). This is in some way that isn\'t moral '
 					],
 					'Nine' => [
 						'name' => 'Nine',
-						'short' => '9',
+						'short' => '09',
 						'description' => 'the suit\'s effects are taken to the extreme'
 					],
 					'Ten' => [
@@ -332,17 +332,17 @@
 					],
 					'Jack' => [
 						'name' => 'Jack',
-						'short' => 'J',
+						'short' => '11',
 						'description' => 'it is different than what outside observers might think it to be, and often has subtle aspects unnoticed by others'
 					],
 					'Queen' => [
 						'name' => 'Queen',
-						'short' => 'Q',
+						'short' => '12',
 						'description' => 'it is less straight-up strong but lends itself towards teamwork and combos with other powers'
 					],
 					'King' => [
 						'name' => 'King',
-						'short' => 'K',
+						'short' => '13',
 						'description' => 'it has strength but is incredibly unethical'
 					]
 				],

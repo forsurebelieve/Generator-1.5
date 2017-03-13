@@ -36,17 +36,8 @@
 					$this->twist['Suit'] = $this->twist['Suit'][0];
 					$this->twist['Value'] = $this->twist['Value'][0];
 					
-					if ($this->twist['Suit']['name'] === 'Spades' 
-					|| $this->twist['Suit']['name'] === 'Clubs') {
-						$this->twist['image'] = '/card/r-' . strtolower($this->twist['Value']['name']) . '.' . strtolower($this->twist['Suit']['name']);
-						} else {
-							$this->twist['image'] = '/card/b-' 
-								. strtolower($this->twist['Value']['name']) . '.' 
-								. strtolower($this->twist['Suit']['name']);
-						}							
-						$this->twist['name'] = $this->twist['Value']['name'] 
-							. ' of ' . $this->twist['Suit']['name'];
-
+					$this->twist['image'] = '/card/' . strtolower($this->twist['Value']['short']) . '-' . strtolower($this->twist['Suit']['name']);
+					$this->twist['name'] = $this->twist['Value']['name'] . ' of ' . $this->twist['Suit']['name'];
 				} else {
 					$this->twist['Tarot'] = $this->array_random_assoc($this->twistList['Tarot']);
 					$this->twist['Tarot'] = $this->twist['Tarot'][0];
@@ -56,19 +47,8 @@
 					$this->twist['Value'] = $this->twistList['Value'][$target[1]];
 					$this->twist['Suit'] = $this->twistList['Suit'][$target[2]];
 					
-					
-					if ($this->twist['Suit']['name'] === 'Spades' 
-					|| $this->twist['Suit']['name'] === 'Clubs') {
-						$this->twist['image'] = '/card/r-'
-							 . strtolower($this->twist['Value']['name']) . '.' 
-							 . strtolower($this->twist['Suit']['name']);
-						} else {
-							$this->twist['image'] = '/card/b-' 
-								. strtolower($this->twist['Value']['name']) . '.' 
-								. strtolower($this->twist['Suit']['name']);
-						}
-						$this->twist['name'] = $this->twist['Value']['name'] 
-							. ' of ' . $this->twist['Suit']['name'];
+					$this->twist['image'] = '/card/' . strtolower($this->twist['Value']['short']) . '-' . strtolower($this->twist['Suit']['name']);
+					$this->twist['name'] = $this->twist['Value']['name'] . ' of ' . $this->twist['Suit']['name'];
 				} else {
 					$this->twist['Tarot'] = $this->array_random_assoc($this->twistList['Tarot']);
 					$this->twist['Tarot'] = $this->twist['Tarot'][0];

@@ -52,7 +52,7 @@ class Parser {
         if ($request == '/') {
             return array($request);
         } else {
-            $site_array  = split("/", $request);
+            $site_array  = explode("/", $request);
 
             foreach($site_array as $key => $value) {
                 if($value == "") {
