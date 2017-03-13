@@ -6,7 +6,7 @@
 		public $TwistSuit;
 		
 		public function __construct() {
-			
+			global $site_root;
 			$this->Flavor = [
 				'Fehu' => [
 					'image' => $site_root . '/img/fehu.png',

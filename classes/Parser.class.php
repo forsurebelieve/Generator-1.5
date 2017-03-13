@@ -49,14 +49,18 @@ class Parser {
     public function getParameters($uri) {
         $uri = strtolower($uri);
         $request  = str_replace("", "", $uri);
-        $site_array  = split("/", $request);
+        if ($request == '/') {
+            return array($request);
+        } else {
+            $site_array  = split("/", $request);
 
-        foreach($site_array as $key => $value) {
-            if($value == "") {
-                unset($site_array[$key]);
+            foreach($site_array as $key => $value) {
+                if($value == "") {
+                    unset($site_array[$key]);
+                }
             }
+            return array_values($site_array);
         }
-        return array_values($site_array);
     }
 }
 

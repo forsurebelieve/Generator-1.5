@@ -1,5 +1,5 @@
 <?php 
-	$site_root = 'http://' . $_SERVER['SERVER_NAME'];
+	$site_root = '//' . $_SERVER['SERVER_NAME'];
 	$serverRoot = $_SERVER['DOCUMENT_ROOT'] . '/';
 	
 	$version = 'v1.5.5-beta';
@@ -39,7 +39,7 @@
 		 * Leave default at the bottom of the list
 		 */
 		
-// Routing Table
+	// Routing Table
 		// List of all portions of a power - all Zodiac, Futhark, and Card Values
 			
 		// Generate an image of a card, and return as .png
