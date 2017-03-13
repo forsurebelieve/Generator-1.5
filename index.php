@@ -49,7 +49,8 @@
 			$name = explode('.', $params[1]);
 			$value = $name[0];
 			$suit = $name[1];
-			$card = new Card($value,$suit);
+			header('Content-Type: image/png');
+			file_get_contents($site_root . '/img/' . $value . '-' . $suit . '.png');
 			exit(0);
 			break;		
 		

@@ -36,7 +36,7 @@
 					$this->twist['Suit'] = $this->twist['Suit'][0];
 					$this->twist['Value'] = $this->twist['Value'][0];
 					
-					$this->twist['image'] = '/card/' . strtolower($this->twist['Value']['short']) . '-' . strtolower($this->twist['Suit']['name']);
+					$this->twist['image'] = '/card/' . strtolower($this->twist['Value']['short']) . '-' . strtolower($this->twist['Suit']['name'] . '.png');
 					$this->twist['name'] = $this->twist['Value']['name'] . ' of ' . $this->twist['Suit']['name'];
 				} else {
 					$this->twist['Tarot'] = $this->array_random_assoc($this->twistList['Tarot']);
@@ -47,7 +47,7 @@
 					$this->twist['Value'] = $this->twistList['Value'][$target[1]];
 					$this->twist['Suit'] = $this->twistList['Suit'][$target[2]];
 					
-					$this->twist['image'] = '/card/' . strtolower($this->twist['Value']['short']) . '-' . strtolower($this->twist['Suit']['name']);
+					$this->twist['image'] = '/card/' . strtolower($this->twist['Value']['short']) . '-' . strtolower($this->twist['Suit']['name']) . '.png';
 					$this->twist['name'] = $this->twist['Value']['name'] . ' of ' . $this->twist['Suit']['name'];
 				} else {
 					$this->twist['Tarot'] = $this->array_random_assoc($this->twistList['Tarot']);
