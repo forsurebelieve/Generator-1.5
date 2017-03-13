@@ -46,6 +46,7 @@
 				. '/' . $this->flavor 
 				. '/' . $this->twist
 				 . '/">Permalink</a>' . "\n";
+			$output .= '<div class="share-button"></div>';
 			$output .= '<div id="ref" class="hidden">' . $this->getReferenceString() . '</div>';
 			return $output;
 		}
