@@ -26,3 +26,4 @@ js/analytics.js
 # Anonymize my dev environment settings (as well as my production env settings!)
 /config/passwords.php
  
+/vendor/

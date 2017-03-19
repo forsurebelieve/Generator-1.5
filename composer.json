@@ -1,0 +1,14 @@
+{
+    "name": "acwpd/futhark-generator",
+    "description": "This is a PHP fork of the Futhark generator for Worm.",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "authors": [
+        {
+            "name": "Aaron C",
+            "email": "git@acwpd.com"
+        }
+    ]
+}
