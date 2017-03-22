@@ -1,12 +1,10 @@
-* create site on acwpd / nfs 
-* log todos properly on github
-* build tables
-  * Tarot cards / Standard deck
-    * figure out what Merkstave is
-  * power classes
-  * runes
-    * maybe some images for these?
-  * build users
-  * build save files
-  * build save / load functions
-* replicate 1.5 functionality in 2.0 UI, in php 
+TODO
+=====
+
+* Add front-controller
+* Use real routing
+* add Bootstrap and rebuild frontend
+* reorganize: public front controller, private everything else
+* add user logins
+* build save / load / list functions
+* move everything to firebase
