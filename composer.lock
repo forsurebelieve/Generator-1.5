@@ -4,8 +4,125 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff935644689da808649e60343ac20367",
+    "content-hash": "7f2264b670712215385543afb0ffad5b",
     "packages": [
+        {
+            "name": "acwpd/futhark-c",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://farfromunique@bitbucket.org/farfromunique/futhark-beta.git",
+                "reference": "0a6aa016a385c0ded7abb08d06e64352739d4f78"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ACWPD\\Futhark\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron C",
+                    "email": "git@acwpd.com"
+                }
+            ],
+            "description": "Classes for Futhark generator",
+            "time": "2017-03-24 01:43:46"
+        },
+        {
+            "name": "acwpd/helpers",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/farfromunique/Helpers.git",
+                "reference": "f1664a6e90a2568a1ecaea448ed5f2ca69cd2398"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/farfromunique/Helpers/zipball/f1664a6e90a2568a1ecaea448ed5f2ca69cd2398",
+                "reference": "f1664a6e90a2568a1ecaea448ed5f2ca69cd2398",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ACWPD\\Helpers\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron C",
+                    "email": "git@acwpd.com"
+                }
+            ],
+            "description": "Helpers for ACWPD projects",
+            "support": {
+                "source": "https://github.com/farfromunique/Helpers/tree/master",
+                "issues": "https://github.com/farfromunique/Helpers/issues"
+            },
+            "time": "2017-03-22 05:23:36"
+        },
+        {
+            "name": "altorouter/altorouter",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dannyvankooten/AltoRouter.git",
+                "reference": "39c50092470128c12284d332bb57f306bb5b58e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dannyvankooten/AltoRouter/zipball/39c50092470128c12284d332bb57f306bb5b58e4",
+                "reference": "39c50092470128c12284d332bb57f306bb5b58e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "AltoRouter.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Danny van Kooten",
+                    "email": "dannyvankooten@gmail.com",
+                    "homepage": "http://dannyvankooten.com/"
+                },
+                {
+                    "name": "Koen Punt",
+                    "homepage": "https://github.com/koenpunt"
+                },
+                {
+                    "name": "niahoo",
+                    "homepage": "https://github.com/niahoo"
+                }
+            ],
+            "description": "A lightning fast router for PHP",
+            "homepage": "https://github.com/dannyvankooten/AltoRouter",
+            "keywords": [
+                "lightweight",
+                "router",
+                "routing"
+            ],
+            "time": "2015-11-30T00:47:43+00:00"
+        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.5",
@@ -59,6 +176,48 @@
                 "instantiate"
             ],
             "time": "2015-06-14T21:17:01+00:00"
+        },
+        {
+            "name": "ktamas77/firebase-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ktamas77/firebase-php.git",
+                "reference": "fbfeefe8437672b983a9efb340bfd0db08bfe71a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ktamas77/firebase-php/zipball/fbfeefe8437672b983a9efb340bfd0db08bfe71a",
+                "reference": "fbfeefe8437672b983a9efb340bfd0db08bfe71a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tamas Kalman",
+                    "email": "ktamas77@gmail.com"
+                }
+            ],
+            "description": "Firebase PHP Client",
+            "homepage": "https://github.com/ktamas77/firebase-php",
+            "keywords": [
+                "firebase",
+                "rest",
+                "wrapper"
+            ],
+            "time": "2016-07-29 07:56:15"
         },
         {
             "name": "myclabs/deep-copy",
@@ -1314,7 +1473,11 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ktamas77/firebase-php": 20,
+        "acwpd/helpers": 20,
+        "acwpd/futhark-c": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

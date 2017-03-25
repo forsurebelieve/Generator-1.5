@@ -2,9 +2,24 @@
     "name": "acwpd/futhark-generator",
     "description": "This is a PHP fork of the Futhark generator for Worm.",
     "type": "project",
+    "minimum-stability": "stable",
     "require": {
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^6.0",
+        "ktamas77/firebase-php": "dev-master",
+        "altorouter/altorouter": "^1.2",
+        "acwpd/helpers": "@dev",
+        "acwpd/futhark-c": "@dev"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/farfromunique/Helpers.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://farfromunique@bitbucket.org/farfromunique/futhark-beta.git"
+        }
+    ],
     "authors": [
         {
             "name": "Aaron C",
