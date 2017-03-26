@@ -27,3 +27,5 @@ js/analytics.js
 /config/passwords.php
  
 /vendor/
+
+private/config.php
