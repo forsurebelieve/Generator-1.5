@@ -14,7 +14,7 @@
 		$i >= 1 ? $nav .= ' | ' : $nav .= ''; 
 		$nav .= '<a href="#power_' . ($i +1) . '"> Power ' . ($i +1) . '</a>';  
 		
-		$power = new Power();
+		$power = new ACWPD\Futhark\Power();
 		$out .= '<a name="power_' . ($i + 1) . '"></a>' . "\n";
 		$out .= $power->getBigImageTable();
 		$out .= $power->getVerboseDescription();

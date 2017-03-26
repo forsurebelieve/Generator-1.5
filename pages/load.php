@@ -17,10 +17,10 @@
 		];
 
 	if ($params[0] === "small") {
-		$power = new Power($build);
+		$power = new ACWPD\Futhark\Power($build);
 		echo $power->getsmallImageTable();
 	} else {
-		$power = new Power($build);
+		$power = new ACWPD\Futhark\Power($build);
 		echo $power->getBigImageTable();
 		echo $power->getVerboseDescription();
 	}
