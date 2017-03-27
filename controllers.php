@@ -22,8 +22,12 @@
 		echo $output;
 	}
 
-	function controller_Multi($count) {		
-		$page = new \ACWPD\Helpers\Templater('list');
+	function controller_Multi($count) {	
+		$page = new \ACWPD\Helpers\Templater('main.frame');
+		$output = '';
+		for ($i=0; $i < $count['count']; $i++) { 
+			$page->appendToBody('multi');
+		}
 		$output = $page->getHTML();
 		echo $output;
 	}
