@@ -32,8 +32,9 @@
 		echo $output;
 	}
 
-	function controller_Load() {		
-		$page = new \ACWPD\Helpers\Templater('list');
+	function controller_Load($load) {		
+		$page = new \ACWPD\Helpers\Templater('main.frame');
+		$page->setBody('load',$load);
 		$output = $page->getHTML();
 		echo $output;
 	}
