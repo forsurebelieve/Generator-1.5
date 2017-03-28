@@ -32,7 +32,7 @@
 		echo $output;
 	}
 
-	function controller_Load($load) {		
+	function controller_Load($load) {
 		$page = new \ACWPD\Helpers\Templater('main.frame');
 		$page->setBody('load',$load);
 		$output = $page->getHTML();
