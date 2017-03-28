@@ -73,7 +73,7 @@
 		</div>
 	</body>
 	<!-- <script src="/js/ShareButton.js"></script>
-	<script src="/js/analytics.js"></script>
+	<script src="/js/analytics.js"></script> -->
 	<script src="/js/ajax.js" language="javascript"></script> -->
 	{{js}}
 </html>

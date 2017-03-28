@@ -6,16 +6,10 @@
  * 
  * For the latest version, please visit: https://github.com/farfromunique/ACWPD_Tools
  * 
- * This code is copyright (C) 2015 Aaron Coquet / ACWPD
+ * This code is copyright (C) 2017 Aaron Coquet / ACWPD
  */ 
  
-/* 
- * Instructions for preperation:
- * Replace ::SiteName:: with the string to be placed in the browser's history
- *
- */
 
-// Put site's address here, in format "http://sub.domain.tld/path/to/root"
 var sRoot = document.location.origin; // Default: document.location.origin
 var siteName = "Futhark Power Generator 1.5.4";
 var countOfAdded = 0;
@@ -111,7 +105,7 @@ function insertSmallImages() {
 
 function reroll() {
 	insertSmallImages();
-	loadMyPage("/raw","content");
+	loadMyPage("/a/roll","content");
 	var hist = document.querySelector("#hist");
 	while (hist.childElementCount > 4) {
 		document.querySelector(".added:last-of-type").remove();
