@@ -12,14 +12,14 @@
 	
 	$router = new AltoRouter();
 	
-	$router->map('GET',	'/',								'controller_Home');
-	$router->map('GET',	'/a/roll',							'controller_Reroll_All');
-	$router->map('GET',	'/list',							'controller_List');
-	$router->map('GET',	'/credits',							'controller_Credits');
-	$router->map('GET',	'/multi/[i:count]',					'controller_Multi');
-	$router->map('GET',	'/load/s/[:loadid]',				'controller_Load_Saved');
-	$router->map('GET',	'/load/[:type]/[:flavor]/[:twist]',	'controller_Load');
-	$router->map('GET',	'/donate',							'controller_Donate');
+	$router->map('GET',	'/',									'controller_Home');
+	$router->map('GET',	'/a/roll',								'controller_Reroll_All');
+	$router->map('GET',	'/list',								'controller_List');
+	$router->map('GET',	'/credits',								'controller_Credits');
+	$router->map('GET',	'/multi/[i:count]',						'controller_Multi');
+	$router->map('GET',	'/load/s/[:loadid]',					'controller_Load_Saved');
+	$router->map('GET',	'/load/[:type]/[:flavor]/[**:twist]',	'controller_Load');
+	$router->map('GET',	'/donate',								'controller_Donate');
 
 	$match = $router->match();
 
