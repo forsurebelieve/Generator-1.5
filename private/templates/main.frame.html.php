@@ -35,7 +35,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="/lists">
+						<a href="/list">
 							See all combinations
 						</a>
 					</li>
