@@ -3,7 +3,6 @@
 	function controller_Home() {
 		$page = new \ACWPD\Helpers\Templater('main.frame');
 		$page->setBody('home');
-		$page->appendToBody('history');
 		$output = $page->getHTML();
 		echo $output;
 	}
@@ -35,6 +34,13 @@
 	function controller_Load($load) {
 		$page = new \ACWPD\Helpers\Templater('main.frame');
 		$page->setBody('load',$load);
+		$output = $page->getHTML();
+		echo $output;
+	}
+
+	function controller_Load_Small($load) {
+		$page = new \ACWPD\Helpers\Templater('ajax.frame');
+		$page->setBody('load.small',$load);
 		$output = $page->getHTML();
 		echo $output;
 	}

@@ -70,6 +70,9 @@
 				Have you heard of <a href="http://parahumans.wordpress.com/">Worm</a>?
 				<br />If not, please <a href="http://www.reddit.com/r/FutharkGenerator/comments/35kilh/if_you_havent_read_worm_read_me_first/">read me first!</a>
 			</div>
+			<div id='hist' class='hist'>
+				<span id='endOfHist'>&nbsp;</span>
+			</div>
 		</div>
 		<div class="content" id="content">
 			{{body}}
@@ -79,7 +82,7 @@
 			<p>Legal Stuff:</p>
 			<p>The Futhark Generator is used to create powers that would be fitting to Wildbow's web serial Worm. Classifications, story, characters, and other elements are his by right, we're just playing in his sandbox. For more information, click <a href="/credits">here</a>.</p>
 		</div>
-		<div id="loader" class="fullscreen hidden">
+		<div id="loader" class="fullscreen" style="display:none;">
 			<svg class="circular">
 				<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="20"/>
 			</svg>
@@ -87,9 +90,9 @@
 	</body>
 	<!-- <script src="/js/ShareButton.js"></script>
 	<script src="/js/analytics.js"></script> -->
-	<script src="/js/ajax.js" language="javascript"></script>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/js/jquery-3.2.0.js"></script>
 	<script src="/js/jquery-migrate-3.0.0.js"></script>
+	<script src="/js/intercooler-1.1.1.min.js"></script>
+	<script src="/js/ajax.js"></script>
     {{js}}
 </html>

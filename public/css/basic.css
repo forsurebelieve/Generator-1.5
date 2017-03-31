@@ -157,31 +157,6 @@ pre {
 	display:none;
 }
 
-table {
-	border: 1px black solid;
-}
-
-img.smallImage {
-	height: 50%;
-}
-
-td {
-	border-top: 1px solid black;
-	border-left: 1px solid black;
-}
-
-td :first-of-type {
-	border-left: 0px;
-}
-
-thead {
-	font-weight: bold;
-}
-
-thead td {
-	border-top: 0px;
-}
-
 spacer {
 	display: block;
 	height: 75px;
@@ -212,6 +187,7 @@ spacer {
 	position: absolute;
 	bottom: 60;
 	left: 0;
+	text-align: center;
 }
 
 .bigImages {
@@ -239,4 +215,33 @@ spacer {
 .bigImages .typeName, .bigImages .flavorName, .bigImages .twistName {
     height: 2rem;
     text-align: center;
+}
+
+.hist .smallImages div {
+    width: 33px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+	padding: 0;
+}
+
+.reversed {
+  transform: rotate(.5turn);
+  transition-delay: 0;
+  transition-duration: .5s;
+  z-index: 12;
+}
+
+.reversed:hover {
+  transform: rotate(0turn) translateX(50%) translateY(25%) scale(1.5);
+  z-index: 15;
+}
+
+.smallImages {
+    padding: 0;
+}
+
+.added {
+    padding: 0;
 }
