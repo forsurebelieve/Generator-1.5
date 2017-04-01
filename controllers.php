@@ -65,3 +65,24 @@
 		$output = $page->getHTML();
 		echo $output;
 	}
+
+	function controller_Reroll_Type() {
+		$page = new \ACWPD\Helpers\Templater('ajax.frame');
+		$page->setBody('type.only');
+		$output = $page->getHTML();
+		echo $output;
+	}
+
+	function controller_Reroll_Flavor() {
+		$page = new \ACWPD\Helpers\Templater('ajax.frame');
+		$page->setBody('flavor.only');
+		$output = $page->getHTML();
+		echo $output;
+	}
+
+	function controller_Reroll_Twist() {
+		$page = new \ACWPD\Helpers\Templater('ajax.frame');
+		$page->setBody('twist.only');
+		$output = $page->getHTML();
+		echo $output;
+	}

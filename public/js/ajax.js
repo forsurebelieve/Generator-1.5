@@ -122,3 +122,27 @@ function hideLoader() {
 	loaderDiv.classList.remove("loading");
 	loaderDiv.classList.add("hidden");
 }
+
+function moveNewType() {
+	let type = $('#addedData .type');
+	let desc = $('#addedData p');
+
+	type.appendTo('#moreTypes');
+	desc.appendTo('#Description');
+}
+
+function moveNewTwist() {
+	let twist = $('#addedData .twist');
+	let desc = $('#addedData p');
+
+	twist.appendTo('#moreTwists');
+	desc.appendTo('#Description');
+}
+
+function moveNewFlavor() {
+	let flavor = $('#addedData .flavor');
+	let desc = $('#addedData p');
+
+	flavor.appendTo('#moreFlavors');
+	desc.appendTo('#Description');
+}

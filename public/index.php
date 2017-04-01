@@ -14,6 +14,9 @@
 	
 	$router->map('GET',	'/',											'controller_Home');
 	$router->map('GET',	'/a/roll',										'controller_Reroll_All');
+	$router->map('GET',	'/a/roll/type',									'controller_Reroll_Type');
+	$router->map('GET',	'/a/roll/flavor',								'controller_Reroll_Flavor');
+	$router->map('GET',	'/a/roll/twist',								'controller_Reroll_Twist');
 	$router->map('GET', '/a/loadsmall/[:type]/[:flavor]/[**:twist]',	'controller_Load_Small');
 	$router->map('GET',	'/list',										'controller_List');
 	$router->map('GET',	'/credits',										'controller_Credits');

@@ -245,3 +245,27 @@ spacer {
 .added {
     padding: 0;
 }
+
+.bigImages button {
+    width: 120px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+	text-align: -webkit-center;
+}
+
+#moreTypes {
+    height: auto;
+}
+
+#moreFlavors {
+    height:  auto;
+}
+
+#moreTwists {
+    height: auto;
+}
+
+#moreTypes, #moreFlavors, #moreTwists {
+    flex-direction: column-reverse;
+}
