@@ -4,15 +4,8 @@
 	
 	require_once DOCUMENT_ROOT . '/private/config.php';
 
-	require_once DOCUMENT_ROOT . '/vendor/autoload.php';
+	require_once DOCUMENT_ROOT . '/private/vendor/autoload.php';
 	
 	$title = 'Futhark Power Generator' . APP_VERSION;
 	
 	require_once DOCUMENT_ROOT . '/private/routes.php';
-	
-
-	
-	
-	
-	
-	
