@@ -1,5 +1,4 @@
 <?php
-	require_once(DOCUMENT_ROOT . '/private/config.php');
 
 	$firebase = new \Firebase\FirebaseLib(FIREBASE_DEFAULT_URL,FIREBASE_DEFAULT_TOKEN);
 

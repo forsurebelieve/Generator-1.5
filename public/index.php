@@ -1,9 +1,9 @@
 <?php 
-	define('APP_VERSION','v1.6beta');
-
 	define('SITE_ROOT','//' . $_SERVER['SERVER_NAME']);
 	define('DOCUMENT_ROOT',dirname($_SERVER['DOCUMENT_ROOT']));
 	
+	require_once DOCUMENT_ROOT . '/private/config.php';
+
 	require DOCUMENT_ROOT . '/vendor/autoload.php'; //TODO Switch to a different PSR-4 Autoloader
 
 	$title = 'Futhark Power Generator' . APP_VERSION;
