@@ -36,7 +36,7 @@
 		 */
 		public function __construct(string $template, array ...$includes) {
 			/* Update this line to move the template directory */
-			$this->template_directory = DOCUMENT_ROOT . '/protected/templates/';
+			$this->template_directory = DOCUMENT_ROOT . 'protected/templates/';
 
 			$this->template = $this->template_directory . $template . '.html.php';
 			$this->includes = $includes;
