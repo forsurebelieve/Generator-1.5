@@ -1,9 +1,17 @@
-sql/
-*.Cache
+# Created by https://www.gitignore.io/api/windows,phpstorm,visualstudiocode
 
-# Windows image file caches
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### Windows ###
+# Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
+ehthumbs_vista.db
 
 # Folder config file
 Desktop.ini
@@ -11,11 +19,16 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
-# Mac crap
-.DS_Store
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
 
-# Visual Studio Code settings
-.settings/*.*
+# Windows shortcuts
+*.lnk
+
+# End of https://www.gitignore.io/api/windows,phpstorm,visualstudiocode
 
 # Get your own analytics.js!
 js/analytics.js
@@ -23,10 +36,7 @@ js/analytics.js
 # Don't include Paint.net files
 *.pdn
 
-# Anonymize my dev environment settings (as well as my production env settings!)
-/config/passwords.php
- 
 /vendor/
 
-protected/config.php
-public/img/cards/original Size.zip
+/protected/config.php
+/public/img/cards/original Size.zip
