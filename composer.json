@@ -25,5 +25,8 @@
             "name": "Aaron C",
             "email": "git@acwpd.com"
         }
-    ]
+    ],
+    "config": {
+        "vendor-dir": "protected/vendor"
+    }
 }

@@ -1,5 +1,5 @@
 <?php
-	require_once(DOCUMENT_ROOT . '/private/controllers.php');
+	require_once(DOCUMENT_ROOT . '/protected/controllers.php');
 	
 	$router = new AltoRouter();
 	
