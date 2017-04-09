@@ -1,7 +1,22 @@
 <?php
-	/*
-	 * This file manages configuration options for Firebase, as well as any other things that need global configuration.
+	/* 
+	 * configuration file for things that will be on every page
 	 */
-	define('FIREBASE_DEFAULT_URL',''); // The URL of your firebase database
-	define('FIREBASE_DEFAULT_TOKEN',''); // Settings -> Service Accounts -> Secrets. Yes, it's deprecated.
 	
+	/**************************************************************************
+	* General App config.
+	**************************************************************************/
+
+	define('APP_VERSION','v1.6beta');
+
+	/**************************************************************************
+	* Firebase database config.
+	* Firebase database connection provided in ktamas77/firebase-php
+	**************************************************************************/
+	define("FIREBASE_CONNECTION_FILE",DOCUMENT_ROOT . 'path/to/firebase/secure.json');
+	
+	define("FIREBASE_DEFAULT_URL",'https://projectname.firebaseio.com');
+	define("FIREBASE_DEFAULT_TOKEN",'FirebaseSecretKey');
+	define("FIREBASE_DEFAULT_PATH",'/');
+
+ ?> 
