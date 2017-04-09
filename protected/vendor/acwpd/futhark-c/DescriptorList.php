@@ -9,7 +9,7 @@ namespace ACWPD\Futhark;
 		private $parser;
 		
 		public function __construct() {
-			require_once(DOCUMENT_ROOT . '/private/config.php');
+			require_once(DOCUMENT_ROOT . '/protected/config.php');
 
 			$firebase = new \Firebase\FirebaseLib(FIREBASE_DEFAULT_URL,FIREBASE_DEFAULT_TOKEN);
 
