@@ -11,4 +11,9 @@
 </div>
 <script>
 moveNewType();
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'newType',
+  eventAction: 'click'
+});
 </script>

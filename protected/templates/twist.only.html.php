@@ -11,4 +11,9 @@
 </div>
 <script>
 moveNewTwist();
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'newTwist',
+  eventAction: 'click'
+});
 </script>

@@ -1,1 +1,2 @@
- var gaTag = 'UA-xxxxx-x';
+  ga('create', 'googleTrackingID', 'auto');
+  ga('send', 'pageview');

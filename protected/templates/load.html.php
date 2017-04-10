@@ -7,3 +7,14 @@ $power = new \ACWPD\Futhark\Power(['type' => $type, 'flavor' => $flavor, 'twist'
 
 echo $power->getBigImageTable();
 echo $power->getVerboseDescription();
+
+?>
+
+<script>
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'loadPower_noNotes',
+  eventAction: 'click',
+  eventLabel: '<?php echo $power->getReferenceString(); ?>'
+});
+</script>

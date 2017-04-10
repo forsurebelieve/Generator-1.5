@@ -7,3 +7,12 @@ echo '<!-- Twist == ' . $twist . ' -->' . "\n";
 $power = new \ACWPD\Futhark\Power(['type' => $type, 'flavor' => $flavor, 'twist' => $twist]);
 
 echo $power->getSmallImageTable();
+
+?>
+<script>
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'reroll',
+  eventAction: 'click'
+});
+</script>

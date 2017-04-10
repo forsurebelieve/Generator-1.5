@@ -11,4 +11,9 @@
 </div>
 <script>
 moveNewFlavor();
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'newFlavor',
+  eventAction: 'click'
+});
 </script>
