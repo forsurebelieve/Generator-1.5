@@ -4,22 +4,22 @@ html {
 }
 h1 {
 	text-align: center;
-	-webkit-margin-after: 5px;
-	-webkit-margin-before: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	font-size: 2.2rem;
 }
 
 h2 {
 	text-align: center;
-	-webkit-margin-after: 5px;
-	-webkit-margin-before: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	font-size: 1.8rem;
 }
 
 h3 {
 	text-align: center;
-	-webkit-margin-after: 5px;
-	-webkit-margin-before: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 	font-size: 1.4rem;
 }
 
@@ -109,8 +109,8 @@ pre {
 .headBar h1,
 .headbar h2 {
 	text-align: center;
-	-webkit-margin-before: 5px;
-	-webkit-margin-after: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .content {
