@@ -59,7 +59,7 @@ namespace ACWPD\Futhark;
 
 				case 'Tarot':
 					$return = array_filter($this->Twist, function ($v, $k) {
-						$suits = ['Major Arcana','Cups','Swords','Wands','Pentacles'];
+						$suits = ['Major Arcana','Cups','Swords','Wands','Coins'];
 						return in_array($v['suit'],$suits,false);
 					}, ARRAY_FILTER_USE_BOTH);
 					break;
