@@ -31,7 +31,10 @@
     },
     "autoload": {
         "psr-4": {
-            "ACWPD\\Futhark\\": "private/classes/"
+            "ACWPD\\Futhark\\": "protected/classes/"
         }
+    },
+    "scripts":{
+        "serve": "php -S localhost:800 -t public/"
     }
 }
