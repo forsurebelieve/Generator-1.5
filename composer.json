@@ -9,7 +9,8 @@
         "ktamas77/firebase-php": "dev-master",
         "altorouter/altorouter": "^1.2",
         "acwpd/helpers": "@dev",
-        "acwpd/futhark-c": "@dev"
+        "acwpd/futhark-c": "@dev",
+        "kreait/firebase-php": "3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0"
