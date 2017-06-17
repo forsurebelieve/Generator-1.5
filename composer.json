@@ -9,7 +9,6 @@
         "ktamas77/firebase-php": "dev-master",
         "altorouter/altorouter": "^1.2",
         "acwpd/helpers": "@dev",
-        "acwpd/futhark-c": "@dev",
         "kreait/firebase-php": "3.0"
     },
     "require-dev": {
@@ -19,10 +18,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/farfromunique/Helpers.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://farfromunique@bitbucket.org/farfromunique/futhark-beta.git"
         }
     ],
     "authors": [
