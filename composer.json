@@ -6,10 +6,9 @@
     "minimum-stability": "stable",
     "require": {
         "PHP": "^7.0",
-        "ktamas77/firebase-php": "dev-master",
         "altorouter/altorouter": "^1.2",
         "acwpd/helpers": "@dev",
-        "acwpd/futhark-c": "@dev"
+        "kreait/firebase-php": "3.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0"
@@ -18,10 +17,6 @@
         {
             "type": "vcs",
             "url": "https://github.com/farfromunique/Helpers.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://farfromunique@bitbucket.org/farfromunique/futhark-beta.git"
         }
     ],
     "authors": [
@@ -32,5 +27,13 @@
     ],
     "config": {
         "vendor-dir": "protected/vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "ACWPD\\Futhark\\": "protected/classes/"
+        }
+    },
+    "scripts":{
+        "serve": "php -S localhost:800 -t public/"
     }
 }
