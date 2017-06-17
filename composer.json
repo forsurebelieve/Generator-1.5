@@ -6,7 +6,6 @@
     "minimum-stability": "stable",
     "require": {
         "PHP": "^7.0",
-        "ktamas77/firebase-php": "dev-master",
         "altorouter/altorouter": "^1.2",
         "acwpd/helpers": "@dev",
         "kreait/firebase-php": "3.1"
