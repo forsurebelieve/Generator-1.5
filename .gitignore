@@ -1,4 +1,14 @@
-# Created by https://www.gitignore.io/api/windows,phpstorm,visualstudiocode
+
+# Created by https://www.gitignore.io/api/windows,composer,visualstudiocode
+
+### Composer ###
+composer.phar
+/vendor/
+protected/vendor/
+
+# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
 
 ### VisualStudioCode ###
 .vscode/*
@@ -28,7 +38,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/windows,phpstorm,visualstudiocode
+# End of https://www.gitignore.io/api/windows,composer,visualstudiocode
 
 # Get your own analytics.js!
 js/analytics.js
@@ -36,8 +46,7 @@ js/analytics.js
 # Don't include Paint.net files
 *.pdn
 
-/vendor/
-
 /public/img/cards/original Size.zip
 protected/config.php
 public/js/analytics.js
+protected/vendor/composer/autoload_static.php
