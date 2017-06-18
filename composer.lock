@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "15cf49d2da66daf91a2a5a5f01065103",
+    "content-hash": "cf76ea0a0aa333a998421ea66bfb6aa2",
     "packages": [
         {
             "name": "acwpd/helpers",
@@ -527,48 +527,6 @@
                 "token"
             ],
             "time": "2017-04-03T18:56:03+00:00"
-        },
-        {
-            "name": "ktamas77/firebase-php",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ktamas77/firebase-php.git",
-                "reference": "fbfeefe8437672b983a9efb340bfd0db08bfe71a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ktamas77/firebase-php/zipball/fbfeefe8437672b983a9efb340bfd0db08bfe71a",
-                "reference": "fbfeefe8437672b983a9efb340bfd0db08bfe71a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tamas Kalman",
-                    "email": "ktamas77@gmail.com"
-                }
-            ],
-            "description": "Firebase PHP Client",
-            "homepage": "https://github.com/ktamas77/firebase-php",
-            "keywords": [
-                "firebase",
-                "rest",
-                "wrapper"
-            ],
-            "time": "2016-07-29 07:56:15"
         },
         {
             "name": "lcobucci/jwt",
@@ -2234,7 +2192,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "ktamas77/firebase-php": 20,
         "acwpd/helpers": 20
     },
     "prefer-stable": false,

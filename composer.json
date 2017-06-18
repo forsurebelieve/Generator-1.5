@@ -36,8 +36,8 @@
 	"scripts":{
 		"serve": "php -S localhost:800 -t public/",
 		"nfsn-install":[
-			"rm -rf /home/protected",
-			"rm -rf /home/public",
+			"ls /home/protected | xargs rm -rf",
+			"ls /home/public | xargs rm -rf",
 			"php composer.phar install --no-dev",
 			"cd protected/",
 			"mv protected/*.* ../../protected/",
