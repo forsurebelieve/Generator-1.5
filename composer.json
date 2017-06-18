@@ -44,12 +44,11 @@
 			"mv protected/classes ../../protected/",
 			"mv protected/templates ../../protected/",
 			"mv protected/vendor ../../protected/",
-			"mv private/*.* ../../private",
-			"mv private/css ../../private",
-			"mv private/img ../../private",
-			"mv private/js ../../private",
-			"rm -rf public/",
-			"ls | grep -v composer.phar | xargs rm -rf"
+			"mv public/*.* ../../public",
+			"mv public/css ../../public",
+			"mv public/img ../../public",
+			"mv public/js ../../public",
+			"rm -rf public/"
 		]
 	}
 }
