@@ -40,14 +40,14 @@
 			"ls /home/public | xargs rm -rf",
 			"@composer install --no-dev",
 			"cd protected/",
-			"mv protected/*.* ../../protected/",
-			"mv protected/classes ../../protected/",
-			"mv protected/templates ../../protected/",
-			"mv protected/vendor ../../protected/",
-			"mv public/*.* ../../public",
-			"mv public/css ../../public",
-			"mv public/img ../../public",
-			"mv public/js ../../public",
+			"mv protected/*.* /home/protected/",
+			"mv protected/classes /home/protected/",
+			"mv protected/templates /home/protected/",
+			"mv protected/vendor /home/protected/",
+			"mv public/*.* /home/public",
+			"mv public/css /home/public",
+			"mv public/img /home/public",
+			"mv public/js /home/public",
 			"rm -rf public/"
 		]
 	}
