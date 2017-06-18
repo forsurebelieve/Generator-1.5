@@ -38,7 +38,7 @@
 		"nfsn-install":[
 			"ls /home/protected | xargs rm -rf",
 			"ls /home/public | xargs rm -rf",
-			"php composer.phar install --no-dev",
+			"@composer install --no-dev",
 			"cd protected/",
 			"mv protected/*.* ../../protected/",
 			"mv protected/classes ../../protected/",
