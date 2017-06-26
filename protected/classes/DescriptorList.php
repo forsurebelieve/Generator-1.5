@@ -27,7 +27,7 @@ use Kreait\Firebase\ServiceAccount as FBServiceAccount;
 			$this->database = $firebase->getDatabase();
 
 
-			$twist = $this->loadFromDB('/twist');
+			$twist = $this->loadFromDB('twist');
 			$flavor = $this->loadFromDB('flavor');
 			$type = $this->loadFromDB('type');
 			
