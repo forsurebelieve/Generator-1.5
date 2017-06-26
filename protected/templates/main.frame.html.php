@@ -26,6 +26,7 @@
 			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 		</script>
 		<script src="/js/analytics.js"></script>
+
 	</head>
 	<body>
 		<div class='headBar'>
