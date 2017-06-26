@@ -1,10 +1,28 @@
 <?php
 
-	$firebase = new \Firebase\FirebaseLib(FIREBASE_DEFAULT_URL,FIREBASE_DEFAULT_TOKEN);
+	require_once(DOCUMENT_ROOT . '/protected/config.php');
+	
+	use Kreait\Firebase\Factory as FBFactory;
+	use Kreait\Firebase\ServiceAccount as FBServiceAccount;
 
-	$twist = json_decode($firebase->get('twist'),true);
-	$flavor = json_decode($firebase->get('flavor'),true);
-	$type = json_decode($firebase->get('type'),true);
+	$serviceAccount = FBServiceAccount::fromValue(FIREBASE_SERVICE_ACCOUNT_JSON);
+	$firebase = (new FBFactory)
+		->withServiceAccount($serviceAccount)
+		->withDatabaseUri(FIREBASE_DATABASE_URL)
+		->create();
+	$database = $firebase->getDatabase();
+
+	$twistRef = $database->getReference('twist');
+	$twistSS = $twistRef->getSnapshot();
+	$twist = $twistRef->getValue();
+
+	$flavorRef = $database->getReference('flavor');
+	$flavorSS = $flavorRef->getSnapshot();
+	$flavor = $flavorRef->getValue();
+
+	$typeRef = $database->getReference('type');
+	$typeSS = $typeRef->getSnapshot();
+	$type= $typeRef->getValue();
 
 ?>
 <style>
