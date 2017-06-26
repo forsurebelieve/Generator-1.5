@@ -20,10 +20,10 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			(function(f,u,t,h,a,r,k){f.GoogleAnalyticsObject=t;f[t]||(f[t]=function(){
+			(f[t].q=f[t].q||[]).push(arguments)});f[t].l=+new Date;r=u.createElement(h);
+			k=u.getElementsByTagName(h)[0];r.src=a;k.parentNode.insertBefore(r,k)}
+			(window,document,'ga','script','//www.google-analytics.com/analytics.js');
 		</script>
 		<script src="/js/analytics.js"></script>
 
