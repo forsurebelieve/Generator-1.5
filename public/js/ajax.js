@@ -1,148 +1,150 @@
-/* 
+/*
  * Provides ajax tools for ACWPD Projects
  * Feel free to use this in your projects! Just provide Attribution by keeping this block in place!
- * 
+ *
  * This is version 1.0
- * 
+ *
  * For the latest version, please visit: https://github.com/farfromunique/ACWPD_Tools
- * 
+ *
  * This code is copyright (C) 2017 Aaron Coquet / ACWPD
- */ 
- 
+ */
+
 
 var sRoot = document.location.origin; // Default: document.location.origin
 var siteName = "Futhark Power Generator 1.5.4";
 var countOfAdded = 0;
 
+function hideLoader() {
+    var loaderDiv;
+    loaderDiv = document.getElementById("loader")
+    loaderDiv.classList.remove("loading");
+    loaderDiv.classList.add("hidden");
+}
+
 function adjustMyURL(displayURL) {
-	window.history.pushState({site:sRoot}, siteName, "/" + displayURL + "/");
+    window.history.pushState({ site: sRoot }, siteName, "/" + displayURL + "/");
 }
 
 function loadMyPage(pageName, targetDiv) {
-	var ajax;
-	var loaderDiv;
-	var timer;
-	loaderDiv = document.getElementById("loader") 
-	loaderDiv.classList.remove("hidden");
-	loaderDiv.classList.add("loading");
-	timer = window.setTimeout(function(){hideLoader();},500)
-	ajax = new XMLHttpRequest();
-	ajax.open("GET", sRoot + pageName, true);
-	ajax.onreadystatechange = function() {
-		if (ajax.readyState === 4) {
-			document.getElementById(targetDiv).innerHTML = ajax.responseText;
-			loaderDiv.classList.remove("loading");
-			loaderDiv.classList.add("hidden");
-		}
-	};
-	ajax.send(null);
-	
-	
+    var ajax;
+    var loaderDiv;
+    var timer;
+    loaderDiv = document.getElementById("loader");
+    loaderDiv.classList.remove("hidden");
+    loaderDiv.classList.add("loading");
+    timer = window.setTimeout(function() { hideLoader(); }, 500);
+    ajax = new XMLHttpRequest();
+    ajax.open("GET", sRoot + pageName, true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState === 4) {
+            document.getElementById(targetDiv).innerHTML = ajax.responseText;
+            loaderDiv.classList.remove("loading");
+            loaderDiv.classList.add("hidden");
+        }
+    };
+    ajax.send(null);
+
+
 }
 
 function postToPage(pageName, displayURL, postData) {
-	var ajax;
-	document.getElementById("content").innerHTML = "Loading ...";
-	ajax = new XMLHttpRequest();
-	ajax.open("POST", sRoot + pageName, true);
-	ajax.onreadystatechange=function() {
-		if (ajax.readyState === 4) {
-			document.getElementById("content").innerHTML = ajax.responseText;
-		}
-	};
-	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	ajax.send(postData);
-	adjustMyURL(displayURL);
+    var ajax;
+    document.getElementById("content").innerHTML = "Loading ...";
+    ajax = new XMLHttpRequest();
+    ajax.open("POST", sRoot + pageName, true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState === 4) {
+            document.getElementById("content").innerHTML = ajax.responseText;
+        }
+    };
+    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajax.send(postData);
+    adjustMyURL(displayURL);
 }
 
 function postAndRedirect(pageName, displayURL, postData, redirectTo) {
-	var ajax;
+    var ajax;
     document.getElementById("content").innerHTML = "Loading ...";
-	ajax = new XMLHttpRequest();
-	ajax.open("POST",sRoot + pageName, true);
-	ajax.onreadystatechange=function() {
-		if (ajax.readyState === 4) {
-			loadMyPage(redirectTo, displayURL, 'content');
-		}
-	};
-	ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	ajax.send(postData);
-	adjustMyURL(displayURL);
+    ajax = new XMLHttpRequest();
+    ajax.open("POST", sRoot + pageName, true);
+    ajax.onreadystatechange = function() {
+        if (ajax.readyState === 4) {
+            loadMyPage(redirectTo, displayURL, "content");
+        }
+    };
+    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    ajax.send(postData);
+    adjustMyURL(displayURL);
 }
 
 function DismissImportant() {
-	if (document.getElementById('Important')) {
-	document.getElementById('Important').style.display='none';
-	}
+    if (document.getElementById("Important")) {
+        document.getElementById("Important").style.display = "none";
+    }
 }
 
 function hideMessage() {
-	if(document.getElementById('Message')) {
-		document.getElementById('Message').style.display='none';
-	}
+    if (document.getElementById("Message")) {
+        document.getElementById("Message").style.display = "none";
+    }
 }
 
 function insertHistory() {
-	var hist = document.querySelector("#hist");
-	var marker = document.querySelector("#endOfhist");
-	var newDiv = document.createElement("div");
-	
-	newDiv.id = "added_"+ countOfAdded;
-	countOfAdded++;
-	newDiv.classList.add("added");
-	if (document.querySelectorAll(".added").length > 0) {
-		marker = document.querySelector(".added");
-	}
-	hist.insertBefore(newDiv,marker);
-	return newDiv.id;	
+    var hist = document.querySelector("#hist");
+    var marker = document.querySelector("#endOfhist");
+    var newDiv = document.createElement("div");
+
+    newDiv.id = "added_" + countOfAdded;
+    countOfAdded++;
+    newDiv.classList.add("added");
+    if (document.querySelectorAll(".added").length > 0) {
+        marker = document.querySelector(".added");
+    }
+    hist.insertBefore(newDiv, marker);
+    return newDiv.id;
 }
 
 function insertSmallImages() {
-	var target = insertHistory();
-	var req = "/a/loadsmall/" + document.querySelector("#ref").innerText;
-	loadMyPage(req,target);
+    var target = insertHistory();
+    var req = "/a/loadsmall/" + document.querySelector("#ref").innerText;
+    loadMyPage(req, target);
 }
 
 function reroll() {
-	insertSmallImages();
-	loadMyPage("/a/roll","content");
-	var hist = document.querySelector("#hist");
-	while (hist.childElementCount > 4) {
-		document.querySelector(".added:last-of-type").remove();
-	}
+    insertSmallImages();
+    loadMyPage("/a/roll", "content");
+    var hist = document.querySelector("#hist");
+    while (hist.childElementCount > 4) {
+        document.querySelector(".added:last-of-type").remove();
+    }
 }
 
 function goToPower(powerRef) {
-	loadMyPage('/load/' + powerRef + 'raw',"content");
+    loadMyPage('/load/' + powerRef + 'raw', "content");
 }
 
-function hideLoader() {
-	var loaderDiv;
-	loaderDiv = document.getElementById("loader") 
-	loaderDiv.classList.remove("loading");
-	loaderDiv.classList.add("hidden");
-}
+
 
 function moveNewType() {
-	let type = $('#addedData .type');
-	let desc = $('#addedData p');
+    let type = $('#addedData .type');
+    let desc = $('#addedData p');
 
-	type.appendTo('#moreTypes');
-	desc.appendTo('#Description');
+    type.appendTo('#moreTypes');
+    desc.appendTo('#Description');
 }
 
 function moveNewTwist() {
-	let twist = $('#addedData .twist');
-	let desc = $('#addedData p');
+    let twist = $('#addedData .twist');
+    let desc = $('#addedData p');
 
-	twist.appendTo('#moreTwists');
-	desc.appendTo('#Description');
+    twist.appendTo('#moreTwists');
+    desc.appendTo('#Description');
 }
 
 function moveNewFlavor() {
-	let flavor = $('#addedData .flavor');
-	let desc = $('#addedData p');
+    let flavor = $('#addedData .flavor');
+    let desc = $('#addedData p');
 
-	flavor.appendTo('#moreFlavors');
-	desc.appendTo('#Description');
+    flavor.appendTo('#moreFlavors');
+    desc.appendTo('#Description');
 }

@@ -7,24 +7,24 @@
 		echo $output;
 	}
 
-	function controller_List() {		
+	function controller_List() {
 		$page = new \ACWPD\Helpers\Templater('main.frame');
 		$page->setBody('list');
 		$output = $page->getHTML();
 		echo $output;
 	}
 
-	function controller_Credits() {		
+	function controller_Credits() {
 		$page = new \ACWPD\Helpers\Templater('main.frame');
 		$page->setBody('credits');
 		$output = $page->getHTML();
 		echo $output;
 	}
 
-	function controller_Multi($count) {	
+	function controller_Multi($count) {
 		$page = new \ACWPD\Helpers\Templater('main.frame');
 		$output = '';
-		for ($i=0; $i < $count['count']; $i++) { 
+		for ($i=0; $i < $count['count']; $i++) {
 			$page->appendToBody('multi');
 		}
 		$output = $page->getHTML();
@@ -44,21 +44,21 @@
 		$output = $page->getHTML();
 		echo $output;
 	}
-
-	function controller_Load_AJAX($id) {		
+/*
+	function controller_Load_AJAX($id) {
 		$page = new \ACWPD\Helpers\Templater('ajax.frame');
 		$page->setBody('home');
 		$output = $page->getHTML();
 		echo $output;
 	}
-
+*/
 	function controller_Donate() {
 		$page = new \ACWPD\Helpers\Templater('main.frame');
 		$page->setBody('donate');
 		$output = $page->getHTML();
 		echo $output;
 	}
-	
+
 	function controller_Reroll_All() {
 		$page = new \ACWPD\Helpers\Templater('ajax.frame');
 		$page->setBody('home');
