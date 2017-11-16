@@ -16,7 +16,7 @@ var countOfAdded = 0;
 
 function hideLoader() {
     var loaderDiv;
-    loaderDiv = document.getElementById("loader")
+    loaderDiv = document.getElementById("loader");
     loaderDiv.classList.remove("loading");
     loaderDiv.classList.add("hidden");
 }
@@ -120,31 +120,29 @@ function reroll() {
 }
 
 function goToPower(powerRef) {
-    loadMyPage('/load/' + powerRef + 'raw', "content");
+    loadMyPage("/load/" + powerRef + "raw", "content");
 }
 
-
-
 function moveNewType() {
-    let type = $('#addedData .type');
-    let desc = $('#addedData p');
+    let type = $("#addedData .type");
+    let desc = $("#addedData p");
 
-    type.appendTo('#moreTypes');
-    desc.appendTo('#Description');
+    type.appendTo("#moreTypes");
+    desc.appendTo("#Description");
 }
 
 function moveNewTwist() {
-    let twist = $('#addedData .twist');
-    let desc = $('#addedData p');
+    let twist = $("#addedData .twist");
+    let desc = $("#addedData p");
 
-    twist.appendTo('#moreTwists');
-    desc.appendTo('#Description');
+    twist.appendTo("#moreTwists");
+    desc.appendTo("#Description");
 }
 
 function moveNewFlavor() {
-    let flavor = $('#addedData .flavor');
-    let desc = $('#addedData p');
+    let flavor = $("#addedData .flavor");
+    let desc = $("#addedData p");
 
-    flavor.appendTo('#moreFlavors');
-    desc.appendTo('#Description');
+    flavor.appendTo("#moreFlavors");
+    desc.appendTo("#Description");
 }

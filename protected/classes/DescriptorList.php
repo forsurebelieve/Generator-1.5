@@ -74,14 +74,14 @@ use Kreait\Firebase\ServiceAccount as FBServiceAccount;
 				case 'Poker':
 					$return = array_filter($this->Twist, function ($value, $key) {
 						$suits = ['Black','Red','Spades','Hearts','Clubs','Diamonds'];
-						return in_array($v['suit'],$suits,false);
+						return in_array($value['suit'],$suits,false);
 					}, ARRAY_FILTER_USE_BOTH);
 					break;
 
 				case 'Tarot':
 					$return = array_filter($this->Twist, function ($value, $key) {
 						$suits = ['Major Arcana','Cups','Swords','Wands','Coins'];
-						return in_array($v['suit'],$suits,false);
+						return in_array($value['suit'],$suits,false);
 					}, ARRAY_FILTER_USE_BOTH);
 					break;
 
