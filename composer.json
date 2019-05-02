@@ -48,8 +48,9 @@
             "cd /home/tmp",
             "rm -rf *",
             "cd /home/private/",
-            "cp config.php /home/protected/",
-            "cp futharkGenerator.serviceAccount.json /home/protected/"
+            "cp /home/private/config.php /home/protected/",
+            "cp /home/private/futharkGenerator.serviceAccount.json /home/protected/",
+            "cp /home/private/analytics.js /home/public/js/"
         ]
     }
 }
