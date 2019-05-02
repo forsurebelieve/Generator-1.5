@@ -13,8 +13,7 @@ echo $power->getVerboseDescription();
 <script>
 ga('send', {
   hitType: 'event',
-  eventCategory: 'loadPower_noNotes',
-  eventAction: 'click',
-  eventLabel: '<?php echo $power->getReferenceString(); ?>'
+  eventCategory: 'Load',
+  eventAction: '<?php echo implode(":",[$type,$flavor,$twist]);?>'
 });
 </script>

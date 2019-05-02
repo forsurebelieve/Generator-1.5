@@ -154,6 +154,7 @@
 		align-items: flex-start;
 	}
 </style>
+<script>ga('send', 'pageview');</script>
 <div class='group'>
 	<?php foreach ($type as $typeID => $item) : ?>
 	<div class='type'>

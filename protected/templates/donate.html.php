@@ -1,6 +1,7 @@
 <?php
 /* This is a super-simple template, which doesn't actually need PHP. Codacy complained, though. */
 ?>
+<script>ga('send', 'pageview');</script>
 <h2>Donate</h2>
 <p>Hello, friend. This is a fan-made site, and I don't make any money from it. As the notice at the bottom says, this is Wildbow's sandbox we're playing in. However, web hosting (especially when you have a site designed around the concept of many people reloading it) can get a bit expensive. As a result, I am now soliciting donations. If you feel like tossing a few dollars toward keeping this site up and running, please <a href="https://www.nearlyfreespeech.net/contribute/futhark.acwpd.com" target="_blank">click here</a>.</p>
 

@@ -20,11 +20,12 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 		<script>
-			(function(f,u,t,h,a,r,k){f.GoogleAnalyticsObject=t;f[t]||(f[t]=function(){
+			!function(f,u,t,h,a,r,k){f.GoogleAnalyticsObject=t;f[t]||(f[t]=function(){
 			(f[t].q=f[t].q||[]).push(arguments)});f[t].l=+new Date;r=u.createElement(h);
 			k=u.getElementsByTagName(h)[0];r.src=a;k.parentNode.insertBefore(r,k)}
 			(window,document,'ga','script','//www.google-analytics.com/analytics.js');
 		</script>
+
 		<script src="/js/analytics.js"></script>
 
 	</head>

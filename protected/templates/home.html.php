@@ -6,3 +6,11 @@ echo $power->getBigImageTable();
 echo $power->getVerboseDescription();
 
 ?>
+
+<script>
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'Reroll',
+  eventAction: 'click'
+});
+</script>

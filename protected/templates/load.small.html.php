@@ -10,9 +10,8 @@ echo $power->getSmallImageTable();
 
 ?>
 <script>
-ga('send', {
-  hitType: 'event',
-  eventCategory: 'reroll',
-  eventAction: 'click'
+gtag('event', 'Roll', {
+  'event_category': 'Full',
+  'event_label': 'Reroll'
 });
 </script>

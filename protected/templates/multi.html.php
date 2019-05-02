@@ -7,3 +7,10 @@
 	unset($power);
 ?>
 <hr />
+<script>
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'MultiRoll',
+  eventAction: 'click'
+});
+</script>

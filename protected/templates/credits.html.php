@@ -47,6 +47,7 @@
 		]
 	]
 ?>
+<script>ga('send', 'pageview');</script>
 <h2>Credits</h2>
 <p>This is a creative work with many contributors. Special thanks go out to the following, for their efforts:</p>
 <ul>
