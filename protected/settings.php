@@ -26,8 +26,8 @@ return [
         * Firebase database connection provided in kreait/firebase-php
         **************************************************************************/	
         'firebase' => [
-            'DatabaseURL' => 'https://YourFirebase.firebaseio.com',
-            'ServiceAccountJSON' => __DIR__ . '/YourFirebase.serviceAccount.json',
+            'DatabaseURL' => 'https://futharkgenerator.firebaseio.com',
+            'ServiceAccountJSON' => __DIR__ . '/futharkGenerator.serviceAccount.json',
         ],
 
         'powersDB' => [
