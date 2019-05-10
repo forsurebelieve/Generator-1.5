@@ -193,14 +193,6 @@
       "name" : "Wunjo"
     }
   },
-  "saved combinations" : {
-    "example" : {
-      "name" : "user supplied",
-      "notes" : "user supplied",
-      "owner" : "Hdsys0OOAqd64uTzMqczMRXOJpw1",
-      "pattern" : "some string"
-    }
-  },
   "twist" : {
     "Ace-of-Clubs" : {
       "cardname" : "Ace of Clubs",

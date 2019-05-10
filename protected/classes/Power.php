@@ -1,73 +1,118 @@
 <?php
 
+use Psr\Container\ContainerInterface;
+use Slim\Http\Response;
+use Kreait\Firebase\Factory as FBFactory;
+use Kreait\Firebase\ServiceAccount as FBServiceAccount;
+
 namespace ACWPD\Futhark;
 
-	class Power {
-		private $descriptors;
-		protected $type;
-		protected $flavor;
-		protected $twist;
-		
-		public function __construct($build = ['type' => null, 'flavor' => null, 'twist' => 'Poker']) {
-			if ( ! isset($build['type'])) {
-				$build['type'] = null;
-			}
-			if ( ! isset($build['flavor'])) {
-				$build['flavor'] = null;
-			}
-			if ( ! isset($build['twist'])) {
-				$build['twist'] = null;
-			}
-			$this->descriptors = new DescriptorList();
-			$this->twist = new PowerTwist($this->descriptors, $build['twist']);
-			$this->type = new PowerType($this->descriptors, $build['type']);
-			$this->flavor = new PowerFlavor($this->descriptors, $build['flavor']);
-		}
-		
-		public function getBigImageTable() {
-			$output = '<div class="bigImages">' . "\n";
-			$output .= $this->type->getBigImageCell() . "\n";
-			$output .= $this->flavor->getBigImageCell() . "\n";
-			$output .= $this->twist->getBigImageCell() . "\n";
-			$output .= '<div class="typeName">' . $this->type . '</div>' . "\n";
-			$output .= '<div class="flavorName">' . $this->flavor . '</div>' . "\n";
-			$output .= '<div class="twistName">' . $this->twist . '</div>' . "\n";
-			$output .= '<button id="rollType" ic-get-from="/a/roll/type" ic-target="#addedData" ic-replace-target="true" ic-indicator="#type-load">Roll Another</button><i id="type-load" class="lds-dual-ring"></i>' . "\n";
-			$output .= '<button id="rollFlavor" ic-get-from="/a/roll/flavor" ic-target="#addedData" ic-replace-target="true" ic-indicator="#flavor-load">Roll Another</button><i id="flavor-load" class="lds-dual-ring"></i>' . "\n";
-			$output .= '<button id="rollTwist" ic-get-from="/a/roll/twist" ic-target="#addedData" ic-replace-target="true" ic-indicator="#twist-load">Draw Again</button><i id="twist-load" class="lds-dual-ring"></i>' . "\n";
-			$output .= '<div id="moreTypes"></div>' . "\n";
-			$output .= '<div id="moreFlavors"></div>' . "\n";
-			$output .= '<div id="moreTwists"></div>' . "\n";
-			$output .= '</div>' . "\n";
-			return $output;
-		}
-	
-		public function getSmallImageTable() {
-			$output = '<div class="smallImages" onclick="goToPower(' . "'" . $this->getReferenceString() . "/'" . ')">' . "\n";
-			$output .= $this->type->getSmallImageCell() . "\n";
-			$output .= $this->flavor->getSmallImageCell() . "\n";
-			$output .= $this->twist->getSmallImageCell() . "\n";
-			$output .= '</div>' . "\n";
-			
-			return $output;
-		}
-		
-		public function getVerboseDescription() {
-			$output = '<div class="verboseDescription" id="Description">' . "\n";
-			$output .= $this->type->getVerboseDescription() . "\n";
-			$output .= $this->flavor->getVerboseDescription() . "\n";
-			$output .= $this->twist->getVerboseDescription() . "\n";
-			$output .= '</div>' . "\n";
-			$output .= '<a href="/load/' 
-				. implode('/',[$this->type->getReferenceString(),$this->flavor->getReferenceString(),$this->twist->getReferenceString()])
-				 . '/">Permalink</a>' . "\n";
-			$output .= '<div class="share-button"></div>';
-			$output .= '<div id="ref" class="hidden">' . $this->getReferenceString() . '</div>';
-			return $output;
-		}
-		
-		public function getReferenceString() {
-			return implode('/',[$this->type->getReferenceString(),$this->flavor->getReferenceString(),$this->twist->getReferenceString()]);
-		}
-			
+class Power {
+	protected $container;
+	private $descriptors;
+	protected $type;
+	protected $flavor;
+	protected $twist;
+	private $powersDB;
+
+	public function __construct(ContainerInterface $container) {
+		$this->container = $container;
+		$this->loadPowersDB();
 	}
+
+	private function loadPowersDB() : void {
+		$location = $this->container->get('settings')['powersDB']['location'];
+		if (\file_exists($location)) {
+			$this->powersDB = \json_decode(\file_get_contents($location));
+		} else {
+			throw new \Exception('Powers DB Not found!', 1);			
+		}
+	}
+
+	public function withTwist(String $twist = 'random') : self {
+		if ($twist == 'random') {
+			$min = 0;
+			$max = \count($this->powersDB['twist']);
+			$rand = \mt_rand($min,$max);
+			$this->twist[] = \array_slice($this->powersDB['twist'],$rand,1);
+		} else {
+			$this->twist[] = $this->powersDB['twist'][$twist];
+		}
+		
+		return self;
+	}
+
+	public function withRandomTwist() : self {
+		return $this->withTwist('random');
+	}
+
+	public function withFlavor(String $flavor = 'random') : self {
+		if ($flavor == 'random') {
+			$min = 0;
+			$max = \count($this->powersDB['flavor']);
+			$rand = \mt_rand($min,$max);
+			$this->flavor[] = \array_slice($this->powersDB['flavor'],$rand,1);
+		} else {
+			$this->flavor[] = $this->powersDB['flavor'][$flavor];
+		}
+
+		return self;
+	}
+
+	public function withRandomFlavor() : self {
+		return $this->withFlavor('random');
+	}
+
+	public function withType(String $type = 'random') : self {
+		if ($type == 'random') {
+			$min = 0;
+			$max = \count($this->powersDB['type']);
+			$rand = \mt_rand($min,$max);
+			$this->type[] = \array_slice($this->powersDB['type'],$rand,1);
+		} else {
+			$this->type[] = $this->powersDB['type'][$type];
+		}
+		
+		return self;
+	}
+
+	public function withRandomType() : self {
+		return $this->withType('random');
+	}
+
+	public function with(String $selector, String $choice = 'random') : self {
+		switch (\strtolower($selector)) {
+			case 'type':
+				return $this->withType($choice);
+				break;
+
+			case 'twist':
+				return $this->withTwist($choice);
+				break;
+			
+			case 'flavor':
+				return $this->withFlavor($choice);
+				break;
+			
+			default:
+				throw new \Exception('Invalid selector: ' . $selector . ' (must be one of Type, Flavor, Twist).', 1);				
+				break;
+		}
+	}
+
+	public function withAllData() : self {
+		$this->type = $this->powersDB['type'];
+		$this->flavor = $this->powersDB['flavor'];
+		$this->twist = $this->powersDB['twist'];
+		return self;
+	}
+
+	public function getPowerData() : Array {
+		return [
+			'type' => $this->type,
+			'flavor' => $this->flavor,
+			'twist' => $this->twist
+		];
+	}
+
+}
