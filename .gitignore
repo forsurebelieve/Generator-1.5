@@ -47,7 +47,6 @@ js/analytics.js
 *.pdn
 
 /public/img/cards/original Size.zip
-protected/config.php
 public/js/analytics.js
 protected/vendor/composer/autoload_static.php
 protected/futharkGenerator.serviceAccount.json
