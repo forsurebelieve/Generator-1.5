@@ -1,16 +1,33 @@
-<?php 
-	define('SITE_ROOT','//' . $_SERVER['SERVER_NAME']);
-	
-	if (isset($_SERVER['NFSN_SITE_ROOT'])) {
-		define('DOCUMENT_ROOT', $_SERVER['NFSN_SITE_ROOT']);
-	} else {
-		define('DOCUMENT_ROOT', dirname($_SERVER['DOCUMENT_ROOT']) . '/');
-	}
+<?php
+if (PHP_SAPI == 'cli-server') {
+    // To help the built-in PHP dev server, check if the request was actually for
+    // something which should probably be served as a static file
+    $url  = parse_url($_SERVER['REQUEST_URI']);
+    $file = __DIR__ . $url['path'];
+    if (is_file($file)) {
+        return false;
+    }
+}
 
-	require_once DOCUMENT_ROOT . 'protected/config.php';
+require __DIR__ . '/../protected/vendor/autoload.php';
 
-	require_once DOCUMENT_ROOT . 'protected/vendor/autoload.php';
-	
-	$title = 'Futhark Power Generator' . APP_VERSION;
-	
-	require_once DOCUMENT_ROOT . 'protected/routes.php';
+session_start();
+
+// Instantiate the app
+$settings = require __DIR__ . '/../protected/settings.php';
+$app = new \Slim\App($settings);
+
+// Set up dependencies
+$dependencies = require __DIR__ . '/../protected/dependencies.php';
+$dependencies($app);
+
+// Register middleware
+$middleware = require __DIR__ . '/../protected/middleware.php';
+$middleware($app);
+
+// Register routes
+$routes = require __DIR__ . '/../protected/routes.php';
+$routes($app);
+
+// Run app
+$app->run();
