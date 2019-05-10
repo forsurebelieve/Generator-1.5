@@ -1,2 +1,2 @@
-  ga("create", "googleTrackingID", "auto");
-  ga("send", "pageview");
+ga('create', 'YourTrackingCode', 'domain.example.com');
+ga('send', 'pageview');
