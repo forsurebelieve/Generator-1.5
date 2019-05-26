@@ -1,5 +1,6 @@
 <div class="Twist">
-	<div title="Twist: <?= $twist['name']; ?>" class="Image" style="background-image:url(<?= $twist['image']; ?>);"></div>
-	<div class="Name"><?= $twist['name']; ?></div>
+	<div  title="Twist: <?= $twist[$i]['cardname']; ?>" class="Image<?= ($twist[$i]['orientation'] == 'Merkstave') ? ' reversed' : '' ?>" style="background-image:url(/img/cards/<?= $twist[$i]['image']; ?>);"></div>
+	<div class="Name"><?= $twist[$i]['cardname']; ?></div>
 	<div class="Button"></div>
+	<input type="hidden" class="p_gen" name="twist_<?= $_SERVER['REQUEST_TIME']; ?>_<?= $i; ?>" value="<?= $twist[$i]['short']; ?>" />
 </div>

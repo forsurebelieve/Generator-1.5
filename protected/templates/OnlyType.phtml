@@ -1,5 +1,6 @@
 <div class="Type">
-	<div title="Type: <?= $type['name']; ?>" class="Image" style="background-image:url(<?= $type['image']; ?>);"></div>
-	<div class="Name"><?= $type['name']; ?></div>
+	<div title="Type: <?= $type[$i]['name']; ?>" class="Image" style="background-image:url(/img/zodiac/<?= $type[$i]['image']; ?>);"></div>
+	<div class="Name"><?= $type[$i]['name']; ?></div>
 	<div class="Button"></div>
+	<input type="hidden" class="p_gen" name="type_<?= $_SERVER['REQUEST_TIME']; ?>_<?= $i; ?>" value="<?= $type[$i]['short']; ?>" />
 </div>

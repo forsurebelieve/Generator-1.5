@@ -81,11 +81,11 @@
 			</div>
 		</div>
 		<div class="content" id="content">
-			<p>Your Roll: <button href="#" id="reroll" ic-get-from="/a/roll" ic-target="#content" ic-on-beforeSend="insertSmallImages()">Start Over</button></p>
+			<p>Your Roll: <button href="#" id="reroll" ic-get-from="/a/roll/" ic-target="#content">Start Over</button></p>
 			<div id="bigImages" class="bigImages">
-<?php for ($i = 0; $i < count($type); $i++): ?>
+<?php for ($i=0; $i < max(count($type),count($flavor),count($twist)); $i++): ?>
 				<div class="Type">
-					<div title="Type: <?= $type[$i]['name']; ?>" class="Image" style="background-image:url(<?= $type[$i]['image']; ?>);"></div>
+					<div title="Type: <?= $type[$i]['name']; ?>" class="Image" style="background-image:url(/img/zodiac/<?= $type[$i]['image']; ?>);"></div>
 					<div class="Name"><?= $type[$i]['name']; ?></div>
 					<div class="Button">
 <?php if ($i == 0): ?>
@@ -103,12 +103,11 @@
 <?php endif; ?>
 						<i id="type-load" class="lds-dual-ring"></i>
 					</div>
+					<input type="hidden" class="p_gen" name="type_<?= $_SERVER['REQUEST_TIME']; ?>_<?= $i; ?>" value="<?= $type[$i]['short']; ?>" />
 				</div>
-<?php endfor; ?>
-				
-<?php for ($i = 0; $i < count($flavor); $i++): ?>
+
 				<div class="Flavor">
-					<div title="Flavor: <?= $flavor[$i]['name']; ?>" class="Image" style="background-image:url(<?= $flavor[$i]['image']; ?>);"></div>
+					<div title="Flavor: <?= $flavor[$i]['name']; ?>" class="Image" style="background-image:url(/img/runes/<?= $flavor[$i]['image']; ?>);"></div>
 					<div class="Name"><?= $flavor[$i]['name']; ?></div>
 					<div class="Button">
 <?php if ($i == 0): ?>
@@ -126,13 +125,12 @@
 <?php endif; ?>
 						<i id="flavor-load" class="lds-dual-ring"></i>
 					</div>
+					<input type="hidden" class="p_gen" name="flavor_<?= $_SERVER['REQUEST_TIME']; ?>_<?= $i; ?>" value="<?= $flavor[$i]['short']; ?>" />
 				</div>
-<?php endfor; ?>
 				
-<?php for ($i = 0; $i < count($twist); $i++): ?>
-				<div title="Twist: <?= $twist[$i]['name']; ?>" class="Twist">
-					<div class="Image" style="background-image:url(<?= $twist[$i]['image']; ?>);"></div>
-					<div class="Name"><?= $twist[$i]['name']; ?></div>
+				<div class="Twist">
+					<div  title="Twist: <?= $twist[$i]['cardname']; ?>" class="Image<?= ($twist[$i]['orientation'] == 'Merkstave') ? ' reversed' : '' ?>" style="background-image:url(/img/cards/<?= $twist[$i]['image']; ?>);"></div>
+					<div class="Name"><?= $twist[$i]['cardname']; ?></div>
 					<div class="Button">
 <?php if ($i == 0): ?>
 						<button 
@@ -149,6 +147,7 @@
 <?php endif; ?>
 						<i id="twist-load" class="lds-dual-ring"></i>
 					</div>
+					<input type="hidden" class="p_gen" name="twist_<?= $_SERVER['REQUEST_TIME']; ?>_<?= $i; ?>" value="<?= $twist[$i]['short']; ?>" />
 				</div>
 <?php endfor; ?>
 			</div>
@@ -160,41 +159,29 @@
 				<hr />
 <?php endif; ?>
 <?php if (isset($type[$i])): ?>
-				<p><?= $type[$i]['verbose']; ?></p>
+				<p>You rolled the <strong><?= $type[$i]['name']; ?></strong> sign! This results in a <strong><?= $type[$i]['class']; ?></strong>-class power. <strong><?= $type[$i]['class']; ?>s</strong> have <?= $type[$i]['description']; ?></p>
 <?php endif; ?>
 <?php if (isset($flavor[$i])): ?>
-				<p><?= $flavor[$i]['verbose']; ?></p>
+				<p>You also rolled the <strong><?= $flavor[$i]['name']; ?></strong> rune! This results in the flavor <strong><?= $flavor[$i]['flavor']; ?></strong>, which gives a power that <?= $flavor[$i]['description']; ?>. Optionally, if your power requires an element in order to manifest, the element associated with this rune is <strong><?= $flavor[$i]['element']; ?></strong>, which roughly correlates to <?= $flavor[$i]['elementname']; ?> (but you can ignore this if it doesn't fit!).</p>
 <?php endif; ?>
 <?php if (isset($twist[$i])): ?>
-				<p><?= $twist[$i]['verbose']; ?></p>
+				<p>Finally, you drew the <strong><?= $twist[$i]['cardname']; ?></strong>. <?= $twist[$i]['description']; ?></p>
 <?php endif; ?>
 <?php endfor; ?>
 			</div>
-			<div class="shortDescription hidden" id="ShortDesc">
-<?php for ($i=0; $i < max(count($type),count($flavor),count($twist)); $i++): ?>
-<?php if (isset($type[$i])): ?>
-				<p><?= $type[$i]['short']; ?></p>
-<?php endif; ?>
-<?php if (isset($flavor[$i])): ?>
-				<p><?= $flavor[$i]['short']; ?></p>
-<?php endif; ?>
-<?php if (isset($twist[$i])): ?>
-				<p><?= $twist[$i]['short']; ?></p>
-<?php endif; ?>
-<?php endfor; ?>
-			</div>
-
+			
+			<div class="spacer"></div>
 		</div>
 		
 		<div class="footer">
 			<p>Legal Stuff:</p>
 			<p>The Futhark Generator is used to create powers that would be fitting to Wildbow's web serial Worm. Classifications, story, characters, and other elements are his by right, we're just playing in his sandbox. For more information, click <a href="/credits">here</a>.</p>
 		</div>
-		<div id="loader" class="fullscreen" style="display:none;">
-			<svg class="circular">
-				<circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-miterlimit="20"/>
-			</svg>
-		</div>
+		
+		<form id="keys" class="hidden">
+				<input type="hidden" class="p_gen" name="default" value="probably valid" />
+		</form>
+
 	</body>
     <script src="/js/jquery-3.2.0.js"></script>
 	<script src="/js/intercooler-1.1.1.min.js"></script>

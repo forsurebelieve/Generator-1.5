@@ -1,5 +1,6 @@
 <div class="Flavor">
-	<div title="Flavor: <?= $flavor['name']; ?>" class="Image" style="background-image:url(<?= $flavor['image']; ?>);"></div>
-	<div class="Name"><?= $flavor['name']; ?></div>
+	<div title="Flavor: <?= $flavor[$i]['name']; ?>" class="Image" style="background-image:url(/img/runes/<?= $flavor[$i]['image']; ?>);"></div>
+	<div class="Name"><?= $flavor[$i]['name']; ?></div>
 	<div class="Button"></div>
+	<input type="hidden" class="p_gen" name="flavor_<?= $_SERVER['REQUEST_TIME']; ?>_<?= $i; ?>" value="<?= $flavor[$i]['short']; ?>" />
 </div>
