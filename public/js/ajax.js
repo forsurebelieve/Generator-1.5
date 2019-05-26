@@ -15,35 +15,35 @@ var siteName = "Futhark Power Generator 1.5.4";
 var countOfAdded = 0;
 
 function hideLoader() {
-    var loaderDiv;
-    loaderDiv = document.getElementById("loader");
-    loaderDiv.classList.remove("loading");
-    loaderDiv.classList.add("hidden");
+	var loaderDiv;
+	loaderDiv = document.getElementById("loader");
+	loaderDiv.classList.remove("loading");
+	loaderDiv.classList.add("hidden");
 }
 
 function updateFormWithPowerData(e) {
-    /* 
-        Updates a form field with data parsed from the current DOM, detailing the power.
-        
-    */
-    let a = document.querySelectorAll('.bigImages input.p_gen');
-    let input_ = document.createElement('input');
-    input_.name = 'power';
-    input_.type = 'hidden';
+	/* 
+		Updates a form field with data parsed from the current DOM, detailing the power.
+		
+	*/
+	let a = document.querySelectorAll('.bigImages input.p_gen');
+	let input_ = document.createElement('input');
+	input_.name = 'power';
+	input_.type = 'hidden';
 
-    a.forEach(function (e) {
-        let e_type = e.name.slice(0,e.name.indexOf('_'));
-        input_.value += e_type+':'+e.value+';';
-    });
-    while (keys.children[1]) {
-        keys.children[1].remove();
-    }
-    keys.appendChild(input_);
-    console.log('done!');
+	a.forEach(function (e) {
+		let e_type = e.name.slice(0,e.name.indexOf('_'));
+		input_.value += e_type+':'+e.value+';';
+	});
+	while (keys.children[1]) {
+		keys.children[1].remove();
+	}
+	keys.appendChild(input_);
+	console.log('done!');
 }
 
 $(document).on('elementAdded.ic', function(){
-    updateFormWithPowerData();
+	updateFormWithPowerData();
 });
 
 document.addEventListener('load',updateFormWithPowerData());
