@@ -1,45 +1,42 @@
 <?php
 
-use Psr\Container\ContainerInterface;
-use Slim\Http\Response;
-use Kreait\Firebase\Factory as FBFactory;
-use Kreait\Firebase\ServiceAccount as FBServiceAccount;
-
 namespace ACWPD\Futhark;
 
 class Power {
 	protected $container;
 	private $descriptors;
+	const validSelectors = ['type', 'flavor','twist'];
 	protected $type;
 	protected $flavor;
 	protected $twist;
 	private $powersDB;
 
-	public function __construct(ContainerInterface $container) {
+	public function __construct(\Psr\Container\ContainerInterface $container) {
 		$this->container = $container;
 		$this->loadPowersDB();
 	}
 
-	private function loadPowersDB() : void {
+	public function loadPowersDB() : void {
 		$location = $this->container->get('settings')['powersDB']['location'];
 		if (\file_exists($location)) {
-			$this->powersDB = \json_decode(\file_get_contents($location));
+			$this->powersDB = \json_decode(\file_get_contents($location),true);
 		} else {
 			throw new \Exception('Powers DB Not found!', 1);			
 		}
 	}
 
 	public function withTwist(String $twist = 'random') : self {
+		
 		if ($twist == 'random') {
 			$min = 0;
 			$max = \count($this->powersDB['twist']);
 			$rand = \mt_rand($min,$max);
-			$this->twist[] = \array_slice($this->powersDB['twist'],$rand,1);
+			$this->twist[] = \array_slice($this->powersDB['twist'],$rand,1)[0];
 		} else {
 			$this->twist[] = $this->powersDB['twist'][$twist];
 		}
+		return $this;
 		
-		return self;
 	}
 
 	public function withRandomTwist() : self {
@@ -51,12 +48,12 @@ class Power {
 			$min = 0;
 			$max = \count($this->powersDB['flavor']);
 			$rand = \mt_rand($min,$max);
-			$this->flavor[] = \array_slice($this->powersDB['flavor'],$rand,1);
+			$this->flavor[] = \array_slice($this->powersDB['flavor'],$rand,1)[0];
 		} else {
 			$this->flavor[] = $this->powersDB['flavor'][$flavor];
 		}
 
-		return self;
+		return $this;
 	}
 
 	public function withRandomFlavor() : self {
@@ -68,12 +65,12 @@ class Power {
 			$min = 0;
 			$max = \count($this->powersDB['type']);
 			$rand = \mt_rand($min,$max);
-			$this->type[] = \array_slice($this->powersDB['type'],$rand,1);
+			$this->type[] = \array_slice($this->powersDB['type'],$rand,1)[0];
 		} else {
 			$this->type[] = $this->powersDB['type'][$type];
 		}
 		
-		return self;
+		return $this;
 	}
 
 	public function withRandomType() : self {
@@ -81,30 +78,31 @@ class Power {
 	}
 
 	public function with(String $selector, String $choice = 'random') : self {
-		switch (\strtolower($selector)) {
+		
+		switch ($selector) {
 			case 'type':
 				return $this->withType($choice);
+				break;
+
+			case 'flavor':
+				return $this->withFlavor($choice);
 				break;
 
 			case 'twist':
 				return $this->withTwist($choice);
 				break;
 			
-			case 'flavor':
-				return $this->withFlavor($choice);
-				break;
-			
 			default:
-				throw new \Exception('Invalid selector: ' . $selector . ' (must be one of Type, Flavor, Twist).', 1);				
+				throw new \Exception('Invalid selector: ' . $selector . ' (must be one of' . \implode('\', \'', self::validSelectors ) .  '\').', 1);
 				break;
-		}
+		}				
 	}
 
 	public function withAllData() : self {
 		$this->type = $this->powersDB['type'];
 		$this->flavor = $this->powersDB['flavor'];
 		$this->twist = $this->powersDB['twist'];
-		return self;
+		return $this;
 	}
 
 	public function getPowerData() : Array {
