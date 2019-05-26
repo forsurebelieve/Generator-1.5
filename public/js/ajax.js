@@ -6,7 +6,7 @@
  *
  * For the latest version, please visit: https://github.com/farfromunique/ACWPD_Tools
  *
- * This code is copyright (C) 2017 Aaron Coquet / ACWPD
+ * This code is copyright (C) 2019 Aaron Coquet / ACWPD
  */
 
 
@@ -21,128 +21,29 @@ function hideLoader() {
     loaderDiv.classList.add("hidden");
 }
 
-function adjustMyURL(displayURL) {
-    window.history.pushState({ site: sRoot }, siteName, "/" + displayURL + "/");
-}
+function updateFormWithPowerData(e) {
+    /* 
+        Updates a form field with data parsed from the current DOM, detailing the power.
+        
+    */
+    let a = document.querySelectorAll('.bigImages input.p_gen');
+    let input_ = document.createElement('input');
+    input_.name = 'power';
+    input_.type = 'hidden';
 
-function loadMyPage(pageName, targetDiv) {
-    var ajax;
-    var loaderDiv;
-    var timer;
-    loaderDiv = document.getElementById("loader");
-    loaderDiv.classList.remove("hidden");
-    loaderDiv.classList.add("loading");
-    timer = window.setTimeout(function() { hideLoader(); }, 500);
-    ajax = new XMLHttpRequest();
-    ajax.open("GET", sRoot + pageName, true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState === 4) {
-            document.getElementById(targetDiv).innerHTML = ajax.responseText;
-            loaderDiv.classList.remove("loading");
-            loaderDiv.classList.add("hidden");
-        }
-    };
-    ajax.send(null);
-
-
-}
-
-function postToPage(pageName, displayURL, postData) {
-    var ajax;
-    document.getElementById("content").innerHTML = "Loading ...";
-    ajax = new XMLHttpRequest();
-    ajax.open("POST", sRoot + pageName, true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState === 4) {
-            document.getElementById("content").innerHTML = ajax.responseText;
-        }
-    };
-    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    ajax.send(postData);
-    adjustMyURL(displayURL);
-}
-
-function postAndRedirect(pageName, displayURL, postData, redirectTo) {
-    var ajax;
-    document.getElementById("content").innerHTML = "Loading ...";
-    ajax = new XMLHttpRequest();
-    ajax.open("POST", sRoot + pageName, true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState === 4) {
-            loadMyPage(redirectTo, displayURL, "content");
-        }
-    };
-    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    ajax.send(postData);
-    adjustMyURL(displayURL);
-}
-
-function DismissImportant() {
-    if (document.getElementById("Important")) {
-        document.getElementById("Important").style.display = "none";
+    a.forEach(function (e) {
+        let e_type = e.name.slice(0,e.name.indexOf('_'));
+        input_.value += e_type+':'+e.value+';';
+    });
+    while (keys.children[1]) {
+        keys.children[1].remove();
     }
+    keys.appendChild(input_);
+    console.log('done!');
 }
 
-function hideMessage() {
-    if (document.getElementById("Message")) {
-        document.getElementById("Message").style.display = "none";
-    }
-}
+$(document).on('elementAdded.ic', function(){
+    updateFormWithPowerData();
+});
 
-function insertHistory() {
-    var hist = document.querySelector("#hist");
-    var marker = document.querySelector("#endOfhist");
-    var newDiv = document.createElement("div");
-
-    newDiv.id = "added_" + countOfAdded;
-    countOfAdded++;
-    newDiv.classList.add("added");
-    if (document.querySelectorAll(".added").length > 0) {
-        marker = document.querySelector(".added");
-    }
-    hist.insertBefore(newDiv, marker);
-    return newDiv.id;
-}
-
-function insertSmallImages() {
-    var target = insertHistory();
-    var req = "/a/loadsmall/" + document.querySelector("#ref").innerText;
-    loadMyPage(req, target);
-}
-
-function reroll() {
-    insertSmallImages();
-    loadMyPage("/a/roll", "content");
-    var hist = document.querySelector("#hist");
-    while (hist.childElementCount > 4) {
-        document.querySelector(".added:last-of-type").remove();
-    }
-}
-
-function goToPower(powerRef) {
-    loadMyPage("/load/" + powerRef + "raw", "content");
-}
-
-function moveNewType() {
-    let type = $("#addedData .type");
-    let desc = $("#addedData p");
-
-    type.appendTo("#moreTypes");
-    desc.appendTo("#Description");
-}
-
-function moveNewTwist() {
-    let twist = $("#addedData .twist");
-    let desc = $("#addedData p");
-
-    twist.appendTo("#moreTwists");
-    desc.appendTo("#Description");
-}
-
-function moveNewFlavor() {
-    let flavor = $("#addedData .flavor");
-    let desc = $("#addedData p");
-
-    flavor.appendTo("#moreFlavors");
-    desc.appendTo("#Description");
-}
+document.addEventListener('load',updateFormWithPowerData());
