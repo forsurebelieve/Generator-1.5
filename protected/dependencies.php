@@ -13,7 +13,8 @@ return function (App $app) {
 	$container['logger'] = function ($c) {
 		$settings = $c->get('settings')['logger'];
 		$logger = new \Monolog\Logger($settings['name']);
-		$logger->pushProcessor(new \Monolog\Processor\UidProcessor());
+		//$logger->pushProcessor(new \Monolog\Processor\IntrospectionProcessor());
+		$logger->pushHandler(new \Monolog\Handler\ChromePHPHandler());
 		$logger->pushHandler(new \Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
 		return $logger;
 	};
@@ -21,8 +22,8 @@ return function (App $app) {
 	// firebase
 	$container['firebase'] = function ($c) {
 		$settings = $c->get('settings')['firebase'];
-		$serviceAccount = FBServiceAccount::fromValue($settings['ServiceAccountJSON']);
-		$firebase = (new FBFactory)
+		$serviceAccount = \Kreait\Firebase\ServiceAccount::fromJsonFile($settings['ServiceAccountJSON']);
+		$firebase = (new \Kreait\Firebase\Factory)
 			->withServiceAccount($serviceAccount)
 			->withDatabaseUri($settings['DatabaseURL'])
 			->create();
@@ -56,7 +57,7 @@ return function (App $app) {
 				->write('Method must be one of: ' . implode(', ', $methods));
 		};
 	};
-
+/*
 	// 500 handler
 	$container['errorHandler'] = function ($c) {
 		return function ($request, $response, $exception) use ($c) {
@@ -64,5 +65,5 @@ return function (App $app) {
 				->withHeader('Content-Type', 'text/html')
 				->write('Something went wrong!');
 		};
-	};
+	};*/
 };
