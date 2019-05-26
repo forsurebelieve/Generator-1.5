@@ -191,6 +191,7 @@ spacer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: 1fr;
+    width: 75%;
   }
 
   .bigImages div {
@@ -233,7 +234,7 @@ spacer {
     grid-area: Image;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
 
 .hist .smallImages div {
