@@ -26,7 +26,7 @@ $middleware = require __DIR__ . '/../protected/middleware.php';
 $middleware($app);
 
 // Register routes
-$routes = require __DIR__ . '/../protected/routes.php';
+$routes = require __DIR__ . '/../protected/slim-routes.php';
 $routes($app);
 
 // Run app
