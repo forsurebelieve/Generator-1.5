@@ -27,7 +27,7 @@
         }
     },
     "scripts": {
-        "serve": "php -S localhost:800 -t public/",
+        "serve": "php -S localhost:8000 -t public/",
         "nfsn-install": [
             "# Note: the repo should be downloaded to /home/tmp/{something}",
             "ls -d /home/protected/* | xargs rm -rf",
