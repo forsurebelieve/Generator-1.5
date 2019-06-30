@@ -29,7 +29,7 @@ class Power {
 		
 		if ($twist == 'random') {
 			$min = 0;
-			$max = \count($this->powersDB['twist']);
+			$max = \count($this->powersDB['twist'])-1;
 			$rand = \mt_rand($min,$max);
 			$this->twist[] = \array_slice($this->powersDB['twist'],$rand,1)[0];
 		} else {
@@ -46,8 +46,10 @@ class Power {
 	public function withFlavor(String $flavor = 'random') : self {
 		if ($flavor == 'random') {
 			$min = 0;
-			$max = \count($this->powersDB['flavor']);
+			$max = \count($this->powersDB['flavor'])-1;
 			$rand = \mt_rand($min,$max);
+			$log = $this->container->get('logger');
+			$log->info('Generating Flavor',['$rand' => $rand, 'flavorDB size' => count($this-powersDB['flavor']),'array' => $this->powersDB['flavor'][$rand]]);
 			$this->flavor[] = \array_slice($this->powersDB['flavor'],$rand,1)[0];
 		} else {
 			$this->flavor[] = $this->powersDB['flavor'][$flavor];
@@ -63,7 +65,7 @@ class Power {
 	public function withType(String $type = 'random') : self {
 		if ($type == 'random') {
 			$min = 0;
-			$max = \count($this->powersDB['type']);
+			$max = \count($this->powersDB['type'])-1;
 			$rand = \mt_rand($min,$max);
 			$this->type[] = \array_slice($this->powersDB['type'],$rand,1)[0];
 		} else {
