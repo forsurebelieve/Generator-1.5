@@ -51,3 +51,4 @@ public/js/analytics.js
 protected/vendor/composer/autoload_static.php
 protected/futharkGenerator.serviceAccount.json
 logs/*
+\.vscode/
