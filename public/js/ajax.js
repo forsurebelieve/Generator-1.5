@@ -9,18 +9,6 @@
  * This code is copyright (C) 2019 Aaron Coquet / ACWPD
  */
 
-
-var sRoot = document.location.origin; // Default: document.location.origin
-var siteName = "Futhark Power Generator 1.5.4";
-var countOfAdded = 0;
-
-function hideLoader() {
-	var loaderDiv;
-	loaderDiv = document.getElementById("loader");
-	loaderDiv.classList.remove("loading");
-	loaderDiv.classList.add("hidden");
-}
-
 function updateFormWithPowerData(e) {
 	/* 
 		Updates a form field with data parsed from the current DOM, detailing the power.
@@ -42,8 +30,15 @@ function updateFormWithPowerData(e) {
 	console.log('done!');
 }
 
+document.addEventListener('load',updateFormWithPowerData());
+
+function enableTrashButtons() {
+	document.querySelectorAll('button.remove').forEach(function(e){e.addEventListener('click',function(){this.parentNode.parentNode.remove();});});
+}
+
+document.addEventListener('load',enableTrashButtons());
+
 $(document).on('elementAdded.ic', function(){
 	updateFormWithPowerData();
+	enableTrashButtons();
 });
-
-document.addEventListener('load',updateFormWithPowerData());
