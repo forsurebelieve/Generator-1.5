@@ -920,7 +920,7 @@
     },{
       "cardname" : "Reversed Judgement - XX",
       "short" : "reversed_judgement_xx",
-      "description" : "Finally, you drew <strong>Judgement - XX, Reversed</strong>. Your power seems to to be deteriorating in some fashion. Maybe it's maximum intensity is decreasing or your Control over it is getting worse but either way it's not like it use to be.",
+      "description" : "Your power seems to to be deteriorating in some fashion. Maybe it's maximum intensity is decreasing or your Control over it is getting worse but either way it's not like it use to be.",
       "image" : "20-judgement.png",
       "orientation" : "Merkstave",
       "suit" : "Major Arcana",
