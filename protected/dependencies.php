@@ -23,8 +23,9 @@ return function (App $app) {
     // firebase
     $container['firebase'] = function ($c) {
         $settings = $c->get('settings')['firebase'];
-        // $serviceAccount = \Kreait\Firebase\ServiceAccount::fromJsonFile($settings['ServiceAccountJSON']);
+        $c->get('logger')->info('Firebase get');
         $serviceAccount = \Kreait\Firebase\ServiceAccount::fromArray([$settings]);
+        $c->get('logger')->info('Service Account has ClientID' . $serviceAccount->hasClientId() . ', has PrivateKey' . $serviceAccount->hasPrivateKey());
         $firebase = (new \Kreait\Firebase\Factory)
             ->withServiceAccount($serviceAccount)
             ->withDatabaseUri($settings['DatabaseURL'])
