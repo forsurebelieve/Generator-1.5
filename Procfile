@@ -1,1 +1,1 @@
-web: heroku-php-nginx -l logs/app.log -v public/
+web: vendor/bin/heroku-php-apache2 -l logs/app.log public/
