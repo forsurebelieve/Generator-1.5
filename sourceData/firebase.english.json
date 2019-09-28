@@ -203,7 +203,7 @@
     "orientation": "Regular",
     "suit": "Black",
     "value": 1,
-    "class": "black_01",
+    "class": "jokerblack",
     "extra_info": ""
   },
   {
@@ -1743,7 +1743,7 @@
     "orientation": "Regular",
     "suit": "Red",
     "value": 1,
-    "class": "red_01",
+    "class": "jokerred",
     "extra_info": ""
   },
   {
