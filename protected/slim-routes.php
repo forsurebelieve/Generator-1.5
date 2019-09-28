@@ -111,6 +111,7 @@ return function (App $app) {
         $powerParts['notes']['flavor'] = $inputs['notes_flavor'] ?? '';
         $powerParts['notes']['twist'] = $inputs['notes_twist'] ?? '';
 
+        $logger->info('Vars', $_ENV);
         $db = $container->get('firebase')->getDatabase();
         $logger->info('Firebase Get!');
         $matches = [];
