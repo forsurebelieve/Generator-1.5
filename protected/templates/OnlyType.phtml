@@ -1,0 +1,16 @@
+<div class="media mt-1 pt-1 type">
+	<img class="mr-3 ml-1 my-1 <?= $type[0]['short']; ?>" />
+	<div class="media-body">
+		<h5 class="mt-0"><?= $type[0]['name']; ?></h5>
+		<p>
+			You rolled the <strong><?= $type[0]['name']; ?></strong> sign!
+			This results in a <strong><?= $type[0]['class']; ?></strong>-class power.
+			<strong><?= $type[0]['class']; ?>s</strong> have <?= $type[0]['description']; ?>.
+		</p>
+	</div>
+	<div class="icon remove" ic-action-target="closest .media" ic-action="remove">
+		<svg width="20" height="20">
+			<use href="#icon-delete" width="20" height="20"/>
+		</svg>
+	</div>
+</div>

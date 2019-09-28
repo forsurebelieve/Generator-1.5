@@ -6,143 +6,56 @@
  *
  * For the latest version, please visit: https://github.com/farfromunique/ACWPD_Tools
  *
- * This code is copyright (C) 2017 Aaron Coquet / ACWPD
+ * This code is copyright (C) 2019 Aaron Coquet / ACWPD
  */
 
-
-var sRoot = document.location.origin; // Default: document.location.origin
-var siteName = "Futhark Power Generator 1.5.4";
-var countOfAdded = 0;
-
-function hideLoader() {
-    var loaderDiv;
-    loaderDiv = document.getElementById("loader");
-    loaderDiv.classList.remove("loading");
-    loaderDiv.classList.add("hidden");
+function prepareForSave() {
+	for (let index = 0; index < localStorage.length; index++) {
+		const element = localStorage.key(index);
+		let form = document.querySelector('#data');
+		let input = document.createElement("input");
+		input.name = localStorage.key(index);
+		input.value = localStorage[element];
+		input.type = 'hidden';
+		console.table('name',localStorage.key(index),'value',input.value)
+		form.appendChild(input);
+	}
 }
 
-function adjustMyURL(displayURL) {
-    window.history.pushState({ site: sRoot }, siteName, "/" + displayURL + "/");
-}
+$(document).ready(function(){
+	$('button.toggler').click(function(ev){
+		let tar = ev.target;
+		html = $(tar).html();
+		old = html.match(/(Add|Show|Hide)/)[0];
+		new_ = (old == 'Hide') ? 'Show' : 'Hide';
+		replacement_html = html.replace(/Add|Show|Hide/, new_);
+		$(tar).html(replacement_html);
+	});
 
-function loadMyPage(pageName, targetDiv) {
-    var ajax;
-    var loaderDiv;
-    var timer;
-    loaderDiv = document.getElementById("loader");
-    loaderDiv.classList.remove("hidden");
-    loaderDiv.classList.add("loading");
-    timer = window.setTimeout(function() { hideLoader(); }, 500);
-    ajax = new XMLHttpRequest();
-    ajax.open("GET", sRoot + pageName, true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState === 4) {
-            document.getElementById(targetDiv).innerHTML = ajax.responseText;
-            loaderDiv.classList.remove("loading");
-            loaderDiv.classList.add("hidden");
-        }
-    };
-    ajax.send(null);
+	$('#type-notes').on('input', function(el){
+			let remaining = 4000 - el.target.value.length;
+			document.querySelector('#type-notes-holder .notes-length .count').innerText = remaining;
+			localStorage['notes_type'] = el.target.value;
+	});
 
+	$('#flavor-notes').on('input', function(el){
+		let remaining = 4000 - el.target.value.length;
+		document.querySelector('#flavor-notes-holder .notes-length .count').innerText = remaining;
+		localStorage['notes_flavor'] = el.target.value;
+	});
 
-}
+	$('#twist-notes').on('input', function(el){
+		let remaining = 4000 - el.target.value.length;
+		document.querySelector('#twist-notes-holder .notes-length .count').innerText = remaining;
+		localStorage['notes_twist'] = el.target.value;
+	});
 
-function postToPage(pageName, displayURL, postData) {
-    var ajax;
-    document.getElementById("content").innerHTML = "Loading ...";
-    ajax = new XMLHttpRequest();
-    ajax.open("POST", sRoot + pageName, true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState === 4) {
-            document.getElementById("content").innerHTML = ajax.responseText;
-        }
-    };
-    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    ajax.send(postData);
-    adjustMyURL(displayURL);
-}
+	$('.icon.remove').click(function(){
+		this.parentNode.remove();
+	});
 
-function postAndRedirect(pageName, displayURL, postData, redirectTo) {
-    var ajax;
-    document.getElementById("content").innerHTML = "Loading ...";
-    ajax = new XMLHttpRequest();
-    ajax.open("POST", sRoot + pageName, true);
-    ajax.onreadystatechange = function() {
-        if (ajax.readyState === 4) {
-            loadMyPage(redirectTo, displayURL, "content");
-        }
-    };
-    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    ajax.send(postData);
-    adjustMyURL(displayURL);
-}
-
-function DismissImportant() {
-    if (document.getElementById("Important")) {
-        document.getElementById("Important").style.display = "none";
-    }
-}
-
-function hideMessage() {
-    if (document.getElementById("Message")) {
-        document.getElementById("Message").style.display = "none";
-    }
-}
-
-function insertHistory() {
-    var hist = document.querySelector("#hist");
-    var marker = document.querySelector("#endOfhist");
-    var newDiv = document.createElement("div");
-
-    newDiv.id = "added_" + countOfAdded;
-    countOfAdded++;
-    newDiv.classList.add("added");
-    if (document.querySelectorAll(".added").length > 0) {
-        marker = document.querySelector(".added");
-    }
-    hist.insertBefore(newDiv, marker);
-    return newDiv.id;
-}
-
-function insertSmallImages() {
-    var target = insertHistory();
-    var req = "/a/loadsmall/" + document.querySelector("#ref").innerText;
-    loadMyPage(req, target);
-}
-
-function reroll() {
-    insertSmallImages();
-    loadMyPage("/a/roll", "content");
-    var hist = document.querySelector("#hist");
-    while (hist.childElementCount > 4) {
-        document.querySelector(".added:last-of-type").remove();
-    }
-}
-
-function goToPower(powerRef) {
-    loadMyPage("/load/" + powerRef + "raw", "content");
-}
-
-function moveNewType() {
-    let type = $("#addedData .type");
-    let desc = $("#addedData p");
-
-    type.appendTo("#moreTypes");
-    desc.appendTo("#Description");
-}
-
-function moveNewTwist() {
-    let twist = $("#addedData .twist");
-    let desc = $("#addedData p");
-
-    twist.appendTo("#moreTwists");
-    desc.appendTo("#Description");
-}
-
-function moveNewFlavor() {
-    let flavor = $("#addedData .flavor");
-    let desc = $("#addedData p");
-
-    flavor.appendTo("#moreFlavors");
-    desc.appendTo("#Description");
-}
+	$('#saveButton').click(function(){
+		prepareForSave();
+		$("#data").submit();
+	});
+});

@@ -1,0 +1,59 @@
+.type {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: 1fr 1fr 2fr;
+	grid-template-areas: "image name" "image class" "image description";
+}
+
+.type .image {
+	grid-area: image; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.type .name { grid-area: name; }
+
+.type .class { grid-area: class; }
+
+.type .description { grid-area: description; }
+
+.flavor {
+	display: grid;
+	grid-template-columns: 200px 4fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-areas: "image name" "image element" "image elementname" "image description";
+}
+
+.flavor .image {
+	grid-area: image; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.flavor .name { grid-area: name; }
+
+.flavor .element { grid-area: element; }
+
+.flavor .elementname { grid-area: elementname; }
+
+.flavor .description { grid-area: description; }
+
+.twist {
+	display: grid;
+	grid-template-columns: 200px 4fr;
+	grid-template-rows: 1fr 2fr;
+	grid-template-areas: "image cardname" "image description";
+}
+
+.twist .image {
+	grid-area: image; 
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.twist .cardname { grid-area: cardname; }
+
+.twist .description { grid-area: description; }

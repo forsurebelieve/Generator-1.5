@@ -6,17 +6,16 @@
     "minimum-stability": "stable",
     "require": {
         "PHP": "^7.0",
-        "altorouter/altorouter": "^1.2",
-        "acwpd/helpers": "@dev",
-        "kreait/firebase-php": "3.1"
+        "kreait/firebase-php": "^4.32",
+        "slim/slim": "^3.12",
+        "slim/php-view": "^2.2",
+        "monolog/monolog": "^1.24"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0"
+        "phpunit/phpunit": "^8.0",
+        "vlucas/phpdotenv": "^3.6",
+        "heroku/heroku-buildpack-php": "^162.0"
     },
-    "repositories": [{
-        "type": "vcs",
-        "url": "https://github.com/farfromunique/Helpers.git"
-    }],
     "authors": [{
         "name": "Aaron C",
         "email": "git@acwpd.com"
@@ -30,7 +29,7 @@
         }
     },
     "scripts": {
-        "serve": "php -S localhost:800 -t public/",
+        "serve": "php -S localhost:8000 -t public/",
         "nfsn-install": [
             "# Note: the repo should be downloaded to /home/tmp/{something}",
             "ls -d /home/protected/* | xargs rm -rf",
