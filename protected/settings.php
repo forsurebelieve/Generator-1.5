@@ -28,7 +28,11 @@ return [
          **************************************************************************/
         'firebase' => [
             'DatabaseURL' => 'https://futharkgenerator.firebaseio.com',
-            'ServiceAccountJSON' => __DIR__ . '/futharkGenerator.serviceAccount.json',
+            //'ServiceAccountJSON' => __DIR__ . '/futharkGenerator.serviceAccount.json',
+            'project_id' => $_ENV['FB_PROJECT_ID'],
+            'client_id' => $_ENV['FB_CLIENT_ID'],
+            'client_email' => $_ENV['FB_CLIENT_EMAIL'],
+            'private_key' => $_ENV['FB_PRIVATE_KEY']
         ],
 
         'powersDB' => [
