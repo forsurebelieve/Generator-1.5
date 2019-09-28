@@ -98,8 +98,7 @@ return function (App $app) {
     $app->post('/save', function (Request $request, Response $response) use ($container) {
         $inputs = $request->getParsedBody();
         $logger = $container->get('logger');
-        $logger->info('Power Save requested!');
-        $logger->info('Input:', $inputs);
+        $logger->info('Power Save requested! Input:', $inputs);
 
         $powerParts = [];
         foreach ($inputs as $key => $value) {
@@ -112,7 +111,6 @@ return function (App $app) {
         $powerParts['notes']['twist'] = $inputs['notes_twist'] ?? '';
 
         $db = $container->get('firebase')->getDatabase();
-        $logger->info('Firebase Get!');
         $matches = [];
         if (isset($inputs['ic-current-url']) && preg_match('/\/load\/([A-Za-z0-9\-\_\=]+)$/', $inputs['ic-current-url'], $matches) == 1) {
             $saved = $db
@@ -130,8 +128,6 @@ return function (App $app) {
         $path = $container->get('router')->pathFor('loadSaved', [
             'id_' => $key
         ]);
-
-        $logger->info('Pushing response');
 
         $response = $response->withHeader('X-IC-PushURL', $path);
         return $container->get('renderer')->render($response, 'blank.phtml', ['savekey' => $key]);
