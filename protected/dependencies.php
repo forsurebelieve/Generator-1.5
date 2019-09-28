@@ -24,15 +24,15 @@ return function (App $app) {
     $container['firebase'] = function ($c) {
         $settings = $c->get('settings')['firebase'];
         $serviceAccount = \Kreait\Firebase\ServiceAccount::fromArray([$settings]);
-
+        $c->get('logger')->info('Firebase Stage 1', $serviceAccount);
         $firebase = \Kreait\Firebase\Factory;
-        $c->get('logger')->info('Firebase Stage 1', $firebase);
-        $firebase->withServiceAccount($serviceAccount);
         $c->get('logger')->info('Firebase Stage 2', $firebase);
-        $firebase->withDatabaseUri($settings['DatabaseURL']);
+        $firebase->withServiceAccount($serviceAccount);
         $c->get('logger')->info('Firebase Stage 3', $firebase);
-        $firebase->create();
+        $firebase->withDatabaseUri($settings['DatabaseURL']);
         $c->get('logger')->info('Firebase Stage 4', $firebase);
+        $firebase->create();
+        $c->get('logger')->info('Firebase Stage 5', $firebase);
         return $firebase;
     };
 
