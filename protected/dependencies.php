@@ -23,7 +23,7 @@ return function (App $app) {
     // firebase
     $container['firebase'] = function ($c) {
         $settings = $c->get('settings')['firebase'];
-        $serviceAccount = \Kreait\Firebase\ServiceAccount::fromJson([$settings]['ServiceAccount']);
+        $serviceAccount = \Kreait\Firebase\ServiceAccount::fromJson($settings['ServiceAccount']);
         $firebase = (new \Kreait\Firebase\Factory)
             ->withServiceAccount($serviceAccount)
             ->withDatabaseUri($settings['DatabaseURL'])
