@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 -l logs/app.log public/
+web: heroku-php-apache2 -l logs/app.log -v public/
