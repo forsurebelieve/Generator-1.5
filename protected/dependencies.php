@@ -65,7 +65,7 @@ return function (App $app) {
     // 500 handler
     $container['errorHandler'] = function ($c) {
         return function ($request, $response, $exception) use ($c) {
-            $c->get('logger')->error('500, somehow...', $request, $exception);
+            $c->get('logger')->error('500, somehow...', $request);
             return $response->withStatus(500)
                 ->withHeader('Content-Type', 'text/html')
                 ->write('Something went wrong! <br /> I\'m impressed! Something broke in a way that SOME of the page still works.');
