@@ -98,8 +98,7 @@ return function (App $app) {
     $app->post('/save', function (Request $request, Response $response) use ($container) {
         $inputs = $request->getParsedBody();
         $logger = $container->get('logger');
-        $logger->info('Power Save requested!');
-        $logger->info('Input:', $inputs);
+        $logger->info('Power Save requested! Input:', $inputs);
 
         $powerParts = [];
         foreach ($inputs as $key => $value) {
@@ -124,9 +123,12 @@ return function (App $app) {
         }
         $key = $saved->getKey();
 
+        $logger->info('Key: ' . $key);
+
         $path = $container->get('router')->pathFor('loadSaved', [
             'id_' => $key
         ]);
+
         $response = $response->withHeader('X-IC-PushURL', $path);
         return $container->get('renderer')->render($response, 'blank.phtml', ['savekey' => $key]);
     })->setName('save');

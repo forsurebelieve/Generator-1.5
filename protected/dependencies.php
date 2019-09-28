@@ -23,8 +23,7 @@ return function (App $app) {
     // firebase
     $container['firebase'] = function ($c) {
         $settings = $c->get('settings')['firebase'];
-        // $serviceAccount = \Kreait\Firebase\ServiceAccount::fromJsonFile($settings['ServiceAccountJSON']);
-        $serviceAccount = \Kreait\Firebase\ServiceAccount::fromArray([$settings]);
+        $serviceAccount = \Kreait\Firebase\ServiceAccount::fromJson($settings['ServiceAccount']);
         $firebase = (new \Kreait\Firebase\Factory)
             ->withServiceAccount($serviceAccount)
             ->withDatabaseUri($settings['DatabaseURL'])
@@ -65,7 +64,7 @@ return function (App $app) {
     // 500 handler
     $container['errorHandler'] = function ($c) {
         return function ($request, $response, $exception) use ($c) {
-            $c->get('logger')->error('500, somehow...', $request, $exception);
+            $c->get('logger')->error('500, somehow...');
             return $response->withStatus(500)
                 ->withHeader('Content-Type', 'text/html')
                 ->write('Something went wrong! <br /> I\'m impressed! Something broke in a way that SOME of the page still works.');

@@ -20,7 +20,6 @@ if (!isset($_ENV['environment']) || $_ENV['environment'] == 'dev') {
     $dotenv->load();
 }
 
-
 // Instantiate the app
 $settings = require __DIR__ . '/../protected/settings.php';
 $app = new \Slim\App($settings);
