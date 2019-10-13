@@ -139,8 +139,6 @@ h5 {
 footer {
 	max-width: 900px;
 	margin: auto;
-	position: -webkit-sticky;
-	position: sticky;
 	bottom: 0;
 	z-index: 100;
 	-webkit-box-shadow: 0px -5px 5px -1px rgba(15,15,15,1);
@@ -152,18 +150,26 @@ footer {
 	margin: 10px auto;
 }
 
-.sticky-bottom {
-	position: -webkit-sticky;
-	position: sticky;
-	bottom: 206px;
-	height: 0;
+@media (min-width: 576px) {
+	footer {
+		position: -webkit-sticky;
+		position: sticky;
+	}
+
+	.sticky-bottom {
+		position: -webkit-sticky;
+		position: sticky;
+		bottom: 206px;
+		height: 0;
+	}
+
+	.no-height {
+		height: 0;
+	}
+
+	.save-text {
+		position: relative;
+		bottom: 140px;
+	}
 }
 
-.no-height {
-	height: 0;
-}
-
-.save-text {
-	position: relative;
-	bottom: 140px;
-}
